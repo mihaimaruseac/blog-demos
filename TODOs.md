@@ -7,3 +7,4 @@
 - [ ] Git filter-branch
 - [ ] OOP layout
 - [ ] Haskell internals
+- [ ] Backtrace, dtrace, pstack, gstack
