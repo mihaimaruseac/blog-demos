@@ -16,3 +16,4 @@
 - [ ] Finger trees
 - [ ] Lenses
 - [ ] Enumerators
+- [ ] 2048 AI and stats
