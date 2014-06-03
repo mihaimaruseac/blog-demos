@@ -18,3 +18,4 @@
 - [ ] Enumerators
 - [ ] 2048 AI and stats
 - [ ] bignum ops: limbs vs rns
+- [ ] Pandoc. Markdown. Techblog
