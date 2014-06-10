@@ -22,3 +22,5 @@
 - [ ] Gone Fission
 - [ ] Sporos
 - [ ] Space Battles
+- [ ] Go
+- [ ] Arimaa
