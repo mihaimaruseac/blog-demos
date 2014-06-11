@@ -24,3 +24,4 @@
 - [ ] Space Battles
 - [ ] Go
 - [ ] Arimaa
+- [ ] SSH login process (+ patching)
