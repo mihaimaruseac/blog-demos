@@ -25,3 +25,6 @@
 - [ ] Go
 - [ ] Arimaa
 - [ ] SSH login process (+ patching)
+- [ ] AOSA
+    * SSH
+    * Audacious
