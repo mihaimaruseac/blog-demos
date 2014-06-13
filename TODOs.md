@@ -28,3 +28,8 @@
 - [ ] AOSA
     * SSH
     * Audacious
+- [ ] Merge Joins
+- [ ] Astral TD
+- [ ] Hamurabbi
+- [ ] Boltz/Bontz
+- [ ] Chomp
