@@ -34,3 +34,7 @@
 - [ ] Boltz/Bontz
 - [ ] Chomp
 - [ ] RATB
+- [ ] Mazes
+- [ ] Cat theory
+- [ ] Data Mining
+- [ ] SICP
