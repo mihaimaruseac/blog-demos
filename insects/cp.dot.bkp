@@ -1,0 +1,5311 @@
+digraph crickets {
+	graph [layout=dot rankdir=TD]
+	 0 [shape=point]
+	 1 [shape=point]
+	2 [shape=oval, label=100]
+0 -> 2
+	3 [shape=box, label=100]
+1 -> 3
+	4 [shape=oval, label=100]
+2 -> 4
+	5 [shape=box, label=100, style=filled]
+3 -> 5
+	6 [shape=oval, label=100]
+4 -> 6
+	7 [shape=box, label=20]
+5 -> 7
+	8 [shape=box, label=50]
+5 -> 8
+	9 [shape=box, label=30]
+5 -> 9
+	10 [shape=oval, label=100, style=filled]
+6 -> 10
+	11 [shape=box, label=20, style=filled]
+7 -> 11
+	12 [shape=box, label=50]
+8 -> 12
+	13 [shape=box, label=30]
+9 -> 13
+	14 [shape=box, label=50, style=filled]
+12 -> 14
+	15 [shape=box, label=30]
+13 -> 15
+	16 [shape=oval, label=31]
+10 -> 16
+	17 [shape=oval, label=52]
+10 -> 17
+	18 [shape=oval, label=21]
+10 -> 18
+	19 [shape=box, label=22]
+11 -> 19
+	20 [shape=box, label=30, style=filled]
+15 -> 20
+	21 [shape=oval, label=31]
+16 -> 21
+	22 [shape=oval, label=52]
+17 -> 22
+	23 [shape=oval, label=21]
+18 -> 23
+	24 [shape=box, label=22, style=filled]
+19 -> 24
+	25 [shape=box, label=10]
+14 -> 25
+	26 [shape=box, label=25]
+14 -> 26
+	27 [shape=box, label=15]
+14 -> 27
+	28 [shape=oval, label=31]
+21 -> 28
+	29 [shape=oval, label=52]
+22 -> 29
+	30 [shape=oval, label=21]
+23 -> 30
+	31 [shape=box, label=10, style=filled]
+25 -> 31
+	32 [shape=box, label=25]
+26 -> 32
+	33 [shape=box, label=15]
+27 -> 33
+	34 [shape=box, label=6]
+20 -> 34
+	35 [shape=box, label=15]
+20 -> 35
+	36 [shape=box, label=9]
+20 -> 36
+	38 [shape=box, label=11]
+24 -> 38
+	39 [shape=box, label=11]
+24 -> 39
+	40 [shape=oval, label=31, style=filled]
+28 -> 40
+	41 [shape=oval, label=52]
+29 -> 41
+	42 [shape=oval, label=21]
+30 -> 42
+	43 [shape=box, label=25, style=filled]
+32 -> 43
+	44 [shape=box, label=15]
+33 -> 44
+	45 [shape=box, label=6]
+34 -> 45
+	46 [shape=box, label=15]
+35 -> 46
+	47 [shape=box, label=9]
+36 -> 47
+	48 [shape=box, label=11, style=filled]
+38 -> 48
+	49 [shape=box, label=11]
+39 -> 49
+	51 [shape=box, label=5]
+31 -> 51
+	52 [shape=box, label=5]
+31 -> 52
+	53 [shape=oval, label=52, style=filled]
+41 -> 53
+	54 [shape=oval, label=21]
+42 -> 54
+	55 [shape=box, label=15, style=filled]
+44 -> 55
+	56 [shape=box, label=6, style=filled]
+45 -> 56
+	57 [shape=box, label=15]
+46 -> 57
+	58 [shape=box, label=9]
+47 -> 58
+	59 [shape=box, label=11, style=filled]
+49 -> 59
+	60 [shape=box, label=5, style=filled]
+51 -> 60
+	61 [shape=box, label=5]
+52 -> 61
+	62 [shape=oval, label=10]
+40 -> 62
+	63 [shape=oval, label=16]
+40 -> 63
+	64 [shape=oval, label=6]
+40 -> 64
+	65 [shape=box, label=28]
+43 -> 65
+	66 [shape=box, label=12]
+48 -> 66
+	67 [shape=oval, label=21, style=filled]
+54 -> 67
+	68 [shape=box, label=15, style=filled]
+57 -> 68
+	69 [shape=box, label=9]
+58 -> 69
+	70 [shape=box, label=5, style=filled]
+61 -> 70
+	71 [shape=oval, label=10]
+62 -> 71
+	72 [shape=oval, label=16]
+63 -> 72
+	73 [shape=oval, label=6]
+64 -> 73
+	74 [shape=box, label=28]
+65 -> 74
+	75 [shape=box, label=12, style=filled]
+66 -> 75
+	76 [shape=oval, label=16]
+53 -> 76
+	77 [shape=oval, label=27]
+53 -> 77
+	78 [shape=oval, label=11]
+53 -> 78
+	79 [shape=box, label=16]
+55 -> 79
+	80 [shape=box, label=7]
+56 -> 80
+	81 [shape=box, label=12]
+59 -> 81
+	82 [shape=box, label=6]
+60 -> 82
+	83 [shape=box, label=9, style=filled]
+69 -> 83
+	84 [shape=oval, label=10, style=filled]
+71 -> 84
+	85 [shape=oval, label=16]
+72 -> 85
+	86 [shape=oval, label=6]
+73 -> 86
+	87 [shape=box, label=28, style=filled]
+74 -> 87
+	88 [shape=oval, label=16]
+76 -> 88
+	89 [shape=oval, label=27]
+77 -> 89
+	90 [shape=oval, label=11]
+78 -> 90
+	91 [shape=box, label=16]
+79 -> 91
+	92 [shape=box, label=7]
+80 -> 92
+	93 [shape=box, label=12]
+81 -> 93
+	94 [shape=box, label=6, style=filled]
+82 -> 94
+	95 [shape=oval, label=7]
+67 -> 95
+	96 [shape=oval, label=11]
+67 -> 96
+	97 [shape=oval, label=4]
+67 -> 97
+	98 [shape=box, label=16]
+68 -> 98
+	99 [shape=box, label=6]
+70 -> 99
+	100 [shape=box, label=13]
+75 -> 100
+	101 [shape=oval, label=16, style=filled]
+85 -> 101
+	102 [shape=oval, label=6]
+86 -> 102
+	103 [shape=oval, label=16]
+88 -> 103
+	104 [shape=oval, label=27]
+89 -> 104
+	105 [shape=oval, label=11]
+90 -> 105
+	106 [shape=box, label=16]
+91 -> 106
+	107 [shape=box, label=7, style=filled]
+92 -> 107
+	108 [shape=box, label=12, style=filled]
+93 -> 108
+	109 [shape=oval, label=7]
+95 -> 109
+	110 [shape=oval, label=11]
+96 -> 110
+	111 [shape=oval, label=4]
+97 -> 111
+	112 [shape=box, label=16]
+98 -> 112
+	113 [shape=box, label=6]
+99 -> 113
+	114 [shape=box, label=13, style=filled]
+100 -> 114
+	115 [shape=oval, label=3]
+84 -> 115
+	116 [shape=oval, label=5]
+84 -> 116
+	117 [shape=oval, label=2]
+84 -> 117
+	118 [shape=box, label=10]
+83 -> 118
+	119 [shape=box, label=31]
+87 -> 119
+	120 [shape=box, label=7]
+94 -> 120
+	121 [shape=oval, label=6, style=filled]
+102 -> 121
+	122 [shape=oval, label=16, style=filled]
+103 -> 122
+	123 [shape=oval, label=27]
+104 -> 123
+	124 [shape=oval, label=11]
+105 -> 124
+	125 [shape=box, label=16, style=filled]
+106 -> 125
+	126 [shape=oval, label=7]
+109 -> 126
+	127 [shape=oval, label=11]
+110 -> 127
+	128 [shape=oval, label=4]
+111 -> 128
+	129 [shape=box, label=16]
+112 -> 129
+	130 [shape=box, label=6, style=filled]
+113 -> 130
+	131 [shape=oval, label=3, style=filled]
+115 -> 131
+	132 [shape=oval, label=5]
+116 -> 132
+	133 [shape=oval, label=2]
+117 -> 133
+	134 [shape=box, label=10]
+118 -> 134
+	135 [shape=box, label=31]
+119 -> 135
+	136 [shape=box, label=7, style=filled]
+120 -> 136
+	137 [shape=oval, label=5]
+101 -> 137
+	138 [shape=oval, label=8]
+101 -> 138
+	139 [shape=oval, label=4]
+101 -> 139
+	140 [shape=box, label=8]
+107 -> 140
+	141 [shape=box, label=13]
+108 -> 141
+	142 [shape=box, label=14]
+114 -> 142
+	143 [shape=oval, label=27, style=filled]
+123 -> 143
+	144 [shape=oval, label=11]
+124 -> 144
+	145 [shape=oval, label=7]
+126 -> 145
+	146 [shape=oval, label=11]
+127 -> 146
+	147 [shape=oval, label=4]
+128 -> 147
+	148 [shape=box, label=16, style=filled]
+129 -> 148
+	149 [shape=oval, label=5, style=filled]
+132 -> 149
+	150 [shape=oval, label=2]
+133 -> 150
+	151 [shape=box, label=10]
+134 -> 151
+	152 [shape=box, label=31, style=filled]
+135 -> 152
+	153 [shape=oval, label=5]
+137 -> 153
+	154 [shape=oval, label=8]
+138 -> 154
+	155 [shape=oval, label=4]
+139 -> 155
+	156 [shape=box, label=8]
+140 -> 156
+	157 [shape=box, label=13]
+141 -> 157
+	158 [shape=box, label=14, style=filled]
+142 -> 158
+	159 [shape=oval, label=2]
+121 -> 159
+	160 [shape=oval, label=3]
+121 -> 160
+	161 [shape=oval, label=1]
+121 -> 161
+	162 [shape=oval, label=5]
+122 -> 162
+	163 [shape=oval, label=8]
+122 -> 163
+	164 [shape=oval, label=4]
+122 -> 164
+	166 [shape=oval, label=2]
+131 -> 166
+	167 [shape=oval, label=1]
+131 -> 167
+	168 [shape=box, label=18]
+125 -> 168
+	169 [shape=box, label=7]
+130 -> 169
+	170 [shape=box, label=8]
+136 -> 170
+	171 [shape=oval, label=11, style=filled]
+144 -> 171
+	172 [shape=oval, label=7, style=filled]
+145 -> 172
+	173 [shape=oval, label=11]
+146 -> 173
+	174 [shape=oval, label=4]
+147 -> 174
+	175 [shape=oval, label=2, style=filled]
+150 -> 175
+	176 [shape=box, label=10]
+151 -> 176
+	177 [shape=oval, label=5, style=filled]
+153 -> 177
+	178 [shape=oval, label=8]
+154 -> 178
+	179 [shape=oval, label=4]
+155 -> 179
+	180 [shape=box, label=8, style=filled]
+156 -> 180
+	181 [shape=box, label=13, style=filled]
+157 -> 181
+	182 [shape=oval, label=2]
+159 -> 182
+	183 [shape=oval, label=3]
+160 -> 183
+	184 [shape=oval, label=1]
+161 -> 184
+	185 [shape=oval, label=5]
+162 -> 185
+	186 [shape=oval, label=8]
+163 -> 186
+	187 [shape=oval, label=4]
+164 -> 187
+	188 [shape=oval, label=2, style=filled]
+166 -> 188
+	189 [shape=oval, label=1]
+167 -> 189
+	190 [shape=box, label=18]
+168 -> 190
+	191 [shape=box, label=7]
+169 -> 191
+	192 [shape=box, label=8, style=filled]
+170 -> 192
+	193 [shape=oval, label=8]
+143 -> 193
+	194 [shape=oval, label=14]
+143 -> 194
+	195 [shape=oval, label=6]
+143 -> 195
+	196 [shape=oval, label=2]
+149 -> 196
+	197 [shape=oval, label=2]
+149 -> 197
+	198 [shape=oval, label=1]
+149 -> 198
+	199 [shape=box, label=18]
+148 -> 199
+	200 [shape=box, label=34]
+152 -> 200
+	201 [shape=box, label=15]
+158 -> 201
+	202 [shape=oval, label=11, style=filled]
+173 -> 202
+	203 [shape=oval, label=4]
+174 -> 203
+	204 [shape=box, label=10, style=filled]
+176 -> 204
+	205 [shape=oval, label=8, style=filled]
+178 -> 205
+	206 [shape=oval, label=4]
+179 -> 206
+	207 [shape=oval, label=2]
+182 -> 207
+	208 [shape=oval, label=3]
+183 -> 208
+	209 [shape=oval, label=1]
+184 -> 209
+	210 [shape=oval, label=5, style=filled]
+185 -> 210
+	211 [shape=oval, label=8]
+186 -> 211
+	212 [shape=oval, label=4]
+187 -> 212
+	213 [shape=oval, label=1, style=filled]
+189 -> 213
+	214 [shape=box, label=18]
+190 -> 214
+	215 [shape=box, label=7, style=filled]
+191 -> 215
+	216 [shape=oval, label=8]
+193 -> 216
+	217 [shape=oval, label=14]
+194 -> 217
+	218 [shape=oval, label=6]
+195 -> 218
+	219 [shape=oval, label=2, style=filled]
+196 -> 219
+	220 [shape=oval, label=2]
+197 -> 220
+	221 [shape=oval, label=1]
+198 -> 221
+	222 [shape=box, label=18]
+199 -> 222
+	223 [shape=box, label=34]
+200 -> 223
+	224 [shape=box, label=15, style=filled]
+201 -> 224
+	225 [shape=oval, label=3]
+171 -> 225
+	226 [shape=oval, label=6]
+171 -> 226
+	227 [shape=oval, label=2]
+171 -> 227
+	228 [shape=oval, label=2]
+172 -> 228
+	229 [shape=oval, label=4]
+172 -> 229
+	230 [shape=oval, label=1]
+172 -> 230
+	231 [shape=oval, label=1]
+175 -> 231
+	232 [shape=oval, label=1]
+175 -> 232
+	234 [shape=oval, label=2]
+177 -> 234
+	235 [shape=oval, label=2]
+177 -> 235
+	236 [shape=oval, label=1]
+177 -> 236
+	238 [shape=oval, label=1]
+188 -> 238
+	239 [shape=oval, label=1]
+188 -> 239
+	240 [shape=box, label=9]
+180 -> 240
+	241 [shape=box, label=14]
+181 -> 241
+	242 [shape=box, label=9]
+192 -> 242
+	243 [shape=oval, label=4, style=filled]
+203 -> 243
+	244 [shape=oval, label=4, style=filled]
+206 -> 244
+	245 [shape=oval, label=2, style=filled]
+207 -> 245
+	246 [shape=oval, label=3]
+208 -> 246
+	247 [shape=oval, label=1]
+209 -> 247
+	248 [shape=oval, label=8, style=filled]
+211 -> 248
+	249 [shape=oval, label=4]
+212 -> 249
+	250 [shape=box, label=18, style=filled]
+214 -> 250
+	251 [shape=oval, label=8]
+216 -> 251
+	252 [shape=oval, label=14]
+217 -> 252
+	253 [shape=oval, label=6]
+218 -> 253
+	254 [shape=oval, label=2, style=filled]
+220 -> 254
+	255 [shape=oval, label=1]
+221 -> 255
+	256 [shape=box, label=18]
+222 -> 256
+	257 [shape=box, label=34, style=filled]
+223 -> 257
+	258 [shape=oval, label=3]
+225 -> 258
+	259 [shape=oval, label=6]
+226 -> 259
+	260 [shape=oval, label=2]
+227 -> 260
+	261 [shape=oval, label=2]
+228 -> 261
+	262 [shape=oval, label=4]
+229 -> 262
+	263 [shape=oval, label=1]
+230 -> 263
+	264 [shape=oval, label=1]
+231 -> 264
+	265 [shape=oval, label=1]
+232 -> 265
+	266 [shape=oval, label=2, style=filled]
+234 -> 266
+	267 [shape=oval, label=2]
+235 -> 267
+	268 [shape=oval, label=1]
+236 -> 268
+	269 [shape=oval, label=1, style=filled]
+238 -> 269
+	270 [shape=oval, label=1]
+239 -> 270
+	271 [shape=box, label=9]
+240 -> 271
+	272 [shape=box, label=14]
+241 -> 272
+	273 [shape=box, label=9, style=filled]
+242 -> 273
+	274 [shape=oval, label=3]
+202 -> 274
+	275 [shape=oval, label=6]
+202 -> 275
+	276 [shape=oval, label=2]
+202 -> 276
+	277 [shape=oval, label=2]
+205 -> 277
+	278 [shape=oval, label=4]
+205 -> 278
+	279 [shape=oval, label=2]
+205 -> 279
+	280 [shape=oval, label=2]
+210 -> 280
+	281 [shape=oval, label=2]
+210 -> 281
+	282 [shape=oval, label=1]
+210 -> 282
+	285 [shape=oval, label=1]
+213 -> 285
+	287 [shape=oval, label=1]
+219 -> 287
+	288 [shape=oval, label=1]
+219 -> 288
+	289 [shape=box, label=11]
+204 -> 289
+	290 [shape=box, label=8]
+215 -> 290
+	291 [shape=box, label=16]
+224 -> 291
+	292 [shape=oval, label=3, style=filled]
+246 -> 292
+	293 [shape=oval, label=1]
+247 -> 293
+	294 [shape=oval, label=4, style=filled]
+249 -> 294
+	295 [shape=oval, label=8, style=filled]
+251 -> 295
+	296 [shape=oval, label=14]
+252 -> 296
+	297 [shape=oval, label=6]
+253 -> 297
+	298 [shape=oval, label=1, style=filled]
+255 -> 298
+	299 [shape=box, label=18, style=filled]
+256 -> 299
+	300 [shape=oval, label=3]
+258 -> 300
+	301 [shape=oval, label=6]
+259 -> 301
+	302 [shape=oval, label=2]
+260 -> 302
+	303 [shape=oval, label=2]
+261 -> 303
+	304 [shape=oval, label=4]
+262 -> 304
+	305 [shape=oval, label=1]
+263 -> 305
+	306 [shape=oval, label=1, style=filled]
+264 -> 306
+	307 [shape=oval, label=1]
+265 -> 307
+	308 [shape=oval, label=2, style=filled]
+267 -> 308
+	309 [shape=oval, label=1]
+268 -> 309
+	310 [shape=oval, label=1, style=filled]
+270 -> 310
+	311 [shape=box, label=9, style=filled]
+271 -> 311
+	312 [shape=box, label=14, style=filled]
+272 -> 312
+	313 [shape=oval, label=3]
+274 -> 313
+	314 [shape=oval, label=6]
+275 -> 314
+	315 [shape=oval, label=2]
+276 -> 315
+	316 [shape=oval, label=2]
+277 -> 316
+	317 [shape=oval, label=4]
+278 -> 317
+	318 [shape=oval, label=2]
+279 -> 318
+	319 [shape=oval, label=2, style=filled]
+280 -> 319
+	320 [shape=oval, label=2]
+281 -> 320
+	321 [shape=oval, label=1]
+282 -> 321
+	322 [shape=oval, label=1]
+285 -> 322
+	323 [shape=oval, label=1, style=filled]
+287 -> 323
+	324 [shape=oval, label=1]
+288 -> 324
+	325 [shape=box, label=11]
+289 -> 325
+	326 [shape=box, label=8]
+290 -> 326
+	327 [shape=box, label=16, style=filled]
+291 -> 327
+	328 [shape=oval, label=1]
+243 -> 328
+	329 [shape=oval, label=2]
+243 -> 329
+	330 [shape=oval, label=1]
+243 -> 330
+	331 [shape=oval, label=1]
+244 -> 331
+	332 [shape=oval, label=2]
+244 -> 332
+	333 [shape=oval, label=1]
+244 -> 333
+	334 [shape=oval, label=1]
+245 -> 334
+	335 [shape=oval, label=1]
+245 -> 335
+	337 [shape=oval, label=2]
+248 -> 337
+	338 [shape=oval, label=4]
+248 -> 338
+	339 [shape=oval, label=2]
+248 -> 339
+	340 [shape=oval, label=1]
+254 -> 340
+	341 [shape=oval, label=1]
+254 -> 341
+	344 [shape=oval, label=1]
+266 -> 344
+	345 [shape=oval, label=1]
+266 -> 345
+	348 [shape=oval, label=1]
+269 -> 348
+	349 [shape=box, label=20]
+250 -> 349
+	350 [shape=box, label=37]
+257 -> 350
+	351 [shape=box, label=10]
+273 -> 351
+	352 [shape=oval, label=1, style=filled]
+293 -> 352
+	353 [shape=oval, label=14, style=filled]
+296 -> 353
+	354 [shape=oval, label=6]
+297 -> 354
+	355 [shape=oval, label=3]
+300 -> 355
+	356 [shape=oval, label=6]
+301 -> 356
+	357 [shape=oval, label=2]
+302 -> 357
+	358 [shape=oval, label=2, style=filled]
+303 -> 358
+	359 [shape=oval, label=4]
+304 -> 359
+	360 [shape=oval, label=1]
+305 -> 360
+	361 [shape=oval, label=1, style=filled]
+307 -> 361
+	362 [shape=oval, label=1, style=filled]
+309 -> 362
+	363 [shape=oval, label=3]
+313 -> 363
+	364 [shape=oval, label=6]
+314 -> 364
+	365 [shape=oval, label=2]
+315 -> 365
+	366 [shape=oval, label=2, style=filled]
+316 -> 366
+	367 [shape=oval, label=4]
+317 -> 367
+	368 [shape=oval, label=2]
+318 -> 368
+	369 [shape=oval, label=2, style=filled]
+320 -> 369
+	370 [shape=oval, label=1]
+321 -> 370
+	371 [shape=oval, label=1]
+322 -> 371
+	372 [shape=oval, label=1, style=filled]
+324 -> 372
+	373 [shape=box, label=11]
+325 -> 373
+	374 [shape=box, label=8, style=filled]
+326 -> 374
+	375 [shape=oval, label=1]
+328 -> 375
+	376 [shape=oval, label=2]
+329 -> 376
+	377 [shape=oval, label=1]
+330 -> 377
+	378 [shape=oval, label=1]
+331 -> 378
+	379 [shape=oval, label=2]
+332 -> 379
+	380 [shape=oval, label=1]
+333 -> 380
+	381 [shape=oval, label=1]
+334 -> 381
+	382 [shape=oval, label=1]
+335 -> 382
+	383 [shape=oval, label=2]
+337 -> 383
+	384 [shape=oval, label=4]
+338 -> 384
+	385 [shape=oval, label=2]
+339 -> 385
+	386 [shape=oval, label=1, style=filled]
+340 -> 386
+	387 [shape=oval, label=1]
+341 -> 387
+	388 [shape=oval, label=1, style=filled]
+344 -> 388
+	389 [shape=oval, label=1]
+345 -> 389
+	390 [shape=oval, label=1]
+348 -> 390
+	391 [shape=box, label=20]
+349 -> 391
+	392 [shape=box, label=37]
+350 -> 392
+	393 [shape=box, label=10, style=filled]
+351 -> 393
+	394 [shape=oval, label=1]
+292 -> 394
+	395 [shape=oval, label=2]
+292 -> 395
+	397 [shape=oval, label=1]
+294 -> 397
+	398 [shape=oval, label=2]
+294 -> 398
+	399 [shape=oval, label=1]
+294 -> 399
+	400 [shape=oval, label=2]
+295 -> 400
+	401 [shape=oval, label=4]
+295 -> 401
+	402 [shape=oval, label=2]
+295 -> 402
+	405 [shape=oval, label=1]
+298 -> 405
+	408 [shape=oval, label=1]
+306 -> 408
+	409 [shape=oval, label=1]
+308 -> 409
+	410 [shape=oval, label=1]
+308 -> 410
+	414 [shape=oval, label=1]
+310 -> 414
+	416 [shape=oval, label=1]
+319 -> 416
+	417 [shape=oval, label=1]
+319 -> 417
+	420 [shape=oval, label=1]
+323 -> 420
+	421 [shape=box, label=20]
+299 -> 421
+	422 [shape=box, label=10]
+311 -> 422
+	423 [shape=box, label=15]
+312 -> 423
+	424 [shape=box, label=18]
+327 -> 424
+	425 [shape=oval, label=6, style=filled]
+354 -> 425
+	426 [shape=oval, label=3, style=filled]
+355 -> 426
+	427 [shape=oval, label=6]
+356 -> 427
+	428 [shape=oval, label=2]
+357 -> 428
+	429 [shape=oval, label=4, style=filled]
+359 -> 429
+	430 [shape=oval, label=1]
+360 -> 430
+	431 [shape=oval, label=3]
+363 -> 431
+	432 [shape=oval, label=6]
+364 -> 432
+	433 [shape=oval, label=2]
+365 -> 433
+	434 [shape=oval, label=4, style=filled]
+367 -> 434
+	435 [shape=oval, label=2]
+368 -> 435
+	436 [shape=oval, label=1, style=filled]
+370 -> 436
+	437 [shape=oval, label=1, style=filled]
+371 -> 437
+	438 [shape=box, label=11]
+373 -> 438
+	439 [shape=oval, label=1]
+375 -> 439
+	440 [shape=oval, label=2]
+376 -> 440
+	441 [shape=oval, label=1]
+377 -> 441
+	442 [shape=oval, label=1]
+378 -> 442
+	443 [shape=oval, label=2]
+379 -> 443
+	444 [shape=oval, label=1]
+380 -> 444
+	445 [shape=oval, label=1, style=filled]
+381 -> 445
+	446 [shape=oval, label=1]
+382 -> 446
+	447 [shape=oval, label=2, style=filled]
+383 -> 447
+	448 [shape=oval, label=4]
+384 -> 448
+	449 [shape=oval, label=2]
+385 -> 449
+	450 [shape=oval, label=1, style=filled]
+387 -> 450
+	451 [shape=oval, label=1, style=filled]
+389 -> 451
+	452 [shape=oval, label=1, style=filled]
+390 -> 452
+	453 [shape=box, label=20]
+391 -> 453
+	454 [shape=box, label=37, style=filled]
+392 -> 454
+	455 [shape=oval, label=1]
+394 -> 455
+	456 [shape=oval, label=2]
+395 -> 456
+	457 [shape=oval, label=1]
+397 -> 457
+	458 [shape=oval, label=2]
+398 -> 458
+	459 [shape=oval, label=1]
+399 -> 459
+	460 [shape=oval, label=2]
+400 -> 460
+	461 [shape=oval, label=4]
+401 -> 461
+	462 [shape=oval, label=2]
+402 -> 462
+	463 [shape=oval, label=1]
+405 -> 463
+	464 [shape=oval, label=1]
+408 -> 464
+	465 [shape=oval, label=1, style=filled]
+409 -> 465
+	466 [shape=oval, label=1]
+410 -> 466
+	467 [shape=oval, label=1]
+414 -> 467
+	468 [shape=oval, label=1, style=filled]
+416 -> 468
+	469 [shape=oval, label=1]
+417 -> 469
+	470 [shape=oval, label=1]
+420 -> 470
+	471 [shape=box, label=20]
+421 -> 471
+	472 [shape=box, label=10]
+422 -> 472
+	473 [shape=box, label=15]
+423 -> 473
+	474 [shape=box, label=18, style=filled]
+424 -> 474
+	477 [shape=oval, label=1]
+352 -> 477
+	478 [shape=oval, label=4]
+353 -> 478
+	479 [shape=oval, label=8]
+353 -> 479
+	480 [shape=oval, label=3]
+353 -> 480
+	481 [shape=oval, label=1]
+358 -> 481
+	482 [shape=oval, label=1]
+358 -> 482
+	486 [shape=oval, label=1]
+361 -> 486
+	489 [shape=oval, label=1]
+362 -> 489
+	490 [shape=oval, label=1]
+366 -> 490
+	491 [shape=oval, label=1]
+366 -> 491
+	493 [shape=oval, label=1]
+369 -> 493
+	494 [shape=oval, label=1]
+369 -> 494
+	498 [shape=oval, label=1]
+372 -> 498
+	501 [shape=oval, label=1]
+386 -> 501
+	504 [shape=oval, label=1]
+388 -> 504
+	505 [shape=box, label=9]
+374 -> 505
+	506 [shape=box, label=11]
+393 -> 506
+	507 [shape=oval, label=6, style=filled]
+427 -> 507
+	508 [shape=oval, label=2]
+428 -> 508
+	509 [shape=oval, label=1, style=filled]
+430 -> 509
+	510 [shape=oval, label=3, style=filled]
+431 -> 510
+	511 [shape=oval, label=6]
+432 -> 511
+	512 [shape=oval, label=2]
+433 -> 512
+	513 [shape=oval, label=2, style=filled]
+435 -> 513
+	514 [shape=box, label=11, style=filled]
+438 -> 514
+	515 [shape=oval, label=1]
+439 -> 515
+	516 [shape=oval, label=2]
+440 -> 516
+	517 [shape=oval, label=1]
+441 -> 517
+	518 [shape=oval, label=1, style=filled]
+442 -> 518
+	519 [shape=oval, label=2]
+443 -> 519
+	520 [shape=oval, label=1]
+444 -> 520
+	521 [shape=oval, label=1, style=filled]
+446 -> 521
+	522 [shape=oval, label=4, style=filled]
+448 -> 522
+	523 [shape=oval, label=2]
+449 -> 523
+	524 [shape=box, label=20, style=filled]
+453 -> 524
+	525 [shape=oval, label=1]
+455 -> 525
+	526 [shape=oval, label=2]
+456 -> 526
+	527 [shape=oval, label=1]
+457 -> 527
+	528 [shape=oval, label=2]
+458 -> 528
+	529 [shape=oval, label=1]
+459 -> 529
+	530 [shape=oval, label=2, style=filled]
+460 -> 530
+	531 [shape=oval, label=4]
+461 -> 531
+	532 [shape=oval, label=2]
+462 -> 532
+	533 [shape=oval, label=1]
+463 -> 533
+	534 [shape=oval, label=1]
+464 -> 534
+	535 [shape=oval, label=1, style=filled]
+466 -> 535
+	536 [shape=oval, label=1]
+467 -> 536
+	537 [shape=oval, label=1, style=filled]
+469 -> 537
+	538 [shape=oval, label=1, style=filled]
+470 -> 538
+	539 [shape=box, label=20]
+471 -> 539
+	540 [shape=box, label=10, style=filled]
+472 -> 540
+	541 [shape=box, label=15, style=filled]
+473 -> 541
+	542 [shape=oval, label=1]
+477 -> 542
+	543 [shape=oval, label=4]
+478 -> 543
+	544 [shape=oval, label=8]
+479 -> 544
+	545 [shape=oval, label=3]
+480 -> 545
+	546 [shape=oval, label=1]
+481 -> 546
+	547 [shape=oval, label=1]
+482 -> 547
+	548 [shape=oval, label=1]
+486 -> 548
+	549 [shape=oval, label=1]
+489 -> 549
+	550 [shape=oval, label=1, style=filled]
+490 -> 550
+	551 [shape=oval, label=1]
+491 -> 551
+	552 [shape=oval, label=1, style=filled]
+493 -> 552
+	553 [shape=oval, label=1]
+494 -> 553
+	554 [shape=oval, label=1]
+498 -> 554
+	555 [shape=oval, label=1]
+501 -> 555
+	556 [shape=oval, label=1]
+504 -> 556
+	557 [shape=box, label=9]
+505 -> 557
+	558 [shape=box, label=11, style=filled]
+506 -> 558
+	559 [shape=oval, label=2]
+425 -> 559
+	560 [shape=oval, label=3]
+425 -> 560
+	561 [shape=oval, label=1]
+425 -> 561
+	562 [shape=oval, label=1]
+426 -> 562
+	563 [shape=oval, label=2]
+426 -> 563
+	565 [shape=oval, label=1]
+429 -> 565
+	566 [shape=oval, label=2]
+429 -> 566
+	567 [shape=oval, label=1]
+429 -> 567
+	568 [shape=oval, label=1]
+434 -> 568
+	569 [shape=oval, label=2]
+434 -> 569
+	570 [shape=oval, label=1]
+434 -> 570
+	573 [shape=oval, label=1]
+436 -> 573
+	576 [shape=oval, label=1]
+437 -> 576
+	579 [shape=oval, label=1]
+445 -> 579
+	580 [shape=oval, label=1]
+447 -> 580
+	581 [shape=oval, label=1]
+447 -> 581
+	585 [shape=oval, label=1]
+450 -> 585
+	588 [shape=oval, label=1]
+451 -> 588
+	591 [shape=oval, label=1]
+452 -> 591
+	594 [shape=oval, label=1]
+465 -> 594
+	597 [shape=oval, label=1]
+468 -> 597
+	598 [shape=box, label=41]
+454 -> 598
+	599 [shape=box, label=20]
+474 -> 599
+	600 [shape=oval, label=2, style=filled]
+508 -> 600
+	601 [shape=oval, label=6, style=filled]
+511 -> 601
+	602 [shape=oval, label=2]
+512 -> 602
+	603 [shape=oval, label=1]
+515 -> 603
+	604 [shape=oval, label=2]
+516 -> 604
+	605 [shape=oval, label=1]
+517 -> 605
+	606 [shape=oval, label=2, style=filled]
+519 -> 606
+	607 [shape=oval, label=1]
+520 -> 607
+	608 [shape=oval, label=2, style=filled]
+523 -> 608
+	609 [shape=oval, label=1, style=filled]
+525 -> 609
+	610 [shape=oval, label=2]
+526 -> 610
+	611 [shape=oval, label=1, style=filled]
+527 -> 611
+	612 [shape=oval, label=2]
+528 -> 612
+	613 [shape=oval, label=1]
+529 -> 613
+	614 [shape=oval, label=4, style=filled]
+531 -> 614
+	615 [shape=oval, label=2]
+532 -> 615
+	616 [shape=oval, label=1]
+533 -> 616
+	617 [shape=oval, label=1, style=filled]
+534 -> 617
+	618 [shape=oval, label=1, style=filled]
+536 -> 618
+	619 [shape=box, label=20, style=filled]
+539 -> 619
+	620 [shape=oval, label=1]
+542 -> 620
+	621 [shape=oval, label=4]
+543 -> 621
+	622 [shape=oval, label=8]
+544 -> 622
+	623 [shape=oval, label=3]
+545 -> 623
+	624 [shape=oval, label=1, style=filled]
+546 -> 624
+	625 [shape=oval, label=1]
+547 -> 625
+	626 [shape=oval, label=1]
+548 -> 626
+	627 [shape=oval, label=1]
+549 -> 627
+	628 [shape=oval, label=1, style=filled]
+551 -> 628
+	629 [shape=oval, label=1, style=filled]
+553 -> 629
+	630 [shape=oval, label=1]
+554 -> 630
+	631 [shape=oval, label=1, style=filled]
+555 -> 631
+	632 [shape=oval, label=1, style=filled]
+556 -> 632
+	633 [shape=box, label=9, style=filled]
+557 -> 633
+	634 [shape=oval, label=2]
+559 -> 634
+	635 [shape=oval, label=3]
+560 -> 635
+	636 [shape=oval, label=1]
+561 -> 636
+	637 [shape=oval, label=1]
+562 -> 637
+	638 [shape=oval, label=2]
+563 -> 638
+	639 [shape=oval, label=1]
+565 -> 639
+	640 [shape=oval, label=2]
+566 -> 640
+	641 [shape=oval, label=1]
+567 -> 641
+	642 [shape=oval, label=1]
+568 -> 642
+	643 [shape=oval, label=2]
+569 -> 643
+	644 [shape=oval, label=1]
+570 -> 644
+	645 [shape=oval, label=1]
+573 -> 645
+	646 [shape=oval, label=1]
+576 -> 646
+	647 [shape=oval, label=1]
+579 -> 647
+	648 [shape=oval, label=1, style=filled]
+580 -> 648
+	649 [shape=oval, label=1]
+581 -> 649
+	650 [shape=oval, label=1]
+585 -> 650
+	651 [shape=oval, label=1]
+588 -> 651
+	652 [shape=oval, label=1]
+591 -> 652
+	653 [shape=oval, label=1]
+594 -> 653
+	654 [shape=oval, label=1]
+597 -> 654
+	655 [shape=box, label=41]
+598 -> 655
+	656 [shape=box, label=20, style=filled]
+599 -> 656
+	657 [shape=oval, label=2]
+507 -> 657
+	658 [shape=oval, label=3]
+507 -> 658
+	659 [shape=oval, label=1]
+507 -> 659
+	662 [shape=oval, label=1]
+509 -> 662
+	663 [shape=oval, label=1]
+510 -> 663
+	664 [shape=oval, label=2]
+510 -> 664
+	666 [shape=oval, label=1]
+513 -> 666
+	667 [shape=oval, label=1]
+513 -> 667
+	671 [shape=oval, label=1]
+518 -> 671
+	674 [shape=oval, label=1]
+521 -> 674
+	675 [shape=oval, label=1]
+522 -> 675
+	676 [shape=oval, label=2]
+522 -> 676
+	677 [shape=oval, label=1]
+522 -> 677
+	678 [shape=oval, label=1]
+530 -> 678
+	679 [shape=oval, label=1]
+530 -> 679
+	683 [shape=oval, label=1]
+535 -> 683
+	686 [shape=oval, label=1]
+537 -> 686
+	689 [shape=oval, label=1]
+538 -> 689
+	692 [shape=oval, label=1]
+550 -> 692
+	695 [shape=oval, label=1]
+552 -> 695
+	696 [shape=box, label=12]
+514 -> 696
+	697 [shape=box, label=22]
+524 -> 697
+	698 [shape=box, label=11]
+540 -> 698
+	699 [shape=box, label=16]
+541 -> 699
+	700 [shape=box, label=12]
+558 -> 700
+	701 [shape=oval, label=2, style=filled]
+602 -> 701
+	702 [shape=oval, label=1, style=filled]
+603 -> 702
+	703 [shape=oval, label=2]
+604 -> 703
+	704 [shape=oval, label=1]
+605 -> 704
+	705 [shape=oval, label=1, style=filled]
+607 -> 705
+	706 [shape=oval, label=2, style=filled]
+610 -> 706
+	707 [shape=oval, label=2, style=filled]
+612 -> 707
+	708 [shape=oval, label=1]
+613 -> 708
+	709 [shape=oval, label=2, style=filled]
+615 -> 709
+	710 [shape=oval, label=1, style=filled]
+616 -> 710
+	711 [shape=oval, label=1]
+620 -> 711
+	712 [shape=oval, label=4, style=filled]
+621 -> 712
+	713 [shape=oval, label=8]
+622 -> 713
+	714 [shape=oval, label=3]
+623 -> 714
+	715 [shape=oval, label=1, style=filled]
+625 -> 715
+	716 [shape=oval, label=1]
+626 -> 716
+	717 [shape=oval, label=1]
+627 -> 717
+	718 [shape=oval, label=1, style=filled]
+630 -> 718
+	719 [shape=oval, label=2]
+634 -> 719
+	720 [shape=oval, label=3]
+635 -> 720
+	721 [shape=oval, label=1]
+636 -> 721
+	722 [shape=oval, label=1]
+637 -> 722
+	723 [shape=oval, label=2]
+638 -> 723
+	724 [shape=oval, label=1]
+639 -> 724
+	725 [shape=oval, label=2]
+640 -> 725
+	726 [shape=oval, label=1]
+641 -> 726
+	727 [shape=oval, label=1, style=filled]
+642 -> 727
+	728 [shape=oval, label=2]
+643 -> 728
+	729 [shape=oval, label=1]
+644 -> 729
+	730 [shape=oval, label=1]
+645 -> 730
+	731 [shape=oval, label=1]
+646 -> 731
+	732 [shape=oval, label=1]
+647 -> 732
+	733 [shape=oval, label=1, style=filled]
+649 -> 733
+	734 [shape=oval, label=1]
+650 -> 734
+	735 [shape=oval, label=1]
+651 -> 735
+	736 [shape=oval, label=1]
+652 -> 736
+	737 [shape=oval, label=1, style=filled]
+653 -> 737
+	738 [shape=oval, label=1, style=filled]
+654 -> 738
+	739 [shape=box, label=41, style=filled]
+655 -> 739
+	740 [shape=oval, label=2]
+657 -> 740
+	741 [shape=oval, label=3]
+658 -> 741
+	742 [shape=oval, label=1]
+659 -> 742
+	743 [shape=oval, label=1]
+662 -> 743
+	744 [shape=oval, label=1]
+663 -> 744
+	745 [shape=oval, label=2]
+664 -> 745
+	746 [shape=oval, label=1]
+666 -> 746
+	747 [shape=oval, label=1]
+667 -> 747
+	748 [shape=oval, label=1]
+671 -> 748
+	749 [shape=oval, label=1]
+674 -> 749
+	750 [shape=oval, label=1]
+675 -> 750
+	751 [shape=oval, label=2]
+676 -> 751
+	752 [shape=oval, label=1]
+677 -> 752
+	753 [shape=oval, label=1, style=filled]
+678 -> 753
+	754 [shape=oval, label=1]
+679 -> 754
+	755 [shape=oval, label=1]
+683 -> 755
+	756 [shape=oval, label=1]
+686 -> 756
+	757 [shape=oval, label=1]
+689 -> 757
+	758 [shape=oval, label=1]
+692 -> 758
+	759 [shape=oval, label=1]
+695 -> 759
+	760 [shape=box, label=12]
+696 -> 760
+	761 [shape=box, label=22]
+697 -> 761
+	762 [shape=box, label=11]
+698 -> 762
+	763 [shape=box, label=16]
+699 -> 763
+	764 [shape=box, label=12, style=filled]
+700 -> 764
+	765 [shape=oval, label=1]
+600 -> 765
+	766 [shape=oval, label=1]
+600 -> 766
+	768 [shape=oval, label=2]
+601 -> 768
+	769 [shape=oval, label=3]
+601 -> 769
+	770 [shape=oval, label=1]
+601 -> 770
+	771 [shape=oval, label=1]
+606 -> 771
+	772 [shape=oval, label=1]
+606 -> 772
+	774 [shape=oval, label=1]
+608 -> 774
+	775 [shape=oval, label=1]
+608 -> 775
+	779 [shape=oval, label=1]
+609 -> 779
+	782 [shape=oval, label=1]
+611 -> 782
+	783 [shape=oval, label=1]
+614 -> 783
+	784 [shape=oval, label=2]
+614 -> 784
+	785 [shape=oval, label=1]
+614 -> 785
+	788 [shape=oval, label=1]
+617 -> 788
+	791 [shape=oval, label=1]
+618 -> 791
+	794 [shape=oval, label=1]
+624 -> 794
+	797 [shape=oval, label=1]
+628 -> 797
+	800 [shape=oval, label=1]
+629 -> 800
+	803 [shape=oval, label=1]
+631 -> 803
+	806 [shape=oval, label=1]
+632 -> 806
+	809 [shape=oval, label=1]
+648 -> 809
+	810 [shape=box, label=22]
+619 -> 810
+	811 [shape=box, label=10]
+633 -> 811
+	812 [shape=box, label=22]
+656 -> 812
+	813 [shape=oval, label=2, style=filled]
+703 -> 813
+	814 [shape=oval, label=1]
+704 -> 814
+	815 [shape=oval, label=1, style=filled]
+708 -> 815
+	816 [shape=oval, label=1]
+711 -> 816
+	817 [shape=oval, label=8, style=filled]
+713 -> 817
+	818 [shape=oval, label=3]
+714 -> 818
+	819 [shape=oval, label=1, style=filled]
+716 -> 819
+	820 [shape=oval, label=1, style=filled]
+717 -> 820
+	821 [shape=oval, label=2]
+719 -> 821
+	822 [shape=oval, label=3]
+720 -> 822
+	823 [shape=oval, label=1]
+721 -> 823
+	824 [shape=oval, label=1, style=filled]
+722 -> 824
+	825 [shape=oval, label=2]
+723 -> 825
+	826 [shape=oval, label=1, style=filled]
+724 -> 826
+	827 [shape=oval, label=2]
+725 -> 827
+	828 [shape=oval, label=1]
+726 -> 828
+	829 [shape=oval, label=2, style=filled]
+728 -> 829
+	830 [shape=oval, label=1]
+729 -> 830
+	831 [shape=oval, label=1]
+730 -> 831
+	832 [shape=oval, label=1]
+731 -> 832
+	833 [shape=oval, label=1, style=filled]
+732 -> 833
+	834 [shape=oval, label=1, style=filled]
+734 -> 834
+	835 [shape=oval, label=1, style=filled]
+735 -> 835
+	836 [shape=oval, label=1, style=filled]
+736 -> 836
+	837 [shape=oval, label=2]
+740 -> 837
+	838 [shape=oval, label=3]
+741 -> 838
+	839 [shape=oval, label=1]
+742 -> 839
+	840 [shape=oval, label=1]
+743 -> 840
+	841 [shape=oval, label=1]
+744 -> 841
+	842 [shape=oval, label=2]
+745 -> 842
+	843 [shape=oval, label=1]
+746 -> 843
+	844 [shape=oval, label=1]
+747 -> 844
+	845 [shape=oval, label=1]
+748 -> 845
+	846 [shape=oval, label=1]
+749 -> 846
+	847 [shape=oval, label=1, style=filled]
+750 -> 847
+	848 [shape=oval, label=2]
+751 -> 848
+	849 [shape=oval, label=1]
+752 -> 849
+	850 [shape=oval, label=1, style=filled]
+754 -> 850
+	851 [shape=oval, label=1]
+755 -> 851
+	852 [shape=oval, label=1]
+756 -> 852
+	853 [shape=oval, label=1]
+757 -> 853
+	854 [shape=oval, label=1, style=filled]
+758 -> 854
+	855 [shape=oval, label=1, style=filled]
+759 -> 855
+	856 [shape=box, label=12]
+760 -> 856
+	857 [shape=box, label=22]
+761 -> 857
+	858 [shape=box, label=11, style=filled]
+762 -> 858
+	859 [shape=box, label=16, style=filled]
+763 -> 859
+	860 [shape=oval, label=1]
+765 -> 860
+	861 [shape=oval, label=1]
+766 -> 861
+	862 [shape=oval, label=2]
+768 -> 862
+	863 [shape=oval, label=3]
+769 -> 863
+	864 [shape=oval, label=1]
+770 -> 864
+	865 [shape=oval, label=1]
+771 -> 865
+	866 [shape=oval, label=1]
+772 -> 866
+	867 [shape=oval, label=1]
+774 -> 867
+	868 [shape=oval, label=1]
+775 -> 868
+	869 [shape=oval, label=1]
+779 -> 869
+	870 [shape=oval, label=1]
+782 -> 870
+	871 [shape=oval, label=1]
+783 -> 871
+	872 [shape=oval, label=2]
+784 -> 872
+	873 [shape=oval, label=1]
+785 -> 873
+	874 [shape=oval, label=1]
+788 -> 874
+	875 [shape=oval, label=1]
+791 -> 875
+	876 [shape=oval, label=1]
+794 -> 876
+	877 [shape=oval, label=1]
+797 -> 877
+	878 [shape=oval, label=1]
+800 -> 878
+	879 [shape=oval, label=1]
+803 -> 879
+	880 [shape=oval, label=1]
+806 -> 880
+	881 [shape=oval, label=1]
+809 -> 881
+	882 [shape=box, label=22]
+810 -> 882
+	883 [shape=box, label=10]
+811 -> 883
+	884 [shape=box, label=22, style=filled]
+812 -> 884
+	885 [shape=oval, label=1]
+701 -> 885
+	886 [shape=oval, label=1]
+701 -> 886
+	890 [shape=oval, label=1]
+702 -> 890
+	893 [shape=oval, label=1]
+705 -> 893
+	894 [shape=oval, label=1]
+706 -> 894
+	895 [shape=oval, label=1]
+706 -> 895
+	897 [shape=oval, label=1]
+707 -> 897
+	898 [shape=oval, label=1]
+707 -> 898
+	900 [shape=oval, label=1]
+709 -> 900
+	901 [shape=oval, label=1]
+709 -> 901
+	905 [shape=oval, label=1]
+710 -> 905
+	906 [shape=oval, label=1]
+712 -> 906
+	907 [shape=oval, label=2]
+712 -> 907
+	908 [shape=oval, label=1]
+712 -> 908
+	911 [shape=oval, label=1]
+715 -> 911
+	914 [shape=oval, label=1]
+718 -> 914
+	917 [shape=oval, label=1]
+727 -> 917
+	920 [shape=oval, label=1]
+733 -> 920
+	923 [shape=oval, label=1]
+737 -> 923
+	926 [shape=oval, label=1]
+738 -> 926
+	929 [shape=oval, label=1]
+753 -> 929
+	930 [shape=box, label=45]
+739 -> 930
+	931 [shape=box, label=13]
+764 -> 931
+	932 [shape=oval, label=1, style=filled]
+814 -> 932
+	933 [shape=oval, label=1]
+816 -> 933
+	934 [shape=oval, label=3, style=filled]
+818 -> 934
+	935 [shape=oval, label=2, style=filled]
+821 -> 935
+	936 [shape=oval, label=3]
+822 -> 936
+	937 [shape=oval, label=1]
+823 -> 937
+	938 [shape=oval, label=2, style=filled]
+825 -> 938
+	939 [shape=oval, label=2, style=filled]
+827 -> 939
+	940 [shape=oval, label=1]
+828 -> 940
+	941 [shape=oval, label=1, style=filled]
+830 -> 941
+	942 [shape=oval, label=1, style=filled]
+831 -> 942
+	943 [shape=oval, label=1, style=filled]
+832 -> 943
+	944 [shape=oval, label=2]
+837 -> 944
+	945 [shape=oval, label=3]
+838 -> 945
+	946 [shape=oval, label=1]
+839 -> 946
+	947 [shape=oval, label=1]
+840 -> 947
+	948 [shape=oval, label=1, style=filled]
+841 -> 948
+	949 [shape=oval, label=2]
+842 -> 949
+	950 [shape=oval, label=1, style=filled]
+843 -> 950
+	951 [shape=oval, label=1]
+844 -> 951
+	952 [shape=oval, label=1]
+845 -> 952
+	953 [shape=oval, label=1]
+846 -> 953
+	954 [shape=oval, label=2, style=filled]
+848 -> 954
+	955 [shape=oval, label=1]
+849 -> 955
+	956 [shape=oval, label=1, style=filled]
+851 -> 956
+	957 [shape=oval, label=1, style=filled]
+852 -> 957
+	958 [shape=oval, label=1, style=filled]
+853 -> 958
+	959 [shape=box, label=12]
+856 -> 959
+	960 [shape=box, label=22, style=filled]
+857 -> 960
+	961 [shape=oval, label=1]
+860 -> 961
+	962 [shape=oval, label=1]
+861 -> 962
+	963 [shape=oval, label=2]
+862 -> 963
+	964 [shape=oval, label=3]
+863 -> 964
+	965 [shape=oval, label=1]
+864 -> 965
+	966 [shape=oval, label=1]
+865 -> 966
+	967 [shape=oval, label=1]
+866 -> 967
+	968 [shape=oval, label=1]
+867 -> 968
+	969 [shape=oval, label=1]
+868 -> 969
+	970 [shape=oval, label=1]
+869 -> 970
+	971 [shape=oval, label=1]
+870 -> 971
+	972 [shape=oval, label=1, style=filled]
+871 -> 972
+	973 [shape=oval, label=2]
+872 -> 973
+	974 [shape=oval, label=1]
+873 -> 974
+	975 [shape=oval, label=1]
+874 -> 975
+	976 [shape=oval, label=1]
+875 -> 976
+	977 [shape=oval, label=1]
+876 -> 977
+	978 [shape=oval, label=1]
+877 -> 978
+	979 [shape=oval, label=1]
+878 -> 979
+	980 [shape=oval, label=1]
+879 -> 980
+	981 [shape=oval, label=1]
+880 -> 981
+	982 [shape=oval, label=1, style=filled]
+881 -> 982
+	983 [shape=box, label=22]
+882 -> 983
+	984 [shape=box, label=10, style=filled]
+883 -> 984
+	985 [shape=oval, label=1]
+885 -> 985
+	986 [shape=oval, label=1]
+886 -> 986
+	987 [shape=oval, label=1]
+890 -> 987
+	988 [shape=oval, label=1]
+893 -> 988
+	989 [shape=oval, label=1]
+894 -> 989
+	990 [shape=oval, label=1]
+895 -> 990
+	991 [shape=oval, label=1]
+897 -> 991
+	992 [shape=oval, label=1]
+898 -> 992
+	993 [shape=oval, label=1]
+900 -> 993
+	994 [shape=oval, label=1]
+901 -> 994
+	995 [shape=oval, label=1]
+905 -> 995
+	996 [shape=oval, label=1]
+906 -> 996
+	997 [shape=oval, label=2]
+907 -> 997
+	998 [shape=oval, label=1]
+908 -> 998
+	999 [shape=oval, label=1]
+911 -> 999
+	1000 [shape=oval, label=1]
+914 -> 1000
+	1001 [shape=oval, label=1]
+917 -> 1001
+	1002 [shape=oval, label=1]
+920 -> 1002
+	1003 [shape=oval, label=1]
+923 -> 1003
+	1004 [shape=oval, label=1]
+926 -> 1004
+	1005 [shape=oval, label=1]
+929 -> 1005
+	1006 [shape=box, label=45]
+930 -> 1006
+	1007 [shape=box, label=13, style=filled]
+931 -> 1007
+	1008 [shape=oval, label=1]
+813 -> 1008
+	1009 [shape=oval, label=1]
+813 -> 1009
+	1013 [shape=oval, label=1]
+815 -> 1013
+	1014 [shape=oval, label=2]
+817 -> 1014
+	1015 [shape=oval, label=4]
+817 -> 1015
+	1016 [shape=oval, label=2]
+817 -> 1016
+	1019 [shape=oval, label=1]
+819 -> 1019
+	1022 [shape=oval, label=1]
+820 -> 1022
+	1025 [shape=oval, label=1]
+824 -> 1025
+	1028 [shape=oval, label=1]
+826 -> 1028
+	1029 [shape=oval, label=1]
+829 -> 1029
+	1030 [shape=oval, label=1]
+829 -> 1030
+	1034 [shape=oval, label=1]
+833 -> 1034
+	1037 [shape=oval, label=1]
+834 -> 1037
+	1040 [shape=oval, label=1]
+835 -> 1040
+	1043 [shape=oval, label=1]
+836 -> 1043
+	1046 [shape=oval, label=1]
+847 -> 1046
+	1049 [shape=oval, label=1]
+850 -> 1049
+	1052 [shape=oval, label=1]
+854 -> 1052
+	1055 [shape=oval, label=1]
+855 -> 1055
+	1056 [shape=box, label=12]
+858 -> 1056
+	1057 [shape=box, label=18]
+859 -> 1057
+	1058 [shape=box, label=24]
+884 -> 1058
+	1059 [shape=oval, label=1, style=filled]
+933 -> 1059
+	1060 [shape=oval, label=3, style=filled]
+936 -> 1060
+	1061 [shape=oval, label=1]
+937 -> 1061
+	1062 [shape=oval, label=1, style=filled]
+940 -> 1062
+	1063 [shape=oval, label=2, style=filled]
+944 -> 1063
+	1064 [shape=oval, label=3]
+945 -> 1064
+	1065 [shape=oval, label=1]
+946 -> 1065
+	1066 [shape=oval, label=1]
+947 -> 1066
+	1067 [shape=oval, label=2, style=filled]
+949 -> 1067
+	1068 [shape=oval, label=1, style=filled]
+951 -> 1068
+	1069 [shape=oval, label=1, style=filled]
+952 -> 1069
+	1070 [shape=oval, label=1, style=filled]
+953 -> 1070
+	1071 [shape=oval, label=1, style=filled]
+955 -> 1071
+	1072 [shape=box, label=12, style=filled]
+959 -> 1072
+	1073 [shape=oval, label=1]
+961 -> 1073
+	1074 [shape=oval, label=1]
+962 -> 1074
+	1075 [shape=oval, label=2]
+963 -> 1075
+	1076 [shape=oval, label=3]
+964 -> 1076
+	1077 [shape=oval, label=1]
+965 -> 1077
+	1078 [shape=oval, label=1, style=filled]
+966 -> 1078
+	1079 [shape=oval, label=1]
+967 -> 1079
+	1080 [shape=oval, label=1, style=filled]
+968 -> 1080
+	1081 [shape=oval, label=1]
+969 -> 1081
+	1082 [shape=oval, label=1]
+970 -> 1082
+	1083 [shape=oval, label=1]
+971 -> 1083
+	1084 [shape=oval, label=2, style=filled]
+973 -> 1084
+	1085 [shape=oval, label=1]
+974 -> 1085
+	1086 [shape=oval, label=1]
+975 -> 1086
+	1087 [shape=oval, label=1]
+976 -> 1087
+	1088 [shape=oval, label=1, style=filled]
+977 -> 1088
+	1089 [shape=oval, label=1, style=filled]
+978 -> 1089
+	1090 [shape=oval, label=1, style=filled]
+979 -> 1090
+	1091 [shape=oval, label=1, style=filled]
+980 -> 1091
+	1092 [shape=oval, label=1, style=filled]
+981 -> 1092
+	1093 [shape=box, label=22, style=filled]
+983 -> 1093
+	1094 [shape=oval, label=1]
+985 -> 1094
+	1095 [shape=oval, label=1]
+986 -> 1095
+	1096 [shape=oval, label=1]
+987 -> 1096
+	1097 [shape=oval, label=1]
+988 -> 1097
+	1098 [shape=oval, label=1]
+989 -> 1098
+	1099 [shape=oval, label=1]
+990 -> 1099
+	1100 [shape=oval, label=1]
+991 -> 1100
+	1101 [shape=oval, label=1]
+992 -> 1101
+	1102 [shape=oval, label=1]
+993 -> 1102
+	1103 [shape=oval, label=1]
+994 -> 1103
+	1104 [shape=oval, label=1]
+995 -> 1104
+	1105 [shape=oval, label=1, style=filled]
+996 -> 1105
+	1106 [shape=oval, label=2]
+997 -> 1106
+	1107 [shape=oval, label=1]
+998 -> 1107
+	1108 [shape=oval, label=1]
+999 -> 1108
+	1109 [shape=oval, label=1]
+1000 -> 1109
+	1110 [shape=oval, label=1]
+1001 -> 1110
+	1111 [shape=oval, label=1]
+1002 -> 1111
+	1112 [shape=oval, label=1]
+1003 -> 1112
+	1113 [shape=oval, label=1]
+1004 -> 1113
+	1114 [shape=oval, label=1, style=filled]
+1005 -> 1114
+	1115 [shape=box, label=45, style=filled]
+1006 -> 1115
+	1116 [shape=oval, label=1]
+1008 -> 1116
+	1117 [shape=oval, label=1]
+1009 -> 1117
+	1118 [shape=oval, label=1]
+1013 -> 1118
+	1119 [shape=oval, label=2]
+1014 -> 1119
+	1120 [shape=oval, label=4]
+1015 -> 1120
+	1121 [shape=oval, label=2]
+1016 -> 1121
+	1122 [shape=oval, label=1]
+1019 -> 1122
+	1123 [shape=oval, label=1]
+1022 -> 1123
+	1124 [shape=oval, label=1]
+1025 -> 1124
+	1125 [shape=oval, label=1]
+1028 -> 1125
+	1126 [shape=oval, label=1]
+1029 -> 1126
+	1127 [shape=oval, label=1]
+1030 -> 1127
+	1128 [shape=oval, label=1]
+1034 -> 1128
+	1129 [shape=oval, label=1]
+1037 -> 1129
+	1130 [shape=oval, label=1]
+1040 -> 1130
+	1131 [shape=oval, label=1]
+1043 -> 1131
+	1132 [shape=oval, label=1]
+1046 -> 1132
+	1133 [shape=oval, label=1]
+1049 -> 1133
+	1134 [shape=oval, label=1]
+1052 -> 1134
+	1135 [shape=oval, label=1]
+1055 -> 1135
+	1136 [shape=box, label=12]
+1056 -> 1136
+	1137 [shape=box, label=18]
+1057 -> 1137
+	1138 [shape=box, label=24, style=filled]
+1058 -> 1138
+	1141 [shape=oval, label=1]
+932 -> 1141
+	1142 [shape=oval, label=1]
+934 -> 1142
+	1143 [shape=oval, label=2]
+934 -> 1143
+	1145 [shape=oval, label=1]
+935 -> 1145
+	1146 [shape=oval, label=1]
+935 -> 1146
+	1148 [shape=oval, label=1]
+938 -> 1148
+	1149 [shape=oval, label=1]
+938 -> 1149
+	1151 [shape=oval, label=1]
+939 -> 1151
+	1152 [shape=oval, label=1]
+939 -> 1152
+	1156 [shape=oval, label=1]
+941 -> 1156
+	1159 [shape=oval, label=1]
+942 -> 1159
+	1162 [shape=oval, label=1]
+943 -> 1162
+	1165 [shape=oval, label=1]
+948 -> 1165
+	1168 [shape=oval, label=1]
+950 -> 1168
+	1169 [shape=oval, label=1]
+954 -> 1169
+	1170 [shape=oval, label=1]
+954 -> 1170
+	1174 [shape=oval, label=1]
+956 -> 1174
+	1177 [shape=oval, label=1]
+957 -> 1177
+	1180 [shape=oval, label=1]
+958 -> 1180
+	1183 [shape=oval, label=1]
+972 -> 1183
+	1186 [shape=oval, label=1]
+982 -> 1186
+	1187 [shape=box, label=24]
+960 -> 1187
+	1188 [shape=box, label=11]
+984 -> 1188
+	1189 [shape=box, label=14]
+1007 -> 1189
+	1190 [shape=oval, label=1, style=filled]
+1061 -> 1190
+	1191 [shape=oval, label=3, style=filled]
+1064 -> 1191
+	1192 [shape=oval, label=1]
+1065 -> 1192
+	1193 [shape=oval, label=1]
+1066 -> 1193
+	1194 [shape=oval, label=1]
+1073 -> 1194
+	1195 [shape=oval, label=1]
+1074 -> 1195
+	1196 [shape=oval, label=2, style=filled]
+1075 -> 1196
+	1197 [shape=oval, label=3]
+1076 -> 1197
+	1198 [shape=oval, label=1]
+1077 -> 1198
+	1199 [shape=oval, label=1, style=filled]
+1079 -> 1199
+	1200 [shape=oval, label=1, style=filled]
+1081 -> 1200
+	1201 [shape=oval, label=1, style=filled]
+1082 -> 1201
+	1202 [shape=oval, label=1, style=filled]
+1083 -> 1202
+	1203 [shape=oval, label=1, style=filled]
+1085 -> 1203
+	1204 [shape=oval, label=1, style=filled]
+1086 -> 1204
+	1205 [shape=oval, label=1, style=filled]
+1087 -> 1205
+	1206 [shape=oval, label=1]
+1094 -> 1206
+	1207 [shape=oval, label=1]
+1095 -> 1207
+	1208 [shape=oval, label=1]
+1096 -> 1208
+	1209 [shape=oval, label=1]
+1097 -> 1209
+	1210 [shape=oval, label=1, style=filled]
+1098 -> 1210
+	1211 [shape=oval, label=1]
+1099 -> 1211
+	1212 [shape=oval, label=1, style=filled]
+1100 -> 1212
+	1213 [shape=oval, label=1]
+1101 -> 1213
+	1214 [shape=oval, label=1, style=filled]
+1102 -> 1214
+	1215 [shape=oval, label=1]
+1103 -> 1215
+	1216 [shape=oval, label=1]
+1104 -> 1216
+	1217 [shape=oval, label=2, style=filled]
+1106 -> 1217
+	1218 [shape=oval, label=1]
+1107 -> 1218
+	1219 [shape=oval, label=1]
+1108 -> 1219
+	1220 [shape=oval, label=1]
+1109 -> 1220
+	1221 [shape=oval, label=1, style=filled]
+1110 -> 1221
+	1222 [shape=oval, label=1, style=filled]
+1111 -> 1222
+	1223 [shape=oval, label=1, style=filled]
+1112 -> 1223
+	1224 [shape=oval, label=1, style=filled]
+1113 -> 1224
+	1225 [shape=oval, label=1]
+1116 -> 1225
+	1226 [shape=oval, label=1]
+1117 -> 1226
+	1227 [shape=oval, label=1]
+1118 -> 1227
+	1228 [shape=oval, label=2]
+1119 -> 1228
+	1229 [shape=oval, label=4]
+1120 -> 1229
+	1230 [shape=oval, label=2]
+1121 -> 1230
+	1231 [shape=oval, label=1]
+1122 -> 1231
+	1232 [shape=oval, label=1]
+1123 -> 1232
+	1233 [shape=oval, label=1]
+1124 -> 1233
+	1234 [shape=oval, label=1]
+1125 -> 1234
+	1235 [shape=oval, label=1, style=filled]
+1126 -> 1235
+	1236 [shape=oval, label=1]
+1127 -> 1236
+	1237 [shape=oval, label=1]
+1128 -> 1237
+	1238 [shape=oval, label=1]
+1129 -> 1238
+	1239 [shape=oval, label=1]
+1130 -> 1239
+	1240 [shape=oval, label=1]
+1131 -> 1240
+	1241 [shape=oval, label=1]
+1132 -> 1241
+	1242 [shape=oval, label=1]
+1133 -> 1242
+	1243 [shape=oval, label=1]
+1134 -> 1243
+	1244 [shape=oval, label=1]
+1135 -> 1244
+	1245 [shape=box, label=12, style=filled]
+1136 -> 1245
+	1246 [shape=box, label=18, style=filled]
+1137 -> 1246
+	1247 [shape=oval, label=1]
+1141 -> 1247
+	1248 [shape=oval, label=1]
+1142 -> 1248
+	1249 [shape=oval, label=2]
+1143 -> 1249
+	1250 [shape=oval, label=1]
+1145 -> 1250
+	1251 [shape=oval, label=1]
+1146 -> 1251
+	1252 [shape=oval, label=1]
+1148 -> 1252
+	1253 [shape=oval, label=1]
+1149 -> 1253
+	1254 [shape=oval, label=1]
+1151 -> 1254
+	1255 [shape=oval, label=1]
+1152 -> 1255
+	1256 [shape=oval, label=1]
+1156 -> 1256
+	1257 [shape=oval, label=1]
+1159 -> 1257
+	1258 [shape=oval, label=1]
+1162 -> 1258
+	1259 [shape=oval, label=1]
+1165 -> 1259
+	1260 [shape=oval, label=1]
+1168 -> 1260
+	1261 [shape=oval, label=1]
+1169 -> 1261
+	1262 [shape=oval, label=1]
+1170 -> 1262
+	1263 [shape=oval, label=1]
+1174 -> 1263
+	1264 [shape=oval, label=1]
+1177 -> 1264
+	1265 [shape=oval, label=1]
+1180 -> 1265
+	1266 [shape=oval, label=1]
+1183 -> 1266
+	1267 [shape=oval, label=1]
+1186 -> 1267
+	1268 [shape=box, label=24]
+1187 -> 1268
+	1269 [shape=box, label=11]
+1188 -> 1269
+	1270 [shape=box, label=14, style=filled]
+1189 -> 1270
+	1273 [shape=oval, label=1]
+1059 -> 1273
+	1274 [shape=oval, label=1]
+1060 -> 1274
+	1275 [shape=oval, label=2]
+1060 -> 1275
+	1279 [shape=oval, label=1]
+1062 -> 1279
+	1280 [shape=oval, label=1]
+1063 -> 1280
+	1281 [shape=oval, label=1]
+1063 -> 1281
+	1283 [shape=oval, label=1]
+1067 -> 1283
+	1284 [shape=oval, label=1]
+1067 -> 1284
+	1288 [shape=oval, label=1]
+1068 -> 1288
+	1291 [shape=oval, label=1]
+1069 -> 1291
+	1294 [shape=oval, label=1]
+1070 -> 1294
+	1297 [shape=oval, label=1]
+1071 -> 1297
+	1300 [shape=oval, label=1]
+1078 -> 1300
+	1303 [shape=oval, label=1]
+1080 -> 1303
+	1304 [shape=oval, label=1]
+1084 -> 1304
+	1305 [shape=oval, label=1]
+1084 -> 1305
+	1309 [shape=oval, label=1]
+1088 -> 1309
+	1312 [shape=oval, label=1]
+1089 -> 1312
+	1315 [shape=oval, label=1]
+1090 -> 1315
+	1318 [shape=oval, label=1]
+1091 -> 1318
+	1321 [shape=oval, label=1]
+1092 -> 1321
+	1324 [shape=oval, label=1]
+1105 -> 1324
+	1327 [shape=oval, label=1]
+1114 -> 1327
+	1328 [shape=box, label=13]
+1072 -> 1328
+	1329 [shape=box, label=24]
+1093 -> 1329
+	1330 [shape=box, label=50]
+1115 -> 1330
+	1331 [shape=box, label=26]
+1138 -> 1331
+	1332 [shape=oval, label=1, style=filled]
+1192 -> 1332
+	1333 [shape=oval, label=1, style=filled]
+1193 -> 1333
+	1334 [shape=oval, label=1, style=filled]
+1194 -> 1334
+	1335 [shape=oval, label=1]
+1195 -> 1335
+	1336 [shape=oval, label=3, style=filled]
+1197 -> 1336
+	1337 [shape=oval, label=1]
+1198 -> 1337
+	1338 [shape=oval, label=1]
+1206 -> 1338
+	1339 [shape=oval, label=1]
+1207 -> 1339
+	1340 [shape=oval, label=1]
+1208 -> 1340
+	1341 [shape=oval, label=1]
+1209 -> 1341
+	1342 [shape=oval, label=1, style=filled]
+1211 -> 1342
+	1343 [shape=oval, label=1, style=filled]
+1213 -> 1343
+	1344 [shape=oval, label=1, style=filled]
+1215 -> 1344
+	1345 [shape=oval, label=1]
+1216 -> 1345
+	1346 [shape=oval, label=1, style=filled]
+1218 -> 1346
+	1347 [shape=oval, label=1, style=filled]
+1219 -> 1347
+	1348 [shape=oval, label=1, style=filled]
+1220 -> 1348
+	1349 [shape=oval, label=1]
+1225 -> 1349
+	1350 [shape=oval, label=1]
+1226 -> 1350
+	1351 [shape=oval, label=1]
+1227 -> 1351
+	1352 [shape=oval, label=2, style=filled]
+1228 -> 1352
+	1353 [shape=oval, label=4]
+1229 -> 1353
+	1354 [shape=oval, label=2]
+1230 -> 1354
+	1355 [shape=oval, label=1]
+1231 -> 1355
+	1356 [shape=oval, label=1]
+1232 -> 1356
+	1357 [shape=oval, label=1]
+1233 -> 1357
+	1358 [shape=oval, label=1]
+1234 -> 1358
+	1359 [shape=oval, label=1, style=filled]
+1236 -> 1359
+	1360 [shape=oval, label=1]
+1237 -> 1360
+	1361 [shape=oval, label=1]
+1238 -> 1361
+	1362 [shape=oval, label=1]
+1239 -> 1362
+	1363 [shape=oval, label=1]
+1240 -> 1363
+	1364 [shape=oval, label=1, style=filled]
+1241 -> 1364
+	1365 [shape=oval, label=1, style=filled]
+1242 -> 1365
+	1366 [shape=oval, label=1, style=filled]
+1243 -> 1366
+	1367 [shape=oval, label=1, style=filled]
+1244 -> 1367
+	1368 [shape=oval, label=1]
+1247 -> 1368
+	1369 [shape=oval, label=1]
+1248 -> 1369
+	1370 [shape=oval, label=2]
+1249 -> 1370
+	1371 [shape=oval, label=1]
+1250 -> 1371
+	1372 [shape=oval, label=1]
+1251 -> 1372
+	1373 [shape=oval, label=1]
+1252 -> 1373
+	1374 [shape=oval, label=1]
+1253 -> 1374
+	1375 [shape=oval, label=1]
+1254 -> 1375
+	1376 [shape=oval, label=1]
+1255 -> 1376
+	1377 [shape=oval, label=1]
+1256 -> 1377
+	1378 [shape=oval, label=1]
+1257 -> 1378
+	1379 [shape=oval, label=1]
+1258 -> 1379
+	1380 [shape=oval, label=1]
+1259 -> 1380
+	1381 [shape=oval, label=1]
+1260 -> 1381
+	1382 [shape=oval, label=1, style=filled]
+1261 -> 1382
+	1383 [shape=oval, label=1]
+1262 -> 1383
+	1384 [shape=oval, label=1]
+1263 -> 1384
+	1385 [shape=oval, label=1]
+1264 -> 1385
+	1386 [shape=oval, label=1]
+1265 -> 1386
+	1387 [shape=oval, label=1]
+1266 -> 1387
+	1388 [shape=oval, label=1]
+1267 -> 1388
+	1389 [shape=box, label=24]
+1268 -> 1389
+	1390 [shape=box, label=11, style=filled]
+1269 -> 1390
+	1391 [shape=oval, label=1]
+1273 -> 1391
+	1392 [shape=oval, label=1]
+1274 -> 1392
+	1393 [shape=oval, label=2]
+1275 -> 1393
+	1394 [shape=oval, label=1]
+1279 -> 1394
+	1395 [shape=oval, label=1]
+1280 -> 1395
+	1396 [shape=oval, label=1]
+1281 -> 1396
+	1397 [shape=oval, label=1]
+1283 -> 1397
+	1398 [shape=oval, label=1]
+1284 -> 1398
+	1399 [shape=oval, label=1]
+1288 -> 1399
+	1400 [shape=oval, label=1]
+1291 -> 1400
+	1401 [shape=oval, label=1]
+1294 -> 1401
+	1402 [shape=oval, label=1]
+1297 -> 1402
+	1403 [shape=oval, label=1]
+1300 -> 1403
+	1404 [shape=oval, label=1]
+1303 -> 1404
+	1405 [shape=oval, label=1]
+1304 -> 1405
+	1406 [shape=oval, label=1]
+1305 -> 1406
+	1407 [shape=oval, label=1]
+1309 -> 1407
+	1408 [shape=oval, label=1]
+1312 -> 1408
+	1409 [shape=oval, label=1]
+1315 -> 1409
+	1410 [shape=oval, label=1]
+1318 -> 1410
+	1411 [shape=oval, label=1]
+1321 -> 1411
+	1412 [shape=oval, label=1]
+1324 -> 1412
+	1413 [shape=oval, label=1]
+1327 -> 1413
+	1414 [shape=box, label=13]
+1328 -> 1414
+	1415 [shape=box, label=24]
+1329 -> 1415
+	1416 [shape=box, label=50]
+1330 -> 1416
+	1417 [shape=box, label=26, style=filled]
+1331 -> 1417
+	1420 [shape=oval, label=1]
+1190 -> 1420
+	1421 [shape=oval, label=1]
+1191 -> 1421
+	1422 [shape=oval, label=2]
+1191 -> 1422
+	1424 [shape=oval, label=1]
+1196 -> 1424
+	1425 [shape=oval, label=1]
+1196 -> 1425
+	1429 [shape=oval, label=1]
+1199 -> 1429
+	1432 [shape=oval, label=1]
+1200 -> 1432
+	1435 [shape=oval, label=1]
+1201 -> 1435
+	1438 [shape=oval, label=1]
+1202 -> 1438
+	1441 [shape=oval, label=1]
+1203 -> 1441
+	1444 [shape=oval, label=1]
+1204 -> 1444
+	1447 [shape=oval, label=1]
+1205 -> 1447
+	1450 [shape=oval, label=1]
+1210 -> 1450
+	1453 [shape=oval, label=1]
+1212 -> 1453
+	1456 [shape=oval, label=1]
+1214 -> 1456
+	1457 [shape=oval, label=1]
+1217 -> 1457
+	1458 [shape=oval, label=1]
+1217 -> 1458
+	1462 [shape=oval, label=1]
+1221 -> 1462
+	1465 [shape=oval, label=1]
+1222 -> 1465
+	1468 [shape=oval, label=1]
+1223 -> 1468
+	1471 [shape=oval, label=1]
+1224 -> 1471
+	1474 [shape=oval, label=1]
+1235 -> 1474
+	1475 [shape=box, label=13]
+1245 -> 1475
+	1476 [shape=box, label=20]
+1246 -> 1476
+	1477 [shape=box, label=15]
+1270 -> 1477
+	1478 [shape=oval, label=1, style=filled]
+1335 -> 1478
+	1479 [shape=oval, label=1, style=filled]
+1337 -> 1479
+	1480 [shape=oval, label=1, style=filled]
+1338 -> 1480
+	1481 [shape=oval, label=1]
+1339 -> 1481
+	1482 [shape=oval, label=1]
+1340 -> 1482
+	1483 [shape=oval, label=1]
+1341 -> 1483
+	1484 [shape=oval, label=1, style=filled]
+1345 -> 1484
+	1485 [shape=oval, label=1]
+1349 -> 1485
+	1486 [shape=oval, label=1]
+1350 -> 1486
+	1487 [shape=oval, label=1]
+1351 -> 1487
+	1488 [shape=oval, label=4, style=filled]
+1353 -> 1488
+	1489 [shape=oval, label=2]
+1354 -> 1489
+	1490 [shape=oval, label=1]
+1355 -> 1490
+	1491 [shape=oval, label=1]
+1356 -> 1491
+	1492 [shape=oval, label=1, style=filled]
+1357 -> 1492
+	1493 [shape=oval, label=1, style=filled]
+1358 -> 1493
+	1494 [shape=oval, label=1, style=filled]
+1360 -> 1494
+	1495 [shape=oval, label=1, style=filled]
+1361 -> 1495
+	1496 [shape=oval, label=1, style=filled]
+1362 -> 1496
+	1497 [shape=oval, label=1, style=filled]
+1363 -> 1497
+	1498 [shape=oval, label=1]
+1368 -> 1498
+	1499 [shape=oval, label=1]
+1369 -> 1499
+	1500 [shape=oval, label=2]
+1370 -> 1500
+	1501 [shape=oval, label=1, style=filled]
+1371 -> 1501
+	1502 [shape=oval, label=1]
+1372 -> 1502
+	1503 [shape=oval, label=1, style=filled]
+1373 -> 1503
+	1504 [shape=oval, label=1]
+1374 -> 1504
+	1505 [shape=oval, label=1, style=filled]
+1375 -> 1505
+	1506 [shape=oval, label=1]
+1376 -> 1506
+	1507 [shape=oval, label=1]
+1377 -> 1507
+	1508 [shape=oval, label=1]
+1378 -> 1508
+	1509 [shape=oval, label=1]
+1379 -> 1509
+	1510 [shape=oval, label=1]
+1380 -> 1510
+	1511 [shape=oval, label=1]
+1381 -> 1511
+	1512 [shape=oval, label=1, style=filled]
+1383 -> 1512
+	1513 [shape=oval, label=1]
+1384 -> 1513
+	1514 [shape=oval, label=1]
+1385 -> 1514
+	1515 [shape=oval, label=1]
+1386 -> 1515
+	1516 [shape=oval, label=1, style=filled]
+1387 -> 1516
+	1517 [shape=oval, label=1, style=filled]
+1388 -> 1517
+	1518 [shape=box, label=24, style=filled]
+1389 -> 1518
+	1519 [shape=oval, label=1]
+1391 -> 1519
+	1520 [shape=oval, label=1]
+1392 -> 1520
+	1521 [shape=oval, label=2]
+1393 -> 1521
+	1522 [shape=oval, label=1]
+1394 -> 1522
+	1523 [shape=oval, label=1]
+1395 -> 1523
+	1524 [shape=oval, label=1]
+1396 -> 1524
+	1525 [shape=oval, label=1]
+1397 -> 1525
+	1526 [shape=oval, label=1]
+1398 -> 1526
+	1527 [shape=oval, label=1]
+1399 -> 1527
+	1528 [shape=oval, label=1]
+1400 -> 1528
+	1529 [shape=oval, label=1]
+1401 -> 1529
+	1530 [shape=oval, label=1]
+1402 -> 1530
+	1531 [shape=oval, label=1]
+1403 -> 1531
+	1532 [shape=oval, label=1]
+1404 -> 1532
+	1533 [shape=oval, label=1, style=filled]
+1405 -> 1533
+	1534 [shape=oval, label=1]
+1406 -> 1534
+	1535 [shape=oval, label=1]
+1407 -> 1535
+	1536 [shape=oval, label=1]
+1408 -> 1536
+	1537 [shape=oval, label=1]
+1409 -> 1537
+	1538 [shape=oval, label=1]
+1410 -> 1538
+	1539 [shape=oval, label=1]
+1411 -> 1539
+	1540 [shape=oval, label=1]
+1412 -> 1540
+	1541 [shape=oval, label=1]
+1413 -> 1541
+	1542 [shape=box, label=13]
+1414 -> 1542
+	1543 [shape=box, label=24]
+1415 -> 1543
+	1544 [shape=box, label=50, style=filled]
+1416 -> 1544
+	1545 [shape=oval, label=1]
+1420 -> 1545
+	1546 [shape=oval, label=1]
+1421 -> 1546
+	1547 [shape=oval, label=2]
+1422 -> 1547
+	1548 [shape=oval, label=1]
+1424 -> 1548
+	1549 [shape=oval, label=1]
+1425 -> 1549
+	1550 [shape=oval, label=1]
+1429 -> 1550
+	1551 [shape=oval, label=1]
+1432 -> 1551
+	1552 [shape=oval, label=1]
+1435 -> 1552
+	1553 [shape=oval, label=1]
+1438 -> 1553
+	1554 [shape=oval, label=1]
+1441 -> 1554
+	1555 [shape=oval, label=1]
+1444 -> 1555
+	1556 [shape=oval, label=1]
+1447 -> 1556
+	1557 [shape=oval, label=1]
+1450 -> 1557
+	1558 [shape=oval, label=1]
+1453 -> 1558
+	1559 [shape=oval, label=1]
+1456 -> 1559
+	1560 [shape=oval, label=1]
+1457 -> 1560
+	1561 [shape=oval, label=1]
+1458 -> 1561
+	1562 [shape=oval, label=1]
+1462 -> 1562
+	1563 [shape=oval, label=1]
+1465 -> 1563
+	1564 [shape=oval, label=1]
+1468 -> 1564
+	1565 [shape=oval, label=1]
+1471 -> 1565
+	1566 [shape=oval, label=1]
+1474 -> 1566
+	1567 [shape=box, label=13]
+1475 -> 1567
+	1568 [shape=box, label=20]
+1476 -> 1568
+	1569 [shape=box, label=15, style=filled]
+1477 -> 1569
+	1572 [shape=oval, label=1]
+1332 -> 1572
+	1575 [shape=oval, label=1]
+1333 -> 1575
+	1578 [shape=oval, label=1]
+1334 -> 1578
+	1579 [shape=oval, label=1]
+1336 -> 1579
+	1580 [shape=oval, label=2]
+1336 -> 1580
+	1584 [shape=oval, label=1]
+1342 -> 1584
+	1587 [shape=oval, label=1]
+1343 -> 1587
+	1590 [shape=oval, label=1]
+1344 -> 1590
+	1593 [shape=oval, label=1]
+1346 -> 1593
+	1596 [shape=oval, label=1]
+1347 -> 1596
+	1599 [shape=oval, label=1]
+1348 -> 1599
+	1600 [shape=oval, label=1]
+1352 -> 1600
+	1601 [shape=oval, label=1]
+1352 -> 1601
+	1605 [shape=oval, label=1]
+1359 -> 1605
+	1608 [shape=oval, label=1]
+1364 -> 1608
+	1611 [shape=oval, label=1]
+1365 -> 1611
+	1614 [shape=oval, label=1]
+1366 -> 1614
+	1617 [shape=oval, label=1]
+1367 -> 1617
+	1620 [shape=oval, label=1]
+1382 -> 1620
+	1621 [shape=box, label=12]
+1390 -> 1621
+	1622 [shape=box, label=29]
+1417 -> 1622
+	1623 [shape=oval, label=1, style=filled]
+1481 -> 1623
+	1624 [shape=oval, label=1, style=filled]
+1482 -> 1624
+	1625 [shape=oval, label=1, style=filled]
+1483 -> 1625
+	1626 [shape=oval, label=1, style=filled]
+1485 -> 1626
+	1627 [shape=oval, label=1]
+1486 -> 1627
+	1628 [shape=oval, label=1]
+1487 -> 1628
+	1629 [shape=oval, label=2, style=filled]
+1489 -> 1629
+	1630 [shape=oval, label=1, style=filled]
+1490 -> 1630
+	1631 [shape=oval, label=1, style=filled]
+1491 -> 1631
+	1632 [shape=oval, label=1]
+1498 -> 1632
+	1633 [shape=oval, label=1, style=filled]
+1499 -> 1633
+	1634 [shape=oval, label=2]
+1500 -> 1634
+	1635 [shape=oval, label=1, style=filled]
+1502 -> 1635
+	1636 [shape=oval, label=1, style=filled]
+1504 -> 1636
+	1637 [shape=oval, label=1, style=filled]
+1506 -> 1637
+	1638 [shape=oval, label=1]
+1507 -> 1638
+	1639 [shape=oval, label=1]
+1508 -> 1639
+	1640 [shape=oval, label=1]
+1509 -> 1640
+	1641 [shape=oval, label=1, style=filled]
+1510 -> 1641
+	1642 [shape=oval, label=1, style=filled]
+1511 -> 1642
+	1643 [shape=oval, label=1, style=filled]
+1513 -> 1643
+	1644 [shape=oval, label=1, style=filled]
+1514 -> 1644
+	1645 [shape=oval, label=1, style=filled]
+1515 -> 1645
+	1646 [shape=oval, label=1]
+1519 -> 1646
+	1647 [shape=oval, label=1]
+1520 -> 1647
+	1648 [shape=oval, label=2]
+1521 -> 1648
+	1649 [shape=oval, label=1]
+1522 -> 1649
+	1650 [shape=oval, label=1, style=filled]
+1523 -> 1650
+	1651 [shape=oval, label=1]
+1524 -> 1651
+	1652 [shape=oval, label=1, style=filled]
+1525 -> 1652
+	1653 [shape=oval, label=1]
+1526 -> 1653
+	1654 [shape=oval, label=1]
+1527 -> 1654
+	1655 [shape=oval, label=1]
+1528 -> 1655
+	1656 [shape=oval, label=1]
+1529 -> 1656
+	1657 [shape=oval, label=1]
+1530 -> 1657
+	1658 [shape=oval, label=1]
+1531 -> 1658
+	1659 [shape=oval, label=1]
+1532 -> 1659
+	1660 [shape=oval, label=1, style=filled]
+1534 -> 1660
+	1661 [shape=oval, label=1]
+1535 -> 1661
+	1662 [shape=oval, label=1]
+1536 -> 1662
+	1663 [shape=oval, label=1]
+1537 -> 1663
+	1664 [shape=oval, label=1]
+1538 -> 1664
+	1665 [shape=oval, label=1]
+1539 -> 1665
+	1666 [shape=oval, label=1, style=filled]
+1540 -> 1666
+	1667 [shape=oval, label=1, style=filled]
+1541 -> 1667
+	1668 [shape=box, label=13]
+1542 -> 1668
+	1669 [shape=box, label=24, style=filled]
+1543 -> 1669
+	1670 [shape=oval, label=1]
+1545 -> 1670
+	1671 [shape=oval, label=1]
+1546 -> 1671
+	1672 [shape=oval, label=2]
+1547 -> 1672
+	1673 [shape=oval, label=1]
+1548 -> 1673
+	1674 [shape=oval, label=1]
+1549 -> 1674
+	1675 [shape=oval, label=1]
+1550 -> 1675
+	1676 [shape=oval, label=1]
+1551 -> 1676
+	1677 [shape=oval, label=1]
+1552 -> 1677
+	1678 [shape=oval, label=1]
+1553 -> 1678
+	1679 [shape=oval, label=1]
+1554 -> 1679
+	1680 [shape=oval, label=1]
+1555 -> 1680
+	1681 [shape=oval, label=1]
+1556 -> 1681
+	1682 [shape=oval, label=1]
+1557 -> 1682
+	1683 [shape=oval, label=1]
+1558 -> 1683
+	1684 [shape=oval, label=1]
+1559 -> 1684
+	1685 [shape=oval, label=1, style=filled]
+1560 -> 1685
+	1686 [shape=oval, label=1]
+1561 -> 1686
+	1687 [shape=oval, label=1]
+1562 -> 1687
+	1688 [shape=oval, label=1]
+1563 -> 1688
+	1689 [shape=oval, label=1]
+1564 -> 1689
+	1690 [shape=oval, label=1]
+1565 -> 1690
+	1691 [shape=oval, label=1]
+1566 -> 1691
+	1692 [shape=box, label=13, style=filled]
+1567 -> 1692
+	1693 [shape=box, label=20, style=filled]
+1568 -> 1693
+	1694 [shape=oval, label=1]
+1572 -> 1694
+	1695 [shape=oval, label=1]
+1575 -> 1695
+	1696 [shape=oval, label=1]
+1578 -> 1696
+	1697 [shape=oval, label=1]
+1579 -> 1697
+	1698 [shape=oval, label=2]
+1580 -> 1698
+	1699 [shape=oval, label=1]
+1584 -> 1699
+	1700 [shape=oval, label=1]
+1587 -> 1700
+	1701 [shape=oval, label=1]
+1590 -> 1701
+	1702 [shape=oval, label=1]
+1593 -> 1702
+	1703 [shape=oval, label=1]
+1596 -> 1703
+	1704 [shape=oval, label=1]
+1599 -> 1704
+	1705 [shape=oval, label=1]
+1600 -> 1705
+	1706 [shape=oval, label=1]
+1601 -> 1706
+	1707 [shape=oval, label=1]
+1605 -> 1707
+	1708 [shape=oval, label=1]
+1608 -> 1708
+	1709 [shape=oval, label=1]
+1611 -> 1709
+	1710 [shape=oval, label=1]
+1614 -> 1710
+	1711 [shape=oval, label=1]
+1617 -> 1711
+	1712 [shape=oval, label=1]
+1620 -> 1712
+	1713 [shape=box, label=12]
+1621 -> 1713
+	1714 [shape=box, label=29, style=filled]
+1622 -> 1714
+	1717 [shape=oval, label=1]
+1478 -> 1717
+	1720 [shape=oval, label=1]
+1479 -> 1720
+	1723 [shape=oval, label=1]
+1480 -> 1723
+	1726 [shape=oval, label=1]
+1484 -> 1726
+	1727 [shape=oval, label=1]
+1488 -> 1727
+	1728 [shape=oval, label=2]
+1488 -> 1728
+	1729 [shape=oval, label=1]
+1488 -> 1729
+	1732 [shape=oval, label=1]
+1492 -> 1732
+	1735 [shape=oval, label=1]
+1493 -> 1735
+	1738 [shape=oval, label=1]
+1494 -> 1738
+	1741 [shape=oval, label=1]
+1495 -> 1741
+	1744 [shape=oval, label=1]
+1496 -> 1744
+	1747 [shape=oval, label=1]
+1497 -> 1747
+	1750 [shape=oval, label=1]
+1501 -> 1750
+	1753 [shape=oval, label=1]
+1503 -> 1753
+	1756 [shape=oval, label=1]
+1505 -> 1756
+	1759 [shape=oval, label=1]
+1512 -> 1759
+	1762 [shape=oval, label=1]
+1516 -> 1762
+	1765 [shape=oval, label=1]
+1517 -> 1765
+	1768 [shape=oval, label=1]
+1533 -> 1768
+	1769 [shape=box, label=26]
+1518 -> 1769
+	1770 [shape=box, label=55]
+1544 -> 1770
+	1771 [shape=box, label=16]
+1569 -> 1771
+	1772 [shape=oval, label=1, style=filled]
+1627 -> 1772
+	1773 [shape=oval, label=1, style=filled]
+1628 -> 1773
+	1774 [shape=oval, label=1]
+1632 -> 1774
+	1775 [shape=oval, label=2, style=filled]
+1634 -> 1775
+	1776 [shape=oval, label=1, style=filled]
+1638 -> 1776
+	1777 [shape=oval, label=1, style=filled]
+1639 -> 1777
+	1778 [shape=oval, label=1, style=filled]
+1640 -> 1778
+	1779 [shape=oval, label=1]
+1646 -> 1779
+	1780 [shape=oval, label=1, style=filled]
+1647 -> 1780
+	1781 [shape=oval, label=2]
+1648 -> 1781
+	1782 [shape=oval, label=1]
+1649 -> 1782
+	1783 [shape=oval, label=1, style=filled]
+1651 -> 1783
+	1784 [shape=oval, label=1, style=filled]
+1653 -> 1784
+	1785 [shape=oval, label=1]
+1654 -> 1785
+	1786 [shape=oval, label=1]
+1655 -> 1786
+	1787 [shape=oval, label=1]
+1656 -> 1787
+	1788 [shape=oval, label=1]
+1657 -> 1788
+	1789 [shape=oval, label=1, style=filled]
+1658 -> 1789
+	1790 [shape=oval, label=1, style=filled]
+1659 -> 1790
+	1791 [shape=oval, label=1, style=filled]
+1661 -> 1791
+	1792 [shape=oval, label=1, style=filled]
+1662 -> 1792
+	1793 [shape=oval, label=1, style=filled]
+1663 -> 1793
+	1794 [shape=oval, label=1, style=filled]
+1664 -> 1794
+	1795 [shape=oval, label=1, style=filled]
+1665 -> 1795
+	1796 [shape=box, label=13, style=filled]
+1668 -> 1796
+	1797 [shape=oval, label=1]
+1670 -> 1797
+	1798 [shape=oval, label=1]
+1671 -> 1798
+	1799 [shape=oval, label=2]
+1672 -> 1799
+	1800 [shape=oval, label=1, style=filled]
+1673 -> 1800
+	1801 [shape=oval, label=1]
+1674 -> 1801
+	1802 [shape=oval, label=1]
+1675 -> 1802
+	1803 [shape=oval, label=1]
+1676 -> 1803
+	1804 [shape=oval, label=1]
+1677 -> 1804
+	1805 [shape=oval, label=1]
+1678 -> 1805
+	1806 [shape=oval, label=1]
+1679 -> 1806
+	1807 [shape=oval, label=1]
+1680 -> 1807
+	1808 [shape=oval, label=1]
+1681 -> 1808
+	1809 [shape=oval, label=1]
+1682 -> 1809
+	1810 [shape=oval, label=1]
+1683 -> 1810
+	1811 [shape=oval, label=1]
+1684 -> 1811
+	1812 [shape=oval, label=1, style=filled]
+1686 -> 1812
+	1813 [shape=oval, label=1]
+1687 -> 1813
+	1814 [shape=oval, label=1]
+1688 -> 1814
+	1815 [shape=oval, label=1]
+1689 -> 1815
+	1816 [shape=oval, label=1]
+1690 -> 1816
+	1817 [shape=oval, label=1, style=filled]
+1691 -> 1817
+	1818 [shape=oval, label=1]
+1694 -> 1818
+	1819 [shape=oval, label=1]
+1695 -> 1819
+	1820 [shape=oval, label=1]
+1696 -> 1820
+	1821 [shape=oval, label=1]
+1697 -> 1821
+	1822 [shape=oval, label=2]
+1698 -> 1822
+	1823 [shape=oval, label=1]
+1699 -> 1823
+	1824 [shape=oval, label=1]
+1700 -> 1824
+	1825 [shape=oval, label=1]
+1701 -> 1825
+	1826 [shape=oval, label=1]
+1702 -> 1826
+	1827 [shape=oval, label=1]
+1703 -> 1827
+	1828 [shape=oval, label=1]
+1704 -> 1828
+	1829 [shape=oval, label=1, style=filled]
+1705 -> 1829
+	1830 [shape=oval, label=1]
+1706 -> 1830
+	1831 [shape=oval, label=1]
+1707 -> 1831
+	1832 [shape=oval, label=1]
+1708 -> 1832
+	1833 [shape=oval, label=1]
+1709 -> 1833
+	1834 [shape=oval, label=1]
+1710 -> 1834
+	1835 [shape=oval, label=1]
+1711 -> 1835
+	1836 [shape=oval, label=1]
+1712 -> 1836
+	1837 [shape=box, label=12, style=filled]
+1713 -> 1837
+	1838 [shape=oval, label=1]
+1717 -> 1838
+	1839 [shape=oval, label=1]
+1720 -> 1839
+	1840 [shape=oval, label=1]
+1723 -> 1840
+	1841 [shape=oval, label=1]
+1726 -> 1841
+	1842 [shape=oval, label=1]
+1727 -> 1842
+	1843 [shape=oval, label=2]
+1728 -> 1843
+	1844 [shape=oval, label=1]
+1729 -> 1844
+	1845 [shape=oval, label=1]
+1732 -> 1845
+	1846 [shape=oval, label=1]
+1735 -> 1846
+	1847 [shape=oval, label=1]
+1738 -> 1847
+	1848 [shape=oval, label=1]
+1741 -> 1848
+	1849 [shape=oval, label=1]
+1744 -> 1849
+	1850 [shape=oval, label=1]
+1747 -> 1850
+	1851 [shape=oval, label=1]
+1750 -> 1851
+	1852 [shape=oval, label=1]
+1753 -> 1852
+	1853 [shape=oval, label=1]
+1756 -> 1853
+	1854 [shape=oval, label=1]
+1759 -> 1854
+	1855 [shape=oval, label=1]
+1762 -> 1855
+	1856 [shape=oval, label=1]
+1765 -> 1856
+	1857 [shape=oval, label=1]
+1768 -> 1857
+	1858 [shape=box, label=26]
+1769 -> 1858
+	1859 [shape=box, label=55]
+1770 -> 1859
+	1860 [shape=box, label=16, style=filled]
+1771 -> 1860
+	1863 [shape=oval, label=1]
+1623 -> 1863
+	1866 [shape=oval, label=1]
+1624 -> 1866
+	1869 [shape=oval, label=1]
+1625 -> 1869
+	1872 [shape=oval, label=1]
+1626 -> 1872
+	1873 [shape=oval, label=1]
+1629 -> 1873
+	1874 [shape=oval, label=1]
+1629 -> 1874
+	1878 [shape=oval, label=1]
+1630 -> 1878
+	1881 [shape=oval, label=1]
+1631 -> 1881
+	1884 [shape=oval, label=1]
+1633 -> 1884
+	1887 [shape=oval, label=1]
+1635 -> 1887
+	1890 [shape=oval, label=1]
+1636 -> 1890
+	1893 [shape=oval, label=1]
+1637 -> 1893
+	1896 [shape=oval, label=1]
+1641 -> 1896
+	1899 [shape=oval, label=1]
+1642 -> 1899
+	1902 [shape=oval, label=1]
+1643 -> 1902
+	1905 [shape=oval, label=1]
+1644 -> 1905
+	1908 [shape=oval, label=1]
+1645 -> 1908
+	1911 [shape=oval, label=1]
+1650 -> 1911
+	1914 [shape=oval, label=1]
+1652 -> 1914
+	1917 [shape=oval, label=1]
+1660 -> 1917
+	1920 [shape=oval, label=1]
+1666 -> 1920
+	1923 [shape=oval, label=1]
+1667 -> 1923
+	1926 [shape=oval, label=1]
+1685 -> 1926
+	1927 [shape=box, label=26]
+1669 -> 1927
+	1928 [shape=box, label=14]
+1692 -> 1928
+	1929 [shape=box, label=22]
+1693 -> 1929
+	1930 [shape=box, label=32]
+1714 -> 1930
+	1931 [shape=oval, label=1]
+1774 -> 1931
+	1932 [shape=oval, label=1]
+1779 -> 1932
+	1933 [shape=oval, label=2, style=filled]
+1781 -> 1933
+	1934 [shape=oval, label=1]
+1782 -> 1934
+	1935 [shape=oval, label=1, style=filled]
+1785 -> 1935
+	1936 [shape=oval, label=1, style=filled]
+1786 -> 1936
+	1937 [shape=oval, label=1, style=filled]
+1787 -> 1937
+	1938 [shape=oval, label=1, style=filled]
+1788 -> 1938
+	1939 [shape=oval, label=1]
+1797 -> 1939
+	1940 [shape=oval, label=1, style=filled]
+1798 -> 1940
+	1941 [shape=oval, label=2]
+1799 -> 1941
+	1942 [shape=oval, label=1, style=filled]
+1801 -> 1942
+	1943 [shape=oval, label=1]
+1802 -> 1943
+	1944 [shape=oval, label=1]
+1803 -> 1944
+	1945 [shape=oval, label=1]
+1804 -> 1945
+	1946 [shape=oval, label=1]
+1805 -> 1946
+	1947 [shape=oval, label=1]
+1806 -> 1947
+	1948 [shape=oval, label=1]
+1807 -> 1948
+	1949 [shape=oval, label=1]
+1808 -> 1949
+	1950 [shape=oval, label=1, style=filled]
+1809 -> 1950
+	1951 [shape=oval, label=1, style=filled]
+1810 -> 1951
+	1952 [shape=oval, label=1, style=filled]
+1811 -> 1952
+	1953 [shape=oval, label=1, style=filled]
+1813 -> 1953
+	1954 [shape=oval, label=1, style=filled]
+1814 -> 1954
+	1955 [shape=oval, label=1, style=filled]
+1815 -> 1955
+	1956 [shape=oval, label=1, style=filled]
+1816 -> 1956
+	1957 [shape=oval, label=1]
+1818 -> 1957
+	1958 [shape=oval, label=1]
+1819 -> 1958
+	1959 [shape=oval, label=1]
+1820 -> 1959
+	1960 [shape=oval, label=1]
+1821 -> 1960
+	1961 [shape=oval, label=2]
+1822 -> 1961
+	1962 [shape=oval, label=1]
+1823 -> 1962
+	1963 [shape=oval, label=1]
+1824 -> 1963
+	1964 [shape=oval, label=1]
+1825 -> 1964
+	1965 [shape=oval, label=1]
+1826 -> 1965
+	1966 [shape=oval, label=1]
+1827 -> 1966
+	1967 [shape=oval, label=1]
+1828 -> 1967
+	1968 [shape=oval, label=1, style=filled]
+1830 -> 1968
+	1969 [shape=oval, label=1]
+1831 -> 1969
+	1970 [shape=oval, label=1]
+1832 -> 1970
+	1971 [shape=oval, label=1]
+1833 -> 1971
+	1972 [shape=oval, label=1]
+1834 -> 1972
+	1973 [shape=oval, label=1]
+1835 -> 1973
+	1974 [shape=oval, label=1, style=filled]
+1836 -> 1974
+	1975 [shape=oval, label=1]
+1838 -> 1975
+	1976 [shape=oval, label=1]
+1839 -> 1976
+	1977 [shape=oval, label=1]
+1840 -> 1977
+	1978 [shape=oval, label=1]
+1841 -> 1978
+	1979 [shape=oval, label=1]
+1842 -> 1979
+	1980 [shape=oval, label=2]
+1843 -> 1980
+	1981 [shape=oval, label=1]
+1844 -> 1981
+	1982 [shape=oval, label=1]
+1845 -> 1982
+	1983 [shape=oval, label=1]
+1846 -> 1983
+	1984 [shape=oval, label=1]
+1847 -> 1984
+	1985 [shape=oval, label=1]
+1848 -> 1985
+	1986 [shape=oval, label=1]
+1849 -> 1986
+	1987 [shape=oval, label=1]
+1850 -> 1987
+	1988 [shape=oval, label=1]
+1851 -> 1988
+	1989 [shape=oval, label=1]
+1852 -> 1989
+	1990 [shape=oval, label=1]
+1853 -> 1990
+	1991 [shape=oval, label=1]
+1854 -> 1991
+	1992 [shape=oval, label=1]
+1855 -> 1992
+	1993 [shape=oval, label=1]
+1856 -> 1993
+	1994 [shape=oval, label=1]
+1857 -> 1994
+	1995 [shape=box, label=26]
+1858 -> 1995
+	1996 [shape=box, label=55, style=filled]
+1859 -> 1996
+	1997 [shape=oval, label=1]
+1863 -> 1997
+	1998 [shape=oval, label=1]
+1866 -> 1998
+	1999 [shape=oval, label=1]
+1869 -> 1999
+	2000 [shape=oval, label=1]
+1872 -> 2000
+	2001 [shape=oval, label=1]
+1873 -> 2001
+	2002 [shape=oval, label=1]
+1874 -> 2002
+	2003 [shape=oval, label=1]
+1878 -> 2003
+	2004 [shape=oval, label=1]
+1881 -> 2004
+	2005 [shape=oval, label=1]
+1884 -> 2005
+	2006 [shape=oval, label=1]
+1887 -> 2006
+	2007 [shape=oval, label=1]
+1890 -> 2007
+	2008 [shape=oval, label=1]
+1893 -> 2008
+	2009 [shape=oval, label=1]
+1896 -> 2009
+	2010 [shape=oval, label=1]
+1899 -> 2010
+	2011 [shape=oval, label=1]
+1902 -> 2011
+	2012 [shape=oval, label=1]
+1905 -> 2012
+	2013 [shape=oval, label=1]
+1908 -> 2013
+	2014 [shape=oval, label=1]
+1911 -> 2014
+	2015 [shape=oval, label=1]
+1914 -> 2015
+	2016 [shape=oval, label=1]
+1917 -> 2016
+	2017 [shape=oval, label=1]
+1920 -> 2017
+	2018 [shape=oval, label=1]
+1923 -> 2018
+	2019 [shape=oval, label=1]
+1926 -> 2019
+	2020 [shape=box, label=26]
+1927 -> 2020
+	2021 [shape=box, label=14]
+1928 -> 2021
+	2022 [shape=box, label=22]
+1929 -> 2022
+	2023 [shape=box, label=32, style=filled]
+1930 -> 2023
+	2026 [shape=oval, label=1]
+1772 -> 2026
+	2029 [shape=oval, label=1]
+1773 -> 2029
+	2030 [shape=oval, label=1]
+1775 -> 2030
+	2031 [shape=oval, label=1]
+1775 -> 2031
+	2035 [shape=oval, label=1]
+1776 -> 2035
+	2038 [shape=oval, label=1]
+1777 -> 2038
+	2041 [shape=oval, label=1]
+1778 -> 2041
+	2044 [shape=oval, label=1]
+1780 -> 2044
+	2047 [shape=oval, label=1]
+1783 -> 2047
+	2050 [shape=oval, label=1]
+1784 -> 2050
+	2053 [shape=oval, label=1]
+1789 -> 2053
+	2056 [shape=oval, label=1]
+1790 -> 2056
+	2059 [shape=oval, label=1]
+1791 -> 2059
+	2062 [shape=oval, label=1]
+1792 -> 2062
+	2065 [shape=oval, label=1]
+1793 -> 2065
+	2068 [shape=oval, label=1]
+1794 -> 2068
+	2071 [shape=oval, label=1]
+1795 -> 2071
+	2074 [shape=oval, label=1]
+1800 -> 2074
+	2077 [shape=oval, label=1]
+1812 -> 2077
+	2080 [shape=oval, label=1]
+1817 -> 2080
+	2083 [shape=oval, label=1]
+1829 -> 2083
+	2084 [shape=box, label=14]
+1796 -> 2084
+	2085 [shape=box, label=13]
+1837 -> 2085
+	2086 [shape=box, label=18]
+1860 -> 2086
+	2087 [shape=oval, label=1]
+1931 -> 2087
+	2088 [shape=oval, label=1]
+1932 -> 2088
+	2089 [shape=oval, label=1, style=filled]
+1934 -> 2089
+	2090 [shape=oval, label=1]
+1939 -> 2090
+	2091 [shape=oval, label=2, style=filled]
+1941 -> 2091
+	2092 [shape=oval, label=1, style=filled]
+1943 -> 2092
+	2093 [shape=oval, label=1, style=filled]
+1944 -> 2093
+	2094 [shape=oval, label=1, style=filled]
+1945 -> 2094
+	2095 [shape=oval, label=1, style=filled]
+1946 -> 2095
+	2096 [shape=oval, label=1, style=filled]
+1947 -> 2096
+	2097 [shape=oval, label=1, style=filled]
+1948 -> 2097
+	2098 [shape=oval, label=1, style=filled]
+1949 -> 2098
+	2099 [shape=oval, label=1]
+1957 -> 2099
+	2100 [shape=oval, label=1]
+1958 -> 2100
+	2101 [shape=oval, label=1]
+1959 -> 2101
+	2102 [shape=oval, label=1, style=filled]
+1960 -> 2102
+	2103 [shape=oval, label=2]
+1961 -> 2103
+	2104 [shape=oval, label=1]
+1962 -> 2104
+	2105 [shape=oval, label=1]
+1963 -> 2105
+	2106 [shape=oval, label=1]
+1964 -> 2106
+	2107 [shape=oval, label=1]
+1965 -> 2107
+	2108 [shape=oval, label=1]
+1966 -> 2108
+	2109 [shape=oval, label=1]
+1967 -> 2109
+	2110 [shape=oval, label=1, style=filled]
+1969 -> 2110
+	2111 [shape=oval, label=1, style=filled]
+1970 -> 2111
+	2112 [shape=oval, label=1, style=filled]
+1971 -> 2112
+	2113 [shape=oval, label=1, style=filled]
+1972 -> 2113
+	2114 [shape=oval, label=1, style=filled]
+1973 -> 2114
+	2115 [shape=oval, label=1]
+1975 -> 2115
+	2116 [shape=oval, label=1]
+1976 -> 2116
+	2117 [shape=oval, label=1]
+1977 -> 2117
+	2118 [shape=oval, label=1]
+1978 -> 2118
+	2119 [shape=oval, label=1, style=filled]
+1979 -> 2119
+	2120 [shape=oval, label=2]
+1980 -> 2120
+	2121 [shape=oval, label=1]
+1981 -> 2121
+	2122 [shape=oval, label=1]
+1982 -> 2122
+	2123 [shape=oval, label=1]
+1983 -> 2123
+	2124 [shape=oval, label=1]
+1984 -> 2124
+	2125 [shape=oval, label=1]
+1985 -> 2125
+	2126 [shape=oval, label=1]
+1986 -> 2126
+	2127 [shape=oval, label=1]
+1987 -> 2127
+	2128 [shape=oval, label=1]
+1988 -> 2128
+	2129 [shape=oval, label=1]
+1989 -> 2129
+	2130 [shape=oval, label=1]
+1990 -> 2130
+	2131 [shape=oval, label=1]
+1991 -> 2131
+	2132 [shape=oval, label=1]
+1992 -> 2132
+	2133 [shape=oval, label=1]
+1993 -> 2133
+	2134 [shape=oval, label=1, style=filled]
+1994 -> 2134
+	2135 [shape=box, label=26, style=filled]
+1995 -> 2135
+	2136 [shape=oval, label=1]
+1997 -> 2136
+	2137 [shape=oval, label=1]
+1998 -> 2137
+	2138 [shape=oval, label=1]
+1999 -> 2138
+	2139 [shape=oval, label=1]
+2000 -> 2139
+	2140 [shape=oval, label=1]
+2001 -> 2140
+	2141 [shape=oval, label=1]
+2002 -> 2141
+	2142 [shape=oval, label=1]
+2003 -> 2142
+	2143 [shape=oval, label=1]
+2004 -> 2143
+	2144 [shape=oval, label=1]
+2005 -> 2144
+	2145 [shape=oval, label=1]
+2006 -> 2145
+	2146 [shape=oval, label=1]
+2007 -> 2146
+	2147 [shape=oval, label=1]
+2008 -> 2147
+	2148 [shape=oval, label=1]
+2009 -> 2148
+	2149 [shape=oval, label=1]
+2010 -> 2149
+	2150 [shape=oval, label=1]
+2011 -> 2150
+	2151 [shape=oval, label=1]
+2012 -> 2151
+	2152 [shape=oval, label=1]
+2013 -> 2152
+	2153 [shape=oval, label=1]
+2014 -> 2153
+	2154 [shape=oval, label=1]
+2015 -> 2154
+	2155 [shape=oval, label=1]
+2016 -> 2155
+	2156 [shape=oval, label=1]
+2017 -> 2156
+	2157 [shape=oval, label=1]
+2018 -> 2157
+	2158 [shape=oval, label=1]
+2019 -> 2158
+	2159 [shape=box, label=26]
+2020 -> 2159
+	2160 [shape=box, label=14, style=filled]
+2021 -> 2160
+	2161 [shape=box, label=22, style=filled]
+2022 -> 2161
+	2162 [shape=oval, label=1]
+2026 -> 2162
+	2163 [shape=oval, label=1]
+2029 -> 2163
+	2164 [shape=oval, label=1]
+2030 -> 2164
+	2165 [shape=oval, label=1]
+2031 -> 2165
+	2166 [shape=oval, label=1]
+2035 -> 2166
+	2167 [shape=oval, label=1]
+2038 -> 2167
+	2168 [shape=oval, label=1]
+2041 -> 2168
+	2169 [shape=oval, label=1]
+2044 -> 2169
+	2170 [shape=oval, label=1]
+2047 -> 2170
+	2171 [shape=oval, label=1]
+2050 -> 2171
+	2172 [shape=oval, label=1]
+2053 -> 2172
+	2173 [shape=oval, label=1]
+2056 -> 2173
+	2174 [shape=oval, label=1]
+2059 -> 2174
+	2175 [shape=oval, label=1]
+2062 -> 2175
+	2176 [shape=oval, label=1]
+2065 -> 2176
+	2177 [shape=oval, label=1]
+2068 -> 2177
+	2178 [shape=oval, label=1]
+2071 -> 2178
+	2179 [shape=oval, label=1]
+2074 -> 2179
+	2180 [shape=oval, label=1]
+2077 -> 2180
+	2181 [shape=oval, label=1]
+2080 -> 2181
+	2182 [shape=oval, label=1]
+2083 -> 2182
+	2183 [shape=box, label=14]
+2084 -> 2183
+	2184 [shape=box, label=13]
+2085 -> 2184
+	2185 [shape=box, label=18, style=filled]
+2086 -> 2185
+	2186 [shape=oval, label=1]
+1933 -> 2186
+	2187 [shape=oval, label=1]
+1933 -> 2187
+	2191 [shape=oval, label=1]
+1935 -> 2191
+	2194 [shape=oval, label=1]
+1936 -> 2194
+	2197 [shape=oval, label=1]
+1937 -> 2197
+	2200 [shape=oval, label=1]
+1938 -> 2200
+	2203 [shape=oval, label=1]
+1940 -> 2203
+	2206 [shape=oval, label=1]
+1942 -> 2206
+	2209 [shape=oval, label=1]
+1950 -> 2209
+	2212 [shape=oval, label=1]
+1951 -> 2212
+	2215 [shape=oval, label=1]
+1952 -> 2215
+	2218 [shape=oval, label=1]
+1953 -> 2218
+	2221 [shape=oval, label=1]
+1954 -> 2221
+	2224 [shape=oval, label=1]
+1955 -> 2224
+	2227 [shape=oval, label=1]
+1956 -> 2227
+	2230 [shape=oval, label=1]
+1968 -> 2230
+	2233 [shape=oval, label=1]
+1974 -> 2233
+	2234 [shape=box, label=61]
+1996 -> 2234
+	2235 [shape=box, label=35]
+2023 -> 2235
+	2236 [shape=oval, label=1, style=filled]
+2087 -> 2236
+	2237 [shape=oval, label=1, style=filled]
+2088 -> 2237
+	2238 [shape=oval, label=1]
+2090 -> 2238
+	2239 [shape=oval, label=1]
+2099 -> 2239
+	2240 [shape=oval, label=1]
+2100 -> 2240
+	2241 [shape=oval, label=1]
+2101 -> 2241
+	2242 [shape=oval, label=2, style=filled]
+2103 -> 2242
+	2243 [shape=oval, label=1, style=filled]
+2104 -> 2243
+	2244 [shape=oval, label=1, style=filled]
+2105 -> 2244
+	2245 [shape=oval, label=1, style=filled]
+2106 -> 2245
+	2246 [shape=oval, label=1, style=filled]
+2107 -> 2246
+	2247 [shape=oval, label=1, style=filled]
+2108 -> 2247
+	2248 [shape=oval, label=1, style=filled]
+2109 -> 2248
+	2249 [shape=oval, label=1]
+2115 -> 2249
+	2250 [shape=oval, label=1]
+2116 -> 2250
+	2251 [shape=oval, label=1]
+2117 -> 2251
+	2252 [shape=oval, label=1]
+2118 -> 2252
+	2253 [shape=oval, label=2, style=filled]
+2120 -> 2253
+	2254 [shape=oval, label=1]
+2121 -> 2254
+	2255 [shape=oval, label=1]
+2122 -> 2255
+	2256 [shape=oval, label=1]
+2123 -> 2256
+	2257 [shape=oval, label=1]
+2124 -> 2257
+	2258 [shape=oval, label=1]
+2125 -> 2258
+	2259 [shape=oval, label=1]
+2126 -> 2259
+	2260 [shape=oval, label=1]
+2127 -> 2260
+	2261 [shape=oval, label=1, style=filled]
+2128 -> 2261
+	2262 [shape=oval, label=1, style=filled]
+2129 -> 2262
+	2263 [shape=oval, label=1, style=filled]
+2130 -> 2263
+	2264 [shape=oval, label=1, style=filled]
+2131 -> 2264
+	2265 [shape=oval, label=1, style=filled]
+2132 -> 2265
+	2266 [shape=oval, label=1, style=filled]
+2133 -> 2266
+	2267 [shape=oval, label=1]
+2136 -> 2267
+	2268 [shape=oval, label=1]
+2137 -> 2268
+	2269 [shape=oval, label=1]
+2138 -> 2269
+	2270 [shape=oval, label=1]
+2139 -> 2270
+	2271 [shape=oval, label=1]
+2140 -> 2271
+	2272 [shape=oval, label=1]
+2141 -> 2272
+	2273 [shape=oval, label=1]
+2142 -> 2273
+	2274 [shape=oval, label=1]
+2143 -> 2274
+	2275 [shape=oval, label=1]
+2144 -> 2275
+	2276 [shape=oval, label=1]
+2145 -> 2276
+	2277 [shape=oval, label=1]
+2146 -> 2277
+	2278 [shape=oval, label=1]
+2147 -> 2278
+	2279 [shape=oval, label=1]
+2148 -> 2279
+	2280 [shape=oval, label=1]
+2149 -> 2280
+	2281 [shape=oval, label=1]
+2150 -> 2281
+	2282 [shape=oval, label=1]
+2151 -> 2282
+	2283 [shape=oval, label=1]
+2152 -> 2283
+	2284 [shape=oval, label=1]
+2153 -> 2284
+	2285 [shape=oval, label=1]
+2154 -> 2285
+	2286 [shape=oval, label=1]
+2155 -> 2286
+	2287 [shape=oval, label=1]
+2156 -> 2287
+	2288 [shape=oval, label=1]
+2157 -> 2288
+	2289 [shape=oval, label=1, style=filled]
+2158 -> 2289
+	2290 [shape=box, label=26, style=filled]
+2159 -> 2290
+	2291 [shape=oval, label=1]
+2162 -> 2291
+	2292 [shape=oval, label=1]
+2163 -> 2292
+	2293 [shape=oval, label=1]
+2164 -> 2293
+	2294 [shape=oval, label=1]
+2165 -> 2294
+	2295 [shape=oval, label=1]
+2166 -> 2295
+	2296 [shape=oval, label=1]
+2167 -> 2296
+	2297 [shape=oval, label=1]
+2168 -> 2297
+	2298 [shape=oval, label=1]
+2169 -> 2298
+	2299 [shape=oval, label=1]
+2170 -> 2299
+	2300 [shape=oval, label=1]
+2171 -> 2300
+	2301 [shape=oval, label=1]
+2172 -> 2301
+	2302 [shape=oval, label=1]
+2173 -> 2302
+	2303 [shape=oval, label=1]
+2174 -> 2303
+	2304 [shape=oval, label=1]
+2175 -> 2304
+	2305 [shape=oval, label=1]
+2176 -> 2305
+	2306 [shape=oval, label=1]
+2177 -> 2306
+	2307 [shape=oval, label=1]
+2178 -> 2307
+	2308 [shape=oval, label=1]
+2179 -> 2308
+	2309 [shape=oval, label=1]
+2180 -> 2309
+	2310 [shape=oval, label=1]
+2181 -> 2310
+	2311 [shape=oval, label=1]
+2182 -> 2311
+	2312 [shape=box, label=14]
+2183 -> 2312
+	2313 [shape=box, label=13, style=filled]
+2184 -> 2313
+	2314 [shape=oval, label=1]
+2186 -> 2314
+	2315 [shape=oval, label=1]
+2187 -> 2315
+	2316 [shape=oval, label=1]
+2191 -> 2316
+	2317 [shape=oval, label=1]
+2194 -> 2317
+	2318 [shape=oval, label=1]
+2197 -> 2318
+	2319 [shape=oval, label=1]
+2200 -> 2319
+	2320 [shape=oval, label=1]
+2203 -> 2320
+	2321 [shape=oval, label=1]
+2206 -> 2321
+	2322 [shape=oval, label=1]
+2209 -> 2322
+	2323 [shape=oval, label=1]
+2212 -> 2323
+	2324 [shape=oval, label=1]
+2215 -> 2324
+	2325 [shape=oval, label=1]
+2218 -> 2325
+	2326 [shape=oval, label=1]
+2221 -> 2326
+	2327 [shape=oval, label=1]
+2224 -> 2327
+	2328 [shape=oval, label=1]
+2227 -> 2328
+	2329 [shape=oval, label=1]
+2230 -> 2329
+	2330 [shape=oval, label=1]
+2233 -> 2330
+	2331 [shape=box, label=61]
+2234 -> 2331
+	2332 [shape=box, label=35, style=filled]
+2235 -> 2332
+	2335 [shape=oval, label=1]
+2089 -> 2335
+	2336 [shape=oval, label=1]
+2091 -> 2336
+	2337 [shape=oval, label=1]
+2091 -> 2337
+	2341 [shape=oval, label=1]
+2092 -> 2341
+	2344 [shape=oval, label=1]
+2093 -> 2344
+	2347 [shape=oval, label=1]
+2094 -> 2347
+	2350 [shape=oval, label=1]
+2095 -> 2350
+	2353 [shape=oval, label=1]
+2096 -> 2353
+	2356 [shape=oval, label=1]
+2097 -> 2356
+	2359 [shape=oval, label=1]
+2098 -> 2359
+	2362 [shape=oval, label=1]
+2102 -> 2362
+	2365 [shape=oval, label=1]
+2110 -> 2365
+	2368 [shape=oval, label=1]
+2111 -> 2368
+	2371 [shape=oval, label=1]
+2112 -> 2371
+	2374 [shape=oval, label=1]
+2113 -> 2374
+	2377 [shape=oval, label=1]
+2114 -> 2377
+	2380 [shape=oval, label=1]
+2119 -> 2380
+	2383 [shape=oval, label=1]
+2134 -> 2383
+	2384 [shape=box, label=29]
+2135 -> 2384
+	2385 [shape=box, label=15]
+2160 -> 2385
+	2386 [shape=box, label=24]
+2161 -> 2386
+	2387 [shape=box, label=20]
+2185 -> 2387
+	2388 [shape=oval, label=1, style=filled]
+2238 -> 2388
+	2389 [shape=oval, label=1]
+2239 -> 2389
+	2390 [shape=oval, label=1]
+2240 -> 2390
+	2391 [shape=oval, label=1, style=filled]
+2241 -> 2391
+	2392 [shape=oval, label=1]
+2249 -> 2392
+	2393 [shape=oval, label=1]
+2250 -> 2393
+	2394 [shape=oval, label=1]
+2251 -> 2394
+	2395 [shape=oval, label=1]
+2252 -> 2395
+	2396 [shape=oval, label=1, style=filled]
+2254 -> 2396
+	2397 [shape=oval, label=1, style=filled]
+2255 -> 2397
+	2398 [shape=oval, label=1, style=filled]
+2256 -> 2398
+	2399 [shape=oval, label=1, style=filled]
+2257 -> 2399
+	2400 [shape=oval, label=1, style=filled]
+2258 -> 2400
+	2401 [shape=oval, label=1, style=filled]
+2259 -> 2401
+	2402 [shape=oval, label=1, style=filled]
+2260 -> 2402
+	2403 [shape=oval, label=1]
+2267 -> 2403
+	2404 [shape=oval, label=1]
+2268 -> 2404
+	2405 [shape=oval, label=1]
+2269 -> 2405
+	2406 [shape=oval, label=1]
+2270 -> 2406
+	2407 [shape=oval, label=1, style=filled]
+2271 -> 2407
+	2408 [shape=oval, label=1]
+2272 -> 2408
+	2409 [shape=oval, label=1]
+2273 -> 2409
+	2410 [shape=oval, label=1]
+2274 -> 2410
+	2411 [shape=oval, label=1]
+2275 -> 2411
+	2412 [shape=oval, label=1]
+2276 -> 2412
+	2413 [shape=oval, label=1]
+2277 -> 2413
+	2414 [shape=oval, label=1]
+2278 -> 2414
+	2415 [shape=oval, label=1]
+2279 -> 2415
+	2416 [shape=oval, label=1]
+2280 -> 2416
+	2417 [shape=oval, label=1]
+2281 -> 2417
+	2418 [shape=oval, label=1]
+2282 -> 2418
+	2419 [shape=oval, label=1]
+2283 -> 2419
+	2420 [shape=oval, label=1, style=filled]
+2284 -> 2420
+	2421 [shape=oval, label=1, style=filled]
+2285 -> 2421
+	2422 [shape=oval, label=1, style=filled]
+2286 -> 2422
+	2423 [shape=oval, label=1, style=filled]
+2287 -> 2423
+	2424 [shape=oval, label=1, style=filled]
+2288 -> 2424
+	2425 [shape=oval, label=1]
+2291 -> 2425
+	2426 [shape=oval, label=1]
+2292 -> 2426
+	2427 [shape=oval, label=1]
+2293 -> 2427
+	2428 [shape=oval, label=1]
+2294 -> 2428
+	2429 [shape=oval, label=1]
+2295 -> 2429
+	2430 [shape=oval, label=1]
+2296 -> 2430
+	2431 [shape=oval, label=1]
+2297 -> 2431
+	2432 [shape=oval, label=1]
+2298 -> 2432
+	2433 [shape=oval, label=1]
+2299 -> 2433
+	2434 [shape=oval, label=1]
+2300 -> 2434
+	2435 [shape=oval, label=1]
+2301 -> 2435
+	2436 [shape=oval, label=1]
+2302 -> 2436
+	2437 [shape=oval, label=1]
+2303 -> 2437
+	2438 [shape=oval, label=1]
+2304 -> 2438
+	2439 [shape=oval, label=1]
+2305 -> 2439
+	2440 [shape=oval, label=1]
+2306 -> 2440
+	2441 [shape=oval, label=1]
+2307 -> 2441
+	2442 [shape=oval, label=1]
+2308 -> 2442
+	2443 [shape=oval, label=1]
+2309 -> 2443
+	2444 [shape=oval, label=1]
+2310 -> 2444
+	2445 [shape=oval, label=1, style=filled]
+2311 -> 2445
+	2446 [shape=box, label=14]
+2312 -> 2446
+	2447 [shape=oval, label=1]
+2314 -> 2447
+	2448 [shape=oval, label=1]
+2315 -> 2448
+	2449 [shape=oval, label=1]
+2316 -> 2449
+	2450 [shape=oval, label=1]
+2317 -> 2450
+	2451 [shape=oval, label=1]
+2318 -> 2451
+	2452 [shape=oval, label=1]
+2319 -> 2452
+	2453 [shape=oval, label=1]
+2320 -> 2453
+	2454 [shape=oval, label=1]
+2321 -> 2454
+	2455 [shape=oval, label=1]
+2322 -> 2455
+	2456 [shape=oval, label=1]
+2323 -> 2456
+	2457 [shape=oval, label=1]
+2324 -> 2457
+	2458 [shape=oval, label=1]
+2325 -> 2458
+	2459 [shape=oval, label=1]
+2326 -> 2459
+	2460 [shape=oval, label=1]
+2327 -> 2460
+	2461 [shape=oval, label=1]
+2328 -> 2461
+	2462 [shape=oval, label=1]
+2329 -> 2462
+	2463 [shape=oval, label=1]
+2330 -> 2463
+	2464 [shape=box, label=61, style=filled]
+2331 -> 2464
+	2465 [shape=oval, label=1]
+2335 -> 2465
+	2466 [shape=oval, label=1]
+2336 -> 2466
+	2467 [shape=oval, label=1]
+2337 -> 2467
+	2468 [shape=oval, label=1]
+2341 -> 2468
+	2469 [shape=oval, label=1]
+2344 -> 2469
+	2470 [shape=oval, label=1]
+2347 -> 2470
+	2471 [shape=oval, label=1]
+2350 -> 2471
+	2472 [shape=oval, label=1]
+2353 -> 2472
+	2473 [shape=oval, label=1]
+2356 -> 2473
+	2474 [shape=oval, label=1]
+2359 -> 2474
+	2475 [shape=oval, label=1]
+2362 -> 2475
+	2476 [shape=oval, label=1]
+2365 -> 2476
+	2477 [shape=oval, label=1]
+2368 -> 2477
+	2478 [shape=oval, label=1]
+2371 -> 2478
+	2479 [shape=oval, label=1]
+2374 -> 2479
+	2480 [shape=oval, label=1]
+2377 -> 2480
+	2481 [shape=oval, label=1]
+2380 -> 2481
+	2482 [shape=oval, label=1]
+2383 -> 2482
+	2483 [shape=box, label=29]
+2384 -> 2483
+	2484 [shape=box, label=15]
+2385 -> 2484
+	2485 [shape=box, label=24]
+2386 -> 2485
+	2486 [shape=box, label=20, style=filled]
+2387 -> 2486
+	2489 [shape=oval, label=1]
+2236 -> 2489
+	2492 [shape=oval, label=1]
+2237 -> 2492
+	2493 [shape=oval, label=1]
+2242 -> 2493
+	2494 [shape=oval, label=1]
+2242 -> 2494
+	2498 [shape=oval, label=1]
+2243 -> 2498
+	2501 [shape=oval, label=1]
+2244 -> 2501
+	2504 [shape=oval, label=1]
+2245 -> 2504
+	2507 [shape=oval, label=1]
+2246 -> 2507
+	2510 [shape=oval, label=1]
+2247 -> 2510
+	2513 [shape=oval, label=1]
+2248 -> 2513
+	2514 [shape=oval, label=1]
+2253 -> 2514
+	2515 [shape=oval, label=1]
+2253 -> 2515
+	2519 [shape=oval, label=1]
+2261 -> 2519
+	2522 [shape=oval, label=1]
+2262 -> 2522
+	2525 [shape=oval, label=1]
+2263 -> 2525
+	2528 [shape=oval, label=1]
+2264 -> 2528
+	2531 [shape=oval, label=1]
+2265 -> 2531
+	2534 [shape=oval, label=1]
+2266 -> 2534
+	2537 [shape=oval, label=1]
+2289 -> 2537
+	2538 [shape=box, label=29]
+2290 -> 2538
+	2539 [shape=box, label=14]
+2313 -> 2539
+	2540 [shape=box, label=38]
+2332 -> 2540
+	2541 [shape=oval, label=1, style=filled]
+2389 -> 2541
+	2542 [shape=oval, label=1, style=filled]
+2390 -> 2542
+	2543 [shape=oval, label=1]
+2392 -> 2543
+	2544 [shape=oval, label=1]
+2393 -> 2544
+	2545 [shape=oval, label=1, style=filled]
+2394 -> 2545
+	2546 [shape=oval, label=1, style=filled]
+2395 -> 2546
+	2547 [shape=oval, label=1]
+2403 -> 2547
+	2548 [shape=oval, label=1]
+2404 -> 2548
+	2549 [shape=oval, label=1]
+2405 -> 2549
+	2550 [shape=oval, label=1]
+2406 -> 2550
+	2551 [shape=oval, label=1, style=filled]
+2408 -> 2551
+	2552 [shape=oval, label=1]
+2409 -> 2552
+	2553 [shape=oval, label=1]
+2410 -> 2553
+	2554 [shape=oval, label=1, style=filled]
+2411 -> 2554
+	2555 [shape=oval, label=1, style=filled]
+2412 -> 2555
+	2556 [shape=oval, label=1, style=filled]
+2413 -> 2556
+	2557 [shape=oval, label=1, style=filled]
+2414 -> 2557
+	2558 [shape=oval, label=1, style=filled]
+2415 -> 2558
+	2559 [shape=oval, label=1, style=filled]
+2416 -> 2559
+	2560 [shape=oval, label=1, style=filled]
+2417 -> 2560
+	2561 [shape=oval, label=1, style=filled]
+2418 -> 2561
+	2562 [shape=oval, label=1, style=filled]
+2419 -> 2562
+	2563 [shape=oval, label=1]
+2425 -> 2563
+	2564 [shape=oval, label=1]
+2426 -> 2564
+	2565 [shape=oval, label=1, style=filled]
+2427 -> 2565
+	2566 [shape=oval, label=1]
+2428 -> 2566
+	2567 [shape=oval, label=1]
+2429 -> 2567
+	2568 [shape=oval, label=1]
+2430 -> 2568
+	2569 [shape=oval, label=1]
+2431 -> 2569
+	2570 [shape=oval, label=1]
+2432 -> 2570
+	2571 [shape=oval, label=1]
+2433 -> 2571
+	2572 [shape=oval, label=1]
+2434 -> 2572
+	2573 [shape=oval, label=1]
+2435 -> 2573
+	2574 [shape=oval, label=1]
+2436 -> 2574
+	2575 [shape=oval, label=1]
+2437 -> 2575
+	2576 [shape=oval, label=1]
+2438 -> 2576
+	2577 [shape=oval, label=1]
+2439 -> 2577
+	2578 [shape=oval, label=1]
+2440 -> 2578
+	2579 [shape=oval, label=1]
+2441 -> 2579
+	2580 [shape=oval, label=1, style=filled]
+2442 -> 2580
+	2581 [shape=oval, label=1, style=filled]
+2443 -> 2581
+	2582 [shape=oval, label=1, style=filled]
+2444 -> 2582
+	2583 [shape=box, label=14, style=filled]
+2446 -> 2583
+	2584 [shape=oval, label=1]
+2447 -> 2584
+	2585 [shape=oval, label=1]
+2448 -> 2585
+	2586 [shape=oval, label=1]
+2449 -> 2586
+	2587 [shape=oval, label=1]
+2450 -> 2587
+	2588 [shape=oval, label=1]
+2451 -> 2588
+	2589 [shape=oval, label=1]
+2452 -> 2589
+	2590 [shape=oval, label=1]
+2453 -> 2590
+	2591 [shape=oval, label=1]
+2454 -> 2591
+	2592 [shape=oval, label=1]
+2455 -> 2592
+	2593 [shape=oval, label=1]
+2456 -> 2593
+	2594 [shape=oval, label=1]
+2457 -> 2594
+	2595 [shape=oval, label=1]
+2458 -> 2595
+	2596 [shape=oval, label=1]
+2459 -> 2596
+	2597 [shape=oval, label=1]
+2460 -> 2597
+	2598 [shape=oval, label=1]
+2461 -> 2598
+	2599 [shape=oval, label=1]
+2462 -> 2599
+	2600 [shape=oval, label=1]
+2463 -> 2600
+	2601 [shape=oval, label=1]
+2465 -> 2601
+	2602 [shape=oval, label=1]
+2466 -> 2602
+	2603 [shape=oval, label=1]
+2467 -> 2603
+	2604 [shape=oval, label=1]
+2468 -> 2604
+	2605 [shape=oval, label=1]
+2469 -> 2605
+	2606 [shape=oval, label=1]
+2470 -> 2606
+	2607 [shape=oval, label=1]
+2471 -> 2607
+	2608 [shape=oval, label=1]
+2472 -> 2608
+	2609 [shape=oval, label=1]
+2473 -> 2609
+	2610 [shape=oval, label=1]
+2474 -> 2610
+	2611 [shape=oval, label=1]
+2475 -> 2611
+	2612 [shape=oval, label=1]
+2476 -> 2612
+	2613 [shape=oval, label=1]
+2477 -> 2613
+	2614 [shape=oval, label=1]
+2478 -> 2614
+	2615 [shape=oval, label=1]
+2479 -> 2615
+	2616 [shape=oval, label=1]
+2480 -> 2616
+	2617 [shape=oval, label=1]
+2481 -> 2617
+	2618 [shape=oval, label=1]
+2482 -> 2618
+	2619 [shape=box, label=29]
+2483 -> 2619
+	2620 [shape=box, label=15, style=filled]
+2484 -> 2620
+	2621 [shape=box, label=24, style=filled]
+2485 -> 2621
+	2622 [shape=oval, label=1]
+2489 -> 2622
+	2623 [shape=oval, label=1]
+2492 -> 2623
+	2624 [shape=oval, label=1]
+2493 -> 2624
+	2625 [shape=oval, label=1]
+2494 -> 2625
+	2626 [shape=oval, label=1]
+2498 -> 2626
+	2627 [shape=oval, label=1]
+2501 -> 2627
+	2628 [shape=oval, label=1]
+2504 -> 2628
+	2629 [shape=oval, label=1]
+2507 -> 2629
+	2630 [shape=oval, label=1]
+2510 -> 2630
+	2631 [shape=oval, label=1]
+2513 -> 2631
+	2632 [shape=oval, label=1]
+2514 -> 2632
+	2633 [shape=oval, label=1]
+2515 -> 2633
+	2634 [shape=oval, label=1]
+2519 -> 2634
+	2635 [shape=oval, label=1]
+2522 -> 2635
+	2636 [shape=oval, label=1]
+2525 -> 2636
+	2637 [shape=oval, label=1]
+2528 -> 2637
+	2638 [shape=oval, label=1]
+2531 -> 2638
+	2639 [shape=oval, label=1]
+2534 -> 2639
+	2640 [shape=oval, label=1]
+2537 -> 2640
+	2641 [shape=box, label=29]
+2538 -> 2641
+	2642 [shape=box, label=14]
+2539 -> 2642
+	2643 [shape=box, label=38, style=filled]
+2540 -> 2643
+	2646 [shape=oval, label=1]
+2388 -> 2646
+	2649 [shape=oval, label=1]
+2391 -> 2649
+	2652 [shape=oval, label=1]
+2396 -> 2652
+	2655 [shape=oval, label=1]
+2397 -> 2655
+	2658 [shape=oval, label=1]
+2398 -> 2658
+	2661 [shape=oval, label=1]
+2399 -> 2661
+	2664 [shape=oval, label=1]
+2400 -> 2664
+	2667 [shape=oval, label=1]
+2401 -> 2667
+	2670 [shape=oval, label=1]
+2402 -> 2670
+	2673 [shape=oval, label=1]
+2407 -> 2673
+	2676 [shape=oval, label=1]
+2420 -> 2676
+	2679 [shape=oval, label=1]
+2421 -> 2679
+	2682 [shape=oval, label=1]
+2422 -> 2682
+	2685 [shape=oval, label=1]
+2423 -> 2685
+	2688 [shape=oval, label=1]
+2424 -> 2688
+	2691 [shape=oval, label=1]
+2445 -> 2691
+	2692 [shape=box, label=67]
+2464 -> 2692
+	2693 [shape=box, label=22]
+2486 -> 2693
+	2694 [shape=oval, label=1, style=filled]
+2543 -> 2694
+	2695 [shape=oval, label=1, style=filled]
+2544 -> 2695
+	2696 [shape=oval, label=1]
+2547 -> 2696
+	2697 [shape=oval, label=1]
+2548 -> 2697
+	2698 [shape=oval, label=1]
+2549 -> 2698
+	2699 [shape=oval, label=1, style=filled]
+2550 -> 2699
+	2700 [shape=oval, label=1, style=filled]
+2552 -> 2700
+	2701 [shape=oval, label=1, style=filled]
+2553 -> 2701
+	2702 [shape=oval, label=1]
+2563 -> 2702
+	2703 [shape=oval, label=1]
+2564 -> 2703
+	2704 [shape=oval, label=1, style=filled]
+2566 -> 2704
+	2705 [shape=oval, label=1]
+2567 -> 2705
+	2706 [shape=oval, label=1]
+2568 -> 2706
+	2707 [shape=oval, label=1]
+2569 -> 2707
+	2708 [shape=oval, label=1, style=filled]
+2570 -> 2708
+	2709 [shape=oval, label=1, style=filled]
+2571 -> 2709
+	2710 [shape=oval, label=1, style=filled]
+2572 -> 2710
+	2711 [shape=oval, label=1, style=filled]
+2573 -> 2711
+	2712 [shape=oval, label=1, style=filled]
+2574 -> 2712
+	2713 [shape=oval, label=1, style=filled]
+2575 -> 2713
+	2714 [shape=oval, label=1, style=filled]
+2576 -> 2714
+	2715 [shape=oval, label=1, style=filled]
+2577 -> 2715
+	2716 [shape=oval, label=1, style=filled]
+2578 -> 2716
+	2717 [shape=oval, label=1, style=filled]
+2579 -> 2717
+	2718 [shape=oval, label=1, style=filled]
+2584 -> 2718
+	2719 [shape=oval, label=1]
+2585 -> 2719
+	2720 [shape=oval, label=1]
+2586 -> 2720
+	2721 [shape=oval, label=1]
+2587 -> 2721
+	2722 [shape=oval, label=1]
+2588 -> 2722
+	2723 [shape=oval, label=1]
+2589 -> 2723
+	2724 [shape=oval, label=1]
+2590 -> 2724
+	2725 [shape=oval, label=1]
+2591 -> 2725
+	2726 [shape=oval, label=1]
+2592 -> 2726
+	2727 [shape=oval, label=1]
+2593 -> 2727
+	2728 [shape=oval, label=1]
+2594 -> 2728
+	2729 [shape=oval, label=1]
+2595 -> 2729
+	2730 [shape=oval, label=1]
+2596 -> 2730
+	2731 [shape=oval, label=1]
+2597 -> 2731
+	2732 [shape=oval, label=1]
+2598 -> 2732
+	2733 [shape=oval, label=1, style=filled]
+2599 -> 2733
+	2734 [shape=oval, label=1, style=filled]
+2600 -> 2734
+	2735 [shape=oval, label=1]
+2601 -> 2735
+	2736 [shape=oval, label=1]
+2602 -> 2736
+	2737 [shape=oval, label=1]
+2603 -> 2737
+	2738 [shape=oval, label=1]
+2604 -> 2738
+	2739 [shape=oval, label=1]
+2605 -> 2739
+	2740 [shape=oval, label=1]
+2606 -> 2740
+	2741 [shape=oval, label=1]
+2607 -> 2741
+	2742 [shape=oval, label=1]
+2608 -> 2742
+	2743 [shape=oval, label=1]
+2609 -> 2743
+	2744 [shape=oval, label=1]
+2610 -> 2744
+	2745 [shape=oval, label=1]
+2611 -> 2745
+	2746 [shape=oval, label=1]
+2612 -> 2746
+	2747 [shape=oval, label=1]
+2613 -> 2747
+	2748 [shape=oval, label=1]
+2614 -> 2748
+	2749 [shape=oval, label=1]
+2615 -> 2749
+	2750 [shape=oval, label=1]
+2616 -> 2750
+	2751 [shape=oval, label=1]
+2617 -> 2751
+	2752 [shape=oval, label=1]
+2618 -> 2752
+	2753 [shape=box, label=29, style=filled]
+2619 -> 2753
+	2754 [shape=oval, label=1]
+2622 -> 2754
+	2755 [shape=oval, label=1]
+2623 -> 2755
+	2756 [shape=oval, label=1]
+2624 -> 2756
+	2757 [shape=oval, label=1]
+2625 -> 2757
+	2758 [shape=oval, label=1]
+2626 -> 2758
+	2759 [shape=oval, label=1]
+2627 -> 2759
+	2760 [shape=oval, label=1]
+2628 -> 2760
+	2761 [shape=oval, label=1]
+2629 -> 2761
+	2762 [shape=oval, label=1]
+2630 -> 2762
+	2763 [shape=oval, label=1]
+2631 -> 2763
+	2764 [shape=oval, label=1]
+2632 -> 2764
+	2765 [shape=oval, label=1]
+2633 -> 2765
+	2766 [shape=oval, label=1]
+2634 -> 2766
+	2767 [shape=oval, label=1]
+2635 -> 2767
+	2768 [shape=oval, label=1]
+2636 -> 2768
+	2769 [shape=oval, label=1]
+2637 -> 2769
+	2770 [shape=oval, label=1]
+2638 -> 2770
+	2771 [shape=oval, label=1]
+2639 -> 2771
+	2772 [shape=oval, label=1]
+2640 -> 2772
+	2773 [shape=box, label=29]
+2641 -> 2773
+	2774 [shape=box, label=14, style=filled]
+2642 -> 2774
+	2775 [shape=oval, label=1]
+2646 -> 2775
+	2776 [shape=oval, label=1]
+2649 -> 2776
+	2777 [shape=oval, label=1]
+2652 -> 2777
+	2778 [shape=oval, label=1]
+2655 -> 2778
+	2779 [shape=oval, label=1]
+2658 -> 2779
+	2780 [shape=oval, label=1]
+2661 -> 2780
+	2781 [shape=oval, label=1]
+2664 -> 2781
+	2782 [shape=oval, label=1]
+2667 -> 2782
+	2783 [shape=oval, label=1]
+2670 -> 2783
+	2784 [shape=oval, label=1]
+2673 -> 2784
+	2785 [shape=oval, label=1]
+2676 -> 2785
+	2786 [shape=oval, label=1]
+2679 -> 2786
+	2787 [shape=oval, label=1]
+2682 -> 2787
+	2788 [shape=oval, label=1]
+2685 -> 2788
+	2789 [shape=oval, label=1]
+2688 -> 2789
+	2790 [shape=oval, label=1]
+2691 -> 2790
+	2791 [shape=box, label=67]
+2692 -> 2791
+	2792 [shape=box, label=22, style=filled]
+2693 -> 2792
+	2795 [shape=oval, label=1]
+2541 -> 2795
+	2798 [shape=oval, label=1]
+2542 -> 2798
+	2801 [shape=oval, label=1]
+2545 -> 2801
+	2804 [shape=oval, label=1]
+2546 -> 2804
+	2807 [shape=oval, label=1]
+2551 -> 2807
+	2810 [shape=oval, label=1]
+2554 -> 2810
+	2813 [shape=oval, label=1]
+2555 -> 2813
+	2816 [shape=oval, label=1]
+2556 -> 2816
+	2819 [shape=oval, label=1]
+2557 -> 2819
+	2822 [shape=oval, label=1]
+2558 -> 2822
+	2825 [shape=oval, label=1]
+2559 -> 2825
+	2828 [shape=oval, label=1]
+2560 -> 2828
+	2831 [shape=oval, label=1]
+2561 -> 2831
+	2834 [shape=oval, label=1]
+2562 -> 2834
+	2837 [shape=oval, label=1]
+2565 -> 2837
+	2840 [shape=oval, label=1]
+2580 -> 2840
+	2843 [shape=oval, label=1]
+2581 -> 2843
+	2846 [shape=oval, label=1]
+2582 -> 2846
+	2847 [shape=box, label=15]
+2583 -> 2847
+	2848 [shape=box, label=16]
+2620 -> 2848
+	2849 [shape=box, label=26]
+2621 -> 2849
+	2850 [shape=box, label=42]
+2643 -> 2850
+	2851 [shape=oval, label=1, style=filled]
+2696 -> 2851
+	2852 [shape=oval, label=1, style=filled]
+2697 -> 2852
+	2853 [shape=oval, label=1, style=filled]
+2698 -> 2853
+	2854 [shape=oval, label=1]
+2702 -> 2854
+	2855 [shape=oval, label=1]
+2703 -> 2855
+	2856 [shape=oval, label=1, style=filled]
+2705 -> 2856
+	2857 [shape=oval, label=1, style=filled]
+2706 -> 2857
+	2858 [shape=oval, label=1, style=filled]
+2707 -> 2858
+	2859 [shape=oval, label=1, style=filled]
+2719 -> 2859
+	2860 [shape=oval, label=1]
+2720 -> 2860
+	2861 [shape=oval, label=1]
+2721 -> 2861
+	2862 [shape=oval, label=1]
+2722 -> 2862
+	2863 [shape=oval, label=1]
+2723 -> 2863
+	2864 [shape=oval, label=1, style=filled]
+2724 -> 2864
+	2865 [shape=oval, label=1, style=filled]
+2725 -> 2865
+	2866 [shape=oval, label=1, style=filled]
+2726 -> 2866
+	2867 [shape=oval, label=1, style=filled]
+2727 -> 2867
+	2868 [shape=oval, label=1, style=filled]
+2728 -> 2868
+	2869 [shape=oval, label=1, style=filled]
+2729 -> 2869
+	2870 [shape=oval, label=1, style=filled]
+2730 -> 2870
+	2871 [shape=oval, label=1, style=filled]
+2731 -> 2871
+	2872 [shape=oval, label=1, style=filled]
+2732 -> 2872
+	2873 [shape=oval, label=1]
+2735 -> 2873
+	2874 [shape=oval, label=1, style=filled]
+2736 -> 2874
+	2875 [shape=oval, label=1]
+2737 -> 2875
+	2876 [shape=oval, label=1]
+2738 -> 2876
+	2877 [shape=oval, label=1]
+2739 -> 2877
+	2878 [shape=oval, label=1]
+2740 -> 2878
+	2879 [shape=oval, label=1]
+2741 -> 2879
+	2880 [shape=oval, label=1]
+2742 -> 2880
+	2881 [shape=oval, label=1]
+2743 -> 2881
+	2882 [shape=oval, label=1]
+2744 -> 2882
+	2883 [shape=oval, label=1]
+2745 -> 2883
+	2884 [shape=oval, label=1]
+2746 -> 2884
+	2885 [shape=oval, label=1]
+2747 -> 2885
+	2886 [shape=oval, label=1]
+2748 -> 2886
+	2887 [shape=oval, label=1]
+2749 -> 2887
+	2888 [shape=oval, label=1]
+2750 -> 2888
+	2889 [shape=oval, label=1, style=filled]
+2751 -> 2889
+	2890 [shape=oval, label=1, style=filled]
+2752 -> 2890
+	2891 [shape=oval, label=1]
+2754 -> 2891
+	2892 [shape=oval, label=1]
+2755 -> 2892
+	2893 [shape=oval, label=1]
+2756 -> 2893
+	2894 [shape=oval, label=1]
+2757 -> 2894
+	2895 [shape=oval, label=1]
+2758 -> 2895
+	2896 [shape=oval, label=1]
+2759 -> 2896
+	2897 [shape=oval, label=1]
+2760 -> 2897
+	2898 [shape=oval, label=1]
+2761 -> 2898
+	2899 [shape=oval, label=1]
+2762 -> 2899
+	2900 [shape=oval, label=1]
+2763 -> 2900
+	2901 [shape=oval, label=1, style=filled]
+2764 -> 2901
+	2902 [shape=oval, label=1]
+2765 -> 2902
+	2903 [shape=oval, label=1]
+2766 -> 2903
+	2904 [shape=oval, label=1]
+2767 -> 2904
+	2905 [shape=oval, label=1]
+2768 -> 2905
+	2906 [shape=oval, label=1]
+2769 -> 2906
+	2907 [shape=oval, label=1]
+2770 -> 2907
+	2908 [shape=oval, label=1]
+2771 -> 2908
+	2909 [shape=oval, label=1]
+2772 -> 2909
+	2910 [shape=box, label=29, style=filled]
+2773 -> 2910
+	2911 [shape=oval, label=1]
+2775 -> 2911
+	2912 [shape=oval, label=1]
+2776 -> 2912
+	2913 [shape=oval, label=1]
+2777 -> 2913
+	2914 [shape=oval, label=1]
+2778 -> 2914
+	2915 [shape=oval, label=1]
+2779 -> 2915
+	2916 [shape=oval, label=1]
+2780 -> 2916
+	2917 [shape=oval, label=1]
+2781 -> 2917
+	2918 [shape=oval, label=1]
+2782 -> 2918
+	2919 [shape=oval, label=1]
+2783 -> 2919
+	2920 [shape=oval, label=1]
+2784 -> 2920
+	2921 [shape=oval, label=1]
+2785 -> 2921
+	2922 [shape=oval, label=1]
+2786 -> 2922
+	2923 [shape=oval, label=1]
+2787 -> 2923
+	2924 [shape=oval, label=1]
+2788 -> 2924
+	2925 [shape=oval, label=1]
+2789 -> 2925
+	2926 [shape=oval, label=1]
+2790 -> 2926
+	2927 [shape=box, label=67, style=filled]
+2791 -> 2927
+	2928 [shape=oval, label=1]
+2795 -> 2928
+	2929 [shape=oval, label=1]
+2798 -> 2929
+	2930 [shape=oval, label=1]
+2801 -> 2930
+	2931 [shape=oval, label=1]
+2804 -> 2931
+	2932 [shape=oval, label=1]
+2807 -> 2932
+	2933 [shape=oval, label=1]
+2810 -> 2933
+	2934 [shape=oval, label=1]
+2813 -> 2934
+	2935 [shape=oval, label=1]
+2816 -> 2935
+	2936 [shape=oval, label=1]
+2819 -> 2936
+	2937 [shape=oval, label=1]
+2822 -> 2937
+	2938 [shape=oval, label=1]
+2825 -> 2938
+	2939 [shape=oval, label=1]
+2828 -> 2939
+	2940 [shape=oval, label=1]
+2831 -> 2940
+	2941 [shape=oval, label=1]
+2834 -> 2941
+	2942 [shape=oval, label=1]
+2837 -> 2942
+	2943 [shape=oval, label=1]
+2840 -> 2943
+	2944 [shape=oval, label=1]
+2843 -> 2944
+	2945 [shape=oval, label=1]
+2846 -> 2945
+	2946 [shape=box, label=15]
+2847 -> 2946
+	2947 [shape=box, label=16]
+2848 -> 2947
+	2948 [shape=box, label=26]
+2849 -> 2948
+	2949 [shape=box, label=42, style=filled]
+2850 -> 2949
+	2952 [shape=oval, label=1]
+2694 -> 2952
+	2955 [shape=oval, label=1]
+2695 -> 2955
+	2958 [shape=oval, label=1]
+2699 -> 2958
+	2961 [shape=oval, label=1]
+2700 -> 2961
+	2964 [shape=oval, label=1]
+2701 -> 2964
+	2967 [shape=oval, label=1]
+2704 -> 2967
+	2970 [shape=oval, label=1]
+2708 -> 2970
+	2973 [shape=oval, label=1]
+2709 -> 2973
+	2976 [shape=oval, label=1]
+2710 -> 2976
+	2979 [shape=oval, label=1]
+2711 -> 2979
+	2982 [shape=oval, label=1]
+2712 -> 2982
+	2985 [shape=oval, label=1]
+2713 -> 2985
+	2988 [shape=oval, label=1]
+2714 -> 2988
+	2991 [shape=oval, label=1]
+2715 -> 2991
+	2994 [shape=oval, label=1]
+2716 -> 2994
+	2997 [shape=oval, label=1]
+2717 -> 2997
+	3000 [shape=oval, label=1]
+2718 -> 3000
+	3003 [shape=oval, label=1]
+2733 -> 3003
+	3006 [shape=oval, label=1]
+2734 -> 3006
+	3007 [shape=box, label=32]
+2753 -> 3007
+	3008 [shape=box, label=15]
+2774 -> 3008
+	3009 [shape=box, label=24]
+2792 -> 3009
+	3010 [shape=oval, label=1, style=filled]
+2854 -> 3010
+	3011 [shape=oval, label=1, style=filled]
+2855 -> 3011
+	3012 [shape=oval, label=1, style=filled]
+2860 -> 3012
+	3013 [shape=oval, label=1, style=filled]
+2861 -> 3013
+	3014 [shape=oval, label=1, style=filled]
+2862 -> 3014
+	3015 [shape=oval, label=1, style=filled]
+2863 -> 3015
+	3016 [shape=oval, label=1]
+2873 -> 3016
+	3017 [shape=oval, label=1, style=filled]
+2875 -> 3017
+	3018 [shape=oval, label=1]
+2876 -> 3018
+	3019 [shape=oval, label=1]
+2877 -> 3019
+	3020 [shape=oval, label=1]
+2878 -> 3020
+	3021 [shape=oval, label=1]
+2879 -> 3021
+	3022 [shape=oval, label=1]
+2880 -> 3022
+	3023 [shape=oval, label=1]
+2881 -> 3023
+	3024 [shape=oval, label=1]
+2882 -> 3024
+	3025 [shape=oval, label=1, style=filled]
+2883 -> 3025
+	3026 [shape=oval, label=1, style=filled]
+2884 -> 3026
+	3027 [shape=oval, label=1, style=filled]
+2885 -> 3027
+	3028 [shape=oval, label=1, style=filled]
+2886 -> 3028
+	3029 [shape=oval, label=1, style=filled]
+2887 -> 3029
+	3030 [shape=oval, label=1, style=filled]
+2888 -> 3030
+	3031 [shape=oval, label=1]
+2891 -> 3031
+	3032 [shape=oval, label=1]
+2892 -> 3032
+	3033 [shape=oval, label=1, style=filled]
+2893 -> 3033
+	3034 [shape=oval, label=1]
+2894 -> 3034
+	3035 [shape=oval, label=1]
+2895 -> 3035
+	3036 [shape=oval, label=1]
+2896 -> 3036
+	3037 [shape=oval, label=1]
+2897 -> 3037
+	3038 [shape=oval, label=1]
+2898 -> 3038
+	3039 [shape=oval, label=1]
+2899 -> 3039
+	3040 [shape=oval, label=1]
+2900 -> 3040
+	3041 [shape=oval, label=1, style=filled]
+2902 -> 3041
+	3042 [shape=oval, label=1]
+2903 -> 3042
+	3043 [shape=oval, label=1]
+2904 -> 3043
+	3044 [shape=oval, label=1]
+2905 -> 3044
+	3045 [shape=oval, label=1]
+2906 -> 3045
+	3046 [shape=oval, label=1]
+2907 -> 3046
+	3047 [shape=oval, label=1]
+2908 -> 3047
+	3048 [shape=oval, label=1, style=filled]
+2909 -> 3048
+	3049 [shape=oval, label=1]
+2911 -> 3049
+	3050 [shape=oval, label=1]
+2912 -> 3050
+	3051 [shape=oval, label=1]
+2913 -> 3051
+	3052 [shape=oval, label=1]
+2914 -> 3052
+	3053 [shape=oval, label=1]
+2915 -> 3053
+	3054 [shape=oval, label=1]
+2916 -> 3054
+	3055 [shape=oval, label=1]
+2917 -> 3055
+	3056 [shape=oval, label=1]
+2918 -> 3056
+	3057 [shape=oval, label=1]
+2919 -> 3057
+	3058 [shape=oval, label=1]
+2920 -> 3058
+	3059 [shape=oval, label=1]
+2921 -> 3059
+	3060 [shape=oval, label=1]
+2922 -> 3060
+	3061 [shape=oval, label=1]
+2923 -> 3061
+	3062 [shape=oval, label=1]
+2924 -> 3062
+	3063 [shape=oval, label=1]
+2925 -> 3063
+	3064 [shape=oval, label=1]
+2926 -> 3064
+	3065 [shape=oval, label=1]
+2928 -> 3065
+	3066 [shape=oval, label=1]
+2929 -> 3066
+	3067 [shape=oval, label=1]
+2930 -> 3067
+	3068 [shape=oval, label=1]
+2931 -> 3068
+	3069 [shape=oval, label=1]
+2932 -> 3069
+	3070 [shape=oval, label=1]
+2933 -> 3070
+	3071 [shape=oval, label=1]
+2934 -> 3071
+	3072 [shape=oval, label=1]
+2935 -> 3072
+	3073 [shape=oval, label=1]
+2936 -> 3073
+	3074 [shape=oval, label=1]
+2937 -> 3074
+	3075 [shape=oval, label=1]
+2938 -> 3075
+	3076 [shape=oval, label=1]
+2939 -> 3076
+	3077 [shape=oval, label=1]
+2940 -> 3077
+	3078 [shape=oval, label=1]
+2941 -> 3078
+	3079 [shape=oval, label=1]
+2942 -> 3079
+	3080 [shape=oval, label=1]
+2943 -> 3080
+	3081 [shape=oval, label=1]
+2944 -> 3081
+	3082 [shape=oval, label=1]
+2945 -> 3082
+	3083 [shape=box, label=15]
+2946 -> 3083
+	3084 [shape=box, label=16, style=filled]
+2947 -> 3084
+	3085 [shape=box, label=26, style=filled]
+2948 -> 3085
+	3086 [shape=oval, label=1]
+2952 -> 3086
+	3087 [shape=oval, label=1]
+2955 -> 3087
+	3088 [shape=oval, label=1]
+2958 -> 3088
+	3089 [shape=oval, label=1]
+2961 -> 3089
+	3090 [shape=oval, label=1]
+2964 -> 3090
+	3091 [shape=oval, label=1]
+2967 -> 3091
+	3092 [shape=oval, label=1]
+2970 -> 3092
+	3093 [shape=oval, label=1]
+2973 -> 3093
+	3094 [shape=oval, label=1]
+2976 -> 3094
+	3095 [shape=oval, label=1]
+2979 -> 3095
+	3096 [shape=oval, label=1]
+2982 -> 3096
+	3097 [shape=oval, label=1]
+2985 -> 3097
+	3098 [shape=oval, label=1]
+2988 -> 3098
+	3099 [shape=oval, label=1]
+2991 -> 3099
+	3100 [shape=oval, label=1]
+2994 -> 3100
+	3101 [shape=oval, label=1]
+2997 -> 3101
+	3102 [shape=oval, label=1]
+3000 -> 3102
+	3103 [shape=oval, label=1]
+3003 -> 3103
+	3104 [shape=oval, label=1]
+3006 -> 3104
+	3105 [shape=box, label=32]
+3007 -> 3105
+	3106 [shape=box, label=15]
+3008 -> 3106
+	3107 [shape=box, label=24, style=filled]
+3009 -> 3107
+	3110 [shape=oval, label=1]
+2851 -> 3110
+	3113 [shape=oval, label=1]
+2852 -> 3113
+	3116 [shape=oval, label=1]
+2853 -> 3116
+	3119 [shape=oval, label=1]
+2856 -> 3119
+	3122 [shape=oval, label=1]
+2857 -> 3122
+	3125 [shape=oval, label=1]
+2858 -> 3125
+	3128 [shape=oval, label=1]
+2859 -> 3128
+	3131 [shape=oval, label=1]
+2864 -> 3131
+	3134 [shape=oval, label=1]
+2865 -> 3134
+	3137 [shape=oval, label=1]
+2866 -> 3137
+	3140 [shape=oval, label=1]
+2867 -> 3140
+	3143 [shape=oval, label=1]
+2868 -> 3143
+	3146 [shape=oval, label=1]
+2869 -> 3146
+	3149 [shape=oval, label=1]
+2870 -> 3149
+	3152 [shape=oval, label=1]
+2871 -> 3152
+	3155 [shape=oval, label=1]
+2872 -> 3155
+	3158 [shape=oval, label=1]
+2874 -> 3158
+	3161 [shape=oval, label=1]
+2889 -> 3161
+	3164 [shape=oval, label=1]
+2890 -> 3164
+	3167 [shape=oval, label=1]
+2901 -> 3167
+	3168 [shape=box, label=32]
+2910 -> 3168
+	3169 [shape=box, label=74]
+2927 -> 3169
+	3170 [shape=box, label=46]
+2949 -> 3170
+	3171 [shape=oval, label=1]
+3016 -> 3171
+	3172 [shape=oval, label=1, style=filled]
+3018 -> 3172
+	3173 [shape=oval, label=1, style=filled]
+3019 -> 3173
+	3174 [shape=oval, label=1, style=filled]
+3020 -> 3174
+	3175 [shape=oval, label=1, style=filled]
+3021 -> 3175
+	3176 [shape=oval, label=1, style=filled]
+3022 -> 3176
+	3177 [shape=oval, label=1, style=filled]
+3023 -> 3177
+	3178 [shape=oval, label=1, style=filled]
+3024 -> 3178
+	3179 [shape=oval, label=1]
+3031 -> 3179
+	3180 [shape=oval, label=1]
+3032 -> 3180
+	3181 [shape=oval, label=1, style=filled]
+3034 -> 3181
+	3182 [shape=oval, label=1]
+3035 -> 3182
+	3183 [shape=oval, label=1]
+3036 -> 3183
+	3184 [shape=oval, label=1]
+3037 -> 3184
+	3185 [shape=oval, label=1]
+3038 -> 3185
+	3186 [shape=oval, label=1]
+3039 -> 3186
+	3187 [shape=oval, label=1]
+3040 -> 3187
+	3188 [shape=oval, label=1, style=filled]
+3042 -> 3188
+	3189 [shape=oval, label=1, style=filled]
+3043 -> 3189
+	3190 [shape=oval, label=1, style=filled]
+3044 -> 3190
+	3191 [shape=oval, label=1, style=filled]
+3045 -> 3191
+	3192 [shape=oval, label=1, style=filled]
+3046 -> 3192
+	3193 [shape=oval, label=1, style=filled]
+3047 -> 3193
+	3194 [shape=oval, label=1]
+3049 -> 3194
+	3195 [shape=oval, label=1]
+3050 -> 3195
+	3196 [shape=oval, label=1]
+3051 -> 3196
+	3197 [shape=oval, label=1]
+3052 -> 3197
+	3198 [shape=oval, label=1]
+3053 -> 3198
+	3199 [shape=oval, label=1]
+3054 -> 3199
+	3200 [shape=oval, label=1]
+3055 -> 3200
+	3201 [shape=oval, label=1]
+3056 -> 3201
+	3202 [shape=oval, label=1]
+3057 -> 3202
+	3203 [shape=oval, label=1]
+3058 -> 3203
+	3204 [shape=oval, label=1]
+3059 -> 3204
+	3205 [shape=oval, label=1]
+3060 -> 3205
+	3206 [shape=oval, label=1]
+3061 -> 3206
+	3207 [shape=oval, label=1]
+3062 -> 3207
+	3208 [shape=oval, label=1]
+3063 -> 3208
+	3209 [shape=oval, label=1, style=filled]
+3064 -> 3209
+	3210 [shape=oval, label=1]
+3065 -> 3210
+	3211 [shape=oval, label=1]
+3066 -> 3211
+	3212 [shape=oval, label=1]
+3067 -> 3212
+	3213 [shape=oval, label=1]
+3068 -> 3213
+	3214 [shape=oval, label=1]
+3069 -> 3214
+	3215 [shape=oval, label=1]
+3070 -> 3215
+	3216 [shape=oval, label=1]
+3071 -> 3216
+	3217 [shape=oval, label=1]
+3072 -> 3217
+	3218 [shape=oval, label=1]
+3073 -> 3218
+	3219 [shape=oval, label=1]
+3074 -> 3219
+	3220 [shape=oval, label=1]
+3075 -> 3220
+	3221 [shape=oval, label=1]
+3076 -> 3221
+	3222 [shape=oval, label=1]
+3077 -> 3222
+	3223 [shape=oval, label=1]
+3078 -> 3223
+	3224 [shape=oval, label=1]
+3079 -> 3224
+	3225 [shape=oval, label=1]
+3080 -> 3225
+	3226 [shape=oval, label=1]
+3081 -> 3226
+	3227 [shape=oval, label=1]
+3082 -> 3227
+	3228 [shape=box, label=15]
+3083 -> 3228
+	3229 [shape=oval, label=1]
+3086 -> 3229
+	3230 [shape=oval, label=1]
+3087 -> 3230
+	3231 [shape=oval, label=1]
+3088 -> 3231
+	3232 [shape=oval, label=1]
+3089 -> 3232
+	3233 [shape=oval, label=1]
+3090 -> 3233
+	3234 [shape=oval, label=1]
+3091 -> 3234
+	3235 [shape=oval, label=1]
+3092 -> 3235
+	3236 [shape=oval, label=1]
+3093 -> 3236
+	3237 [shape=oval, label=1]
+3094 -> 3237
+	3238 [shape=oval, label=1]
+3095 -> 3238
+	3239 [shape=oval, label=1]
+3096 -> 3239
+	3240 [shape=oval, label=1]
+3097 -> 3240
+	3241 [shape=oval, label=1]
+3098 -> 3241
+	3242 [shape=oval, label=1]
+3099 -> 3242
+	3243 [shape=oval, label=1]
+3100 -> 3243
+	3244 [shape=oval, label=1]
+3101 -> 3244
+	3245 [shape=oval, label=1]
+3102 -> 3245
+	3246 [shape=oval, label=1]
+3103 -> 3246
+	3247 [shape=oval, label=1]
+3104 -> 3247
+	3248 [shape=box, label=32]
+3105 -> 3248
+	3249 [shape=box, label=15, style=filled]
+3106 -> 3249
+	3250 [shape=oval, label=1]
+3110 -> 3250
+	3251 [shape=oval, label=1]
+3113 -> 3251
+	3252 [shape=oval, label=1]
+3116 -> 3252
+	3253 [shape=oval, label=1]
+3119 -> 3253
+	3254 [shape=oval, label=1]
+3122 -> 3254
+	3255 [shape=oval, label=1]
+3125 -> 3255
+	3256 [shape=oval, label=1]
+3128 -> 3256
+	3257 [shape=oval, label=1]
+3131 -> 3257
+	3258 [shape=oval, label=1]
+3134 -> 3258
+	3259 [shape=oval, label=1]
+3137 -> 3259
+	3260 [shape=oval, label=1]
+3140 -> 3260
+	3261 [shape=oval, label=1]
+3143 -> 3261
+	3262 [shape=oval, label=1]
+3146 -> 3262
+	3263 [shape=oval, label=1]
+3149 -> 3263
+	3264 [shape=oval, label=1]
+3152 -> 3264
+	3265 [shape=oval, label=1]
+3155 -> 3265
+	3266 [shape=oval, label=1]
+3158 -> 3266
+	3267 [shape=oval, label=1]
+3161 -> 3267
+	3268 [shape=oval, label=1]
+3164 -> 3268
+	3269 [shape=oval, label=1]
+3167 -> 3269
+	3270 [shape=box, label=32]
+3168 -> 3270
+	3271 [shape=box, label=74]
+3169 -> 3271
+	3272 [shape=box, label=46, style=filled]
+3170 -> 3272
+	3275 [shape=oval, label=1]
+3010 -> 3275
+	3278 [shape=oval, label=1]
+3011 -> 3278
+	3281 [shape=oval, label=1]
+3012 -> 3281
+	3284 [shape=oval, label=1]
+3013 -> 3284
+	3287 [shape=oval, label=1]
+3014 -> 3287
+	3290 [shape=oval, label=1]
+3015 -> 3290
+	3293 [shape=oval, label=1]
+3017 -> 3293
+	3296 [shape=oval, label=1]
+3025 -> 3296
+	3299 [shape=oval, label=1]
+3026 -> 3299
+	3302 [shape=oval, label=1]
+3027 -> 3302
+	3305 [shape=oval, label=1]
+3028 -> 3305
+	3308 [shape=oval, label=1]
+3029 -> 3308
+	3311 [shape=oval, label=1]
+3030 -> 3311
+	3314 [shape=oval, label=1]
+3033 -> 3314
+	3317 [shape=oval, label=1]
+3041 -> 3317
+	3320 [shape=oval, label=1]
+3048 -> 3320
+	3321 [shape=box, label=18]
+3084 -> 3321
+	3322 [shape=box, label=29]
+3085 -> 3322
+	3323 [shape=box, label=26]
+3107 -> 3323
+}
