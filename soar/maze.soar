@@ -1,0 +1,352 @@
+# Implement an inteligent eater which always goes to the best looking spot in
+# the viewable field.
+#
+
+### State table init
+sp {elaborate*position*table
+    (state <ss> ^type state)
+-->
+    (<ss> ^cells <c>)
+    (<ss> ^seencells <sc>)
+    (<ss> ^generation 0)
+}
+
+# Make jumps less frequent
+sp {elaborate*operator*epsilon
+    (state <ss> ^type state)
+-->
+    (<ss> ^operator-epsilon <oe1> <oe2>)
+    (<oe1> ^name move ^operator-epsilon-value 0)
+    (<oe2> ^name jump ^operator-epsilon-value 0.1)
+}
+
+sp {initialize*state*directions
+    (state <ss> ^type state)
+-->
+    (<ss> ^directions <n> <e> <s> <w>)
+    (<n> ^name north ^opposite south ^next east)
+    (<e> ^name east  ^opposite west ^next south)
+    (<s> ^name south ^opposite north ^next west)
+    (<w> ^name west  ^opposite east ^next north)
+}
+
+sp {init*elaborate*delta-pos
+    (state <s> ^type state)
+-->
+    (<s> ^delta-pos <dp1> <dp2> <dp3> <dp4> <dp5> <dp6> <dp7> <dp8>)
+    (<dp1> ^name move ^direction east ^dx 1 ^dy 0)
+    (<dp2> ^name move ^direction north ^dx 0 ^dy -1)
+    (<dp3> ^name move ^direction west ^dx -1 ^dy 0)
+    (<dp4> ^name move ^direction south ^dx 0 ^dy 1)
+    (<dp5> ^name jump ^direction east ^dx 2 ^dy 0)
+    (<dp6> ^name jump ^direction north ^dx 0 ^dy -2)
+    (<dp7> ^name jump ^direction west ^dx -2 ^dy 0)
+    (<dp8> ^name jump ^direction south ^dx 0 ^dy 2)
+}
+
+sp {init*elaborate*name-content-value
+    (state <s> ^type state)
+-->
+    (<s> ^content-value <c1> <c2> <c3> <c4>)
+    (<c1> ^content empty ^value 0)
+    (<c2> ^content eater ^value 0)
+    (<c3> ^content normalfood ^value 5)
+    (<c4> ^content bonusfood ^value 10)
+}
+
+### Rember seen cells
+## Cell:
+##   ^x
+##   ^y
+##   ^content: wall, normalfood, bonusfood, empty
+
+# Center
+sp {elaborate*ct*center
+    (state <ss> ^cells <c>
+        ^io.input-link.eater <e>
+       -^stored-seen-cells true
+        )
+    (<e> ^x <x> ^y <y>)
+-->
+    (<c> ^cellinfo <ci>)
+    (<ci> ^x <x> ^y <y> ^content empty)
+}
+
+# Go one cell in each direction
+sp {elaborate*ct*d1
+    (state <ss> ^cells <c>
+        ^io.input-link.eater <e>
+       -^stored-seen-cells true
+        ^io.input-link.my-location.<dir>.content <ctn>
+        ^delta-pos <dp>
+        )
+    (<dp> ^name move ^direction <dir> ^dx <dx> ^dy <dy>)
+    (<e> ^x <x> ^y <y>)
+-->
+    (<c> ^cellinfo <ci>)
+    (<ci> ^x (+ <x> <dx>) ^y (+ <y> <dy>) ^content <ctn>)
+}
+
+## Look two cells in all directions (jump-ish)
+sp {elaborate*ct*d2
+    (state <ss> ^cells <c>
+        ^io.input-link.eater <e>
+       -^stored-seen-cells true
+        ^io.input-link.my-location.<dir>.<dir>.content <ctn>
+        ^delta-pos <dp>
+        )
+    (<dp> ^name jump ^direction <dir> ^dx <dx> ^dy <dy>)
+    (<e> ^x <x> ^y <y>)
+-->
+    (<c> ^cellinfo <ci>)
+    (<ci> ^x (+ <x> <dx>) ^y (+ <y> <dy>) ^content <ctn>)
+}
+
+# Look one cell ahead and one cell next dir
+sp {elaborate*ct*d1-1
+    (state <ss> ^cells <c>
+        ^io.input-link.eater <e>
+       -^stored-seen-cells true
+        ^io.input-link.my-location.<dir>.<dir1>.content <ctn>
+        ^directions <dirs>
+        ^delta-pos <dp> <dp1>
+        )
+    (<dirs> ^name <dir> ^next <dir1>)
+    (<dp> ^name move ^direction <dir> ^dx <dx> ^dy <dy>)
+    (<dp1> ^name move ^direction <dir1> ^dx <dx1> ^dy <dy1>)
+    (<e> ^x <x> ^y <y>)
+-->
+    (<c> ^cellinfo <ci>)
+    (<ci> ^x (+ <x> <dx> <dx1>) ^y (+ <y> <dy> <dy1>) ^content <ctn>)
+}
+
+## Look two cells ahead and one cell next dir
+sp {elaborate*ct*d2-1
+    (state <ss> ^cells <c>
+        ^io.input-link.eater <e>
+       -^stored-seen-cells true
+        ^io.input-link.my-location.<dir>.<dir>.<dir1>.content <ctn>
+        ^directions <dirs>
+        ^delta-pos <dp> <dp1>
+        )
+    (<dirs> ^name <dir> ^next <dir1>)
+    (<dp> ^name jump ^direction <dir> ^dx <dx> ^dy <dy>)
+    (<dp1> ^name move ^direction <dir1> ^dx <dx1> ^dy <dy1>)
+    (<e> ^x <x> ^y <y>)
+-->
+    (<c> ^cellinfo <ci>)
+    (<ci> ^x (+ <x> <dx> <dx1>) ^y (+ <y> <dy> <dy1>) ^content <ctn>)
+}
+
+# Look one cell ahead and two cells next dir
+sp {elaborate*ct*d1-2
+    (state <ss> ^cells <c>
+        ^io.input-link.eater <e>
+       -^stored-seen-cells true
+        ^io.input-link.my-location.<dir>.<dir1>.<dir1>.content <ctn>
+        ^directions <dirs>
+        ^delta-pos <dp> <dp1>
+        )
+    (<dirs> ^name <dir> ^next <dir1>)
+    (<dp> ^name move ^direction <dir> ^dx <dx> ^dy <dy>)
+    (<dp1> ^name jump ^direction <dir1> ^dx <dx1> ^dy <dy1>)
+    (<e> ^x <x> ^y <y>)
+-->
+    (<c> ^cellinfo <ci>)
+    (<ci> ^x (+ <x> <dx> <dx1>) ^y (+ <y> <dy> <dy1>) ^content <ctn>)
+}
+
+# Look two cells ahead and two cells next dir
+sp {elaborate*ct*d2-2
+    (state <ss> ^cells <c>
+        ^io.input-link.eater <e>
+       -^stored-seen-cells true
+        ^io.input-link.my-location.<dir>.<dir>.<dir1>.<dir1>.content <ctn>
+        ^directions <dirs>
+        ^delta-pos <dp> <dp1>
+        )
+    (<dirs> ^name <dir> ^next <dir1>)
+    (<dp> ^name jump ^direction <dir> ^dx <dx> ^dy <dy>)
+    (<dp1> ^name jump ^direction <dir1> ^dx <dx1> ^dy <dy1>)
+    (<e> ^x <x> ^y <y>)
+-->
+    (<c> ^cellinfo <ci>)
+    (<ci> ^x (+ <x> <dx> <dx1>) ^y (+ <y> <dy> <dy1>) ^content <ctn>)
+}
+
+### Operator propositions
+# Propose operator to store all seen cells.
+sp {propose*store
+    (state <s> ^cells <c>
+       -^stored-seen-cells true
+        )
+-->
+    (<s> ^operator <o>)
+    (<o> ^name store ^what <c>)
+}
+
+# Propose moves to all cells not containing a wall.
+sp {propose*move
+    (state <s>
+        ^io.input-link.my-location.<dir>.content { <content> <> wall }
+        ^io.input-link.eater <e>
+        ^stored-seen-cells true
+        ^delta-pos <dp>
+        )
+    (<e> ^x <x> ^y <y>)
+    (<dp> ^name move ^direction <dir> ^dx <dx> ^dy <dy>)
+-->
+    (<s> ^operator <o> +, =)
+    (<o>
+        ^name move
+        ^actions.move.direction <dir>
+        ^tx (+ <x> <dx>)
+        ^ty (+ <y> <dy>)
+        ^value 1024
+        )
+}
+
+# Propose jumps to all cells not containing a wall.
+sp {propose*jump
+    (state <s>
+        ^io.input-link.my-location.<dir>.<dir>.content { <content> <> wall }
+        ^io.input-link.eater <e>
+        ^stored-seen-cells true
+        ^delta-pos <dp>
+        )
+    (<e> ^x <x> ^y <y>)
+    (<dp> ^name jump ^direction <dir> ^dx <dx> ^dy <dy>)
+-->
+    (<s> ^operator <o> +, =)
+    (<o>
+        ^name jump
+        ^actions.jump.direction <dir>
+        ^tx (+ <x> (* 2 <dx>))
+        ^ty (+ <y> (* 2 <dy>))
+        ^value 1024
+        )
+}
+
+### Operator evaluation
+# For each operator, compute a list of (cell, distance) for each cell which we
+# know has some content which is not wall and wasn't proved empty in the past.
+sp {elaborate*operator*distances
+    (state <s>
+        ^operator <o> +
+        ^seencells <sc>
+        ^stored-seen-cells true
+        )
+    (<o> ^name << move jump >> ^tx <tx> ^ty <ty>)
+    (<sc>
+        ^cellinfo <ci>
+       -^cellinfo (^content empty ^x <x> ^y <y>)
+        )
+    (<ci> ^content { <cnt> <> wall } ^x <x> ^y <y>)
+-->
+    (<o> ^distance-cell <dc>)
+    (<dc> ^distance (+ (abs (- <x> <tx>)) (abs (- <y> <ty>))) ^cell <ci>)
+}
+
+# For each operator, compute a value:
+#   (1 + distance_to_food) / (1 + cval)
+sp {elaborate*operator*value
+    (state <s>
+        ^operator <o> +
+        ^stored-seen-cells true
+        ^content-value <cv>
+        ^operator-epsilon <oe>
+        )
+    (<o> ^name { <n> << move jump >> } ^distance-cell <dc>)
+    (<dc> ^distance <d> ^cell.content <cnt>)
+    (<cv> ^content <cnt> ^value <cval>)
+    (<oe> ^name <n> ^operator-epsilon-value <ote>)
+-->
+    (<o> ^value (+ <ote> (/ (+ 1 <d>) (+ 1 <cval>))))
+}
+
+sp {select*operator*best*value
+    (state <s>
+        ^operator <o> +
+        )
+    (<o> ^value <v>)
+   -(<o> ^value { <v2> < <v> })
+-->
+    (<o> ^best-value <v>)
+}
+
+# Compare and select the best operator in the town.
+sp {select*operator*value
+    (state <s>
+        ^operator <o1> +
+        ^operator <o2> +
+        ^stored-seen-cells true
+        )
+    (<o1> ^best-value <v1>)
+    (<o2> ^best-value { <v2> > <v1> })
+-->
+    (<s> ^operator <o1> > <o2>)
+}
+
+### Operator application
+# Apply store operator: remove cells which become empty
+sp {apply*store*clear-empties
+    (state <s> ^operator <o> ^seencells <sc>)
+    (<o> ^name store ^what <c>)
+    (<c> ^cellinfo <ci>)
+    (<ci> ^x <x> ^y <y> ^content empty)
+    (<sc> ^cellinfo <ci0>)
+    (<ci0> ^x <x> ^y <y>)
+-->
+    (<sc> ^cellinfo <ci0> -)
+}
+
+# Apply store operator: store only the new content
+sp {apply*store*new-content
+    (state <s> ^operator <o> ^seencells <sc>)
+    (<o> ^name store ^what <c>)
+    (<c> ^cellinfo <ci>)
+    (<ci> ^x <x> ^y <y> ^content { <cnt> << normalfood bonusfood >> })
+    (<sc> -^cellinfo (^x <x> ^y <y>))
+-->
+    (<sc> ^cellinfo <ci1>)
+    (<ci1> ^x <x> ^y <y> ^content <cnt>)
+}
+
+# Apply store operator: increase to next generation and remove operator
+sp {apply*store*increase*generation
+    (state <s> ^operator <o> ^generation <g>)
+    (<o> ^name store)
+-->
+    (<s> ^generation <g> -)
+    (<s> ^generation (+ 1 <g>))
+    (<s> ^stored-seen-cells true)
+    (<s> ^operator <o> -)
+}
+
+# Apply move operator deduced from the thinking state.
+sp {apply*operator*create-action-command
+    (state <s>
+        ^operator <o>
+        ^io.output-link <ol>
+        )
+    (<o> ^actions <act> ^best-value <v>)
+    (<act> ^<att> <value>)
+    (<value> ^direction <dir>)
+-->
+    (<s> ^stored-seen-cells true -)
+    (<ol> ^<att> <value1>)
+    (<value1> ^direction <dir>)
+}
+
+# Remove operator from the output link when it was taken into account.
+sp {apply*operator*remove-command
+    (state <s>
+        ^operator.actions
+        ^io.output-link <ol>
+        )
+    (<ol> ^<att> <value>)
+    (<value> ^status complete)
+-->
+    (<ol> ^<att> <value> -)
+}
+
