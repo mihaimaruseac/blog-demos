@@ -38,3 +38,9 @@
 - [ ] Cat theory
 - [ ] Data Mining
 - [ ] SICP
+
+# ideas
+
+- [ ] TODOapp
+- [ ] MMterm
+- [ ] neo4hs
