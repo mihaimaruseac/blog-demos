@@ -38,6 +38,7 @@
 - [ ] Cat theory
 - [ ] Data Mining
 - [ ] SICP
+- [ ] Salary sharing in private way (crypto + bignum)
 
 # ideas
 
