@@ -18,11 +18,9 @@ data NList2 a
   deriving (Show, Generic)
 
 instance Eq a => Eq (NList2 a) where
-  (List [Elem a]) == (Elem b) = a == b
-  (Elem a) == (List [Elem b]) = a == b
   (Elem a) == (Elem b) = a == b
   (List a) == (List b) = a == b
-  _ == _ = False
+  a == b = convert a == convert b
 
 instance Serial m a => Serial m (NList1 a)
 instance Serial m a => Serial m (NList2 a)
@@ -43,11 +41,14 @@ from1To2 (ConsList a b) =
     List b' = from1To2 b
   in List $ List a' : b'
 
-from2To1 :: NList2 a -> NList1 a
-from2To1 (Elem a) = ConsElem a Empty
-from2To1 (List []) = Empty
-from2To1 (List (Elem a:xs)) = ConsElem a (from2To1 $ List xs)
-from2To1 (List (List a:xs)) = ConsList (from2To1 $ List a) (from2To1 $ List xs)
+from2To1' :: NList2 a -> NList1 a
+from2To1' (List []) = Empty
+from2To1' (List (Elem a:xs)) = ConsElem a (from2To1 $ List xs)
+from2To1' (List (List a:xs)) = ConsList (from2To1 $ List a) (from2To1 $ List xs)
+from2To1 = from2To1' . convert
+
+convert (Elem x) = List [Elem x]
+convert x = x
 
 main = do
   let depth = 4
