@@ -15,7 +15,14 @@ data NList1 a
 data NList2 a
   = Elem a
   | List [NList2 a]
-  deriving (Show, Eq, Generic)
+  deriving (Show, Generic)
+
+instance Eq a => Eq (NList2 a) where
+  (List [Elem a]) == (Elem b) = a == b
+  (Elem a) == (List [Elem b]) = a == b
+  (Elem a) == (Elem b) = a == b
+  (List a) == (List b) = a == b
+  _ == _ = False
 
 instance Serial m a => Serial m (NList1 a)
 instance Serial m a => Serial m (NList2 a)
@@ -36,18 +43,6 @@ from1To2 (ConsList a b) =
     List b' = from1To2 b
   in List $ List a' : b'
 
-from1To2' :: NList1 a -> NList2 a
-from1To2' Empty = List []
-from1To2' (ConsElem a b) = case from1To2' b of
-  List [] -> Elem a
-  List b' -> List $ Elem a : b'
-  Elem b' -> List [Elem a, Elem b']
-from1To2' (ConsList a b) = case (from1To2' a, from1To2' b) of
-  (List a', List b') -> List $ a' ++ b'
-  (Elem a', List b') -> List $ [Elem a', List b']
-  (List a', Elem b') -> List $ [List a', Elem b']
-  (Elem a', Elem b') -> List [Elem a', Elem b']
-
 from2To1 :: NList2 a -> NList1 a
 from2To1 (Elem a) = ConsElem a Empty
 from2To1 (List []) = Empty
@@ -60,7 +55,3 @@ main = do
   smallCheck depth $ \l -> from2To1 (from1To2 l) == (l :: NList1 ())
   putStrLn "2 -> 1 -> 2 =?= id"
   smallCheck depth $ \l -> from1To2 (from2To1 l) == (l :: NList2 ())
-  putStrLn "1 ->' 2 -> 1 =?= id"
-  smallCheck depth $ \l -> from2To1 (from1To2' l) == (l :: NList1 ())
-  putStrLn "2 -> 1 ->' 2 =?= id"
-  smallCheck depth $ \l -> from1To2' (from2To1 l) == (l :: NList2 ())
