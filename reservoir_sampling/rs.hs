@@ -117,7 +117,12 @@ instance Item Longer where
   weight (L a) = let x = fromInteger a in 10 * x * x + x
 
 printE (en, er) = putStrLn en >> mapM_ printER er
-printER (el, er) = putStrLn . concat $ ["\t", show el, "\t", show $ take 4 er]
+printER (el, er) = putStrLn . concat $ ["\t", show el, "\t", show mi, "\t", show mx, "\t", show r]
+  where
+    mi = minimumBy cmp er
+    mx = maximumBy cmp er
+    cmp (_, c) (_, d) = c `compare` d
+    r = 1 / sqrt (fromIntegral $ length er)
 
 main = do
   mapM_ printE $ testExp (undefined :: Test)
