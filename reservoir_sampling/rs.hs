@@ -66,7 +66,7 @@ basicWeighted g n = obtainedValues . take n $ rs
 generalRS :: forall a g . (RandomGen g, Item a) => (Double -> Double -> Double) -> Exp a g
 generalRS f g n = obtainedValues . map fst . take n . sortBy keySrt $ ks
   where
-    is = [minBound :: a ..]
+    is = [minBound :: a .. maxBound]
     us = filter (/= 0) $ randomRs (0, 1.0) g
     ks = zipWith (\i u -> (i, f (weight i) u)) is us
     keySrt (_, x) (_, y) = y `compare` x
@@ -102,7 +102,10 @@ instance Bounded Longer where
 
 instance Enum Longer where
   fromEnum (L x) = fromInteger x
-  toEnum x = L $ toInteger x
+  toEnum x
+    | x < 0 = L 0
+    | x > gMAX = L gMAX
+    | otherwise = L $ toInteger x
 
 instance Random Longer where
   random g = randomR (L 0, L gMAX) g
