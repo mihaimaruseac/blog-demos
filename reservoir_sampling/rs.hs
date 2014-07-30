@@ -37,10 +37,10 @@ evalExpsR = fix . map (\(i, c) -> (i, c / weight i)) . foldl1 concatenateExpR
     sum' = sqrt . sum . map ((**2) . snd)
 
 testExpEC :: Item a => Exp a StdGen -> Int -> (Int, ExpR a)
-testExpEC e c = (c, evalExpsR [e (mkStdGen g) c | g <- [1, 42, 52, 69, 88]])
+testExpEC e c = (c, evalExpsR $ concat [replicate 10000 (e (mkStdGen g) c) | g <- [1, 42, 52, 69, 88]])
 
 testExpE :: Item a => (String, Exp a StdGen) -> (String, [(Int, ExpR a)])
-testExpE (se, e) = (se, map (testExpEC e) [10, 100, 1000, 10000])
+testExpE (se, e) = (se, map (testExpEC e) [2, 10, 100, 1000, 10000])
 
 testExp :: Item a => a -> [(String, [(Int, ExpR a)])]
 testExp i = snd (i, map testExpE
