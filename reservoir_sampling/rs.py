@@ -3,14 +3,12 @@ import math
 
 def setup ():
     items = {1:1, 2:2, 3:3, 4:4}
+    sf = sum(items) + 0.0
     pairs = {}
     for i,vi in items.items():
         for j,vj in items.items():
-            if i < j:
-                pairs[(i, j)] = vi * vj
-    sf = sum(pairs.values())
-    for p in pairs:
-        pairs[p] = pairs[p] / (sf + 0.0)
+            if i != j:
+                pairs[(i, j)] = vi * vj / sf / (sf + 0.0 - vi)
     return items, pairs
 
 def rs(items, pairs, rsMethod, maxExps=10000000):
@@ -32,7 +30,6 @@ def wrs(items):
     a = max(d, key=d.get)
     del d[a]
     b = max(d, key=d.get)
-    if a > b: a,b = b,a
     return (a, b)
 
 def prs(items):
@@ -44,7 +41,6 @@ def prs(items):
     a = max(d, key=d.get)
     del d[a]
     b = max(d, key=d.get)
-    if a > b: a,b = b,a
     return (a, b)
 
 items, pairs = setup()
