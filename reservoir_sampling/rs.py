@@ -2,7 +2,7 @@ import random
 import math
 
 def setup ():
-    items = {1:1, 2:2, 3:3, 4:4}
+    items = {1:1, 2:1, 3:4, 4:4}
     sf = sum(items) + 0.0
     pairs = {}
     for i,vi in items.items():
