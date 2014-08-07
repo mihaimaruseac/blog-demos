@@ -24,7 +24,7 @@ def rs(items, pairs, rsMethod, maxExps=10000000):
 def wrs(items):
     d = {}
     for i in items:
-        u = 1 - random.random() # u \in (0, 1]
+        u = random.random() # u \in (0, 1]
         k = math.pow(u, 1.0/items[i])
         d[i] = k
     a = max(d, key=d.get)
@@ -35,7 +35,7 @@ def wrs(items):
 def prs(items):
     d = {}
     for i in items:
-        u = 1 - random.random() # u \in (0, 1]
+        u = random.random() # u \in (0, 1]
         k = (0.0 + items[i]) / u
         d[i] = k
     a = max(d, key=d.get)
