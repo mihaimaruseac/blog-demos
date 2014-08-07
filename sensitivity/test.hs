@@ -28,17 +28,17 @@ prop2 x_ y_ a_ = x*y*a /= 0 ==> maximum [abs (q - q'), abs (q - q'')] <= a'
     a' = (10000*) $ exp (1 / fromIntegral (1 + a))
     qual x y = (10000 *) $ exp (fromIntegral y / fromIntegral (max x a))
 
-prop3 :: Monad m => Int -> Int -> Int -> Property m
+prop3 :: Int -> Int -> Int -> Bool
 --prop2 :: Int -> Int -> Int -> Property
-prop3 x_ y_ a_ = x*y*a /= 0 ==> maximum [abs (q - q'), abs (q - q'')] <= a'
+prop3 x_ y_ a_ = maximum [abs (q - q'), abs (q - q'')] <= a'
   where
-    x = if x_ < 0 then -1000 * x_ else x_
+    x = if x_ < 0 then -1000 * x_ else x_ + 1
     y = if 0 < y_ && y_ < x then y_ else x
-    a = if a_ < 0 then -1000 * a_ else a_
+    a = if a_ < 0 then -1000 * a_ else a_ + 1
     q = qual x y
     q' = qual (x+1) y
     q'' = qual (x+1) (y+1)
-    a' = (1 / fromIntegral (1 + a)) ^ 5
+    a' = 1 --(1 / fromIntegral (1 + a)) ^ 5
     qual x y = let c = (fromIntegral y / fromIntegral (max x a)) in c^5
 
 expected a = liftM2 (/) sum genericLength [(fromIntegral y / fromIntegral (max x a)) ^ 1 / (1 / fromIntegral (1 + a)) ^ 1 |
