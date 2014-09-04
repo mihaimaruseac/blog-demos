@@ -39,6 +39,7 @@
 - [ ] Data Mining
 - [ ] SICP
 - [ ] Salary sharing in private way (crypto + bignum)
+- [ ] NoThrees
 
 # ideas
 
