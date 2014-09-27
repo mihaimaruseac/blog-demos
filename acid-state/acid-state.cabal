@@ -18,7 +18,7 @@ executable test
 
   build-depends:
     acid-state >= 0.12,
-    base >=4.6
+    base >=4.6,
     bytestring >=0.10,
     mtl >=2.2,
     safecopy >=0.8
