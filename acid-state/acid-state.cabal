@@ -2,7 +2,7 @@ name:                test
 version:             0.1.0.0
 synopsis:            Simple test of acid-state
 
-license:             PublicDomain
+license:             BSD3
 license-file:        LICENSE
 author:              Mihai Maruseac
 maintainer:          mihai.maruseac@gmail.com
