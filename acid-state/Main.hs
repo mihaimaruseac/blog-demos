@@ -27,14 +27,18 @@ queryTest = ask
 
 $(makeAcidic ''Test ['writeTest, 'queryTest])
 
+main :: IO ()
 main = do
   st <- openLocalState $ T "about:blank" [] "Default homepage"
   dump st
-  insert st
+  _ <- insert st
   dump st
   closeAcidState st
 
+dump :: AcidState (EventState QueryTest) -> IO ()
 dump st = query st QueryTest >>= print
+
+insert :: AcidState (EventState WriteTest) -> IO (EventResult WriteTest)
 insert st = do
   putStr "Enter uri: "
   uri <- getLine
