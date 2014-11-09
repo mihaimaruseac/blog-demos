@@ -12,6 +12,7 @@ import Data.Typeable (Typeable)
 
 import Prelude hiding (getLine, putStr)
 
+{-
 type URI = ByteString
 type Tag = ByteString
 type Description = ByteString
@@ -26,15 +27,20 @@ queryTest :: Query Test Test
 queryTest = ask
 
 $(makeAcidic ''Test ['writeTest, 'queryTest])
+-}
 
 main :: IO ()
 main = do
+  print "TODO"
+{-
   st <- openLocalState $ T "about:blank" [] "Default homepage"
   dump st
   _ <- insert st
   dump st
   closeAcidState st
+  -}
 
+{-
 dump :: AcidState (EventState QueryTest) -> IO ()
 dump st = query st QueryTest >>= print
 
@@ -45,3 +51,4 @@ insert st = do
   putStr "Enter description: "
   description <- getLine
   update st . WriteTest $ T uri [] description
+-}
