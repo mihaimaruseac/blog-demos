@@ -12,11 +12,7 @@ import Data.Typeable (Typeable)
 
 import Prelude hiding (getLine, putStr)
 
-{-
-type URI = ByteString
-type Tag = ByteString
-type Description = ByteString
-data Test = T URI [Tag] Description deriving (Show, Typeable)
+newtype Test = Test [Int] deriving (Show, Typeable)
 
 $(deriveSafeCopy 0 'base ''Test)
 
@@ -27,7 +23,6 @@ queryTest :: Query Test Test
 queryTest = ask
 
 $(makeAcidic ''Test ['writeTest, 'queryTest])
--}
 
 main :: IO ()
 main = do
