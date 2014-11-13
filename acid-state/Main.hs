@@ -28,21 +28,15 @@ main :: IO ()
 main = do
   st <- openLocalState $ Test []
   dump st
-{-
   _ <- insert st
   dump st
-  -}
   closeAcidState st
 
 dump :: AcidState (EventState QueryTest) -> IO ()
 dump st = query st QueryTest >>= print
 
-{-
 insert :: AcidState (EventState WriteTest) -> IO (EventResult WriteTest)
 insert st = do
-  putStr "Enter uri: "
-  uri <- getLine
-  putStr "Enter description: "
-  description <- getLine
-  update st . WriteTest $ T uri [] description
--}
+  putStr "Enter number: "
+  number <- readLn
+  update st . WriteTest $ Test [number]
