@@ -37,6 +37,7 @@ dump st = query st QueryTest >>= print
 
 insert :: AcidState (EventState WriteTest) -> IO (EventResult WriteTest)
 insert st = do
+  (Test current) <- query st QueryTest
   putStr "Enter number: "
   number <- readLn
-  update st . WriteTest $ Test [number]
+  update st . WriteTest . Test $ number : current
