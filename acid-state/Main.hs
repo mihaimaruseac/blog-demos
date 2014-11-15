@@ -28,6 +28,8 @@ main :: IO ()
 main = do
   st <- openLocalState $ Test []
   dump st
+  _ <- clean st
+  dump st
   _ <- insert st
   dump st
   closeAcidState st
@@ -41,3 +43,6 @@ insert st = do
   putStr "Enter number: "
   number <- readLn
   update st . WriteTest . Test $ number : current
+
+clean :: AcidState (EventState WriteTest) -> IO (EventResult WriteTest)
+clean st = update st . WriteTest . Test $ []
