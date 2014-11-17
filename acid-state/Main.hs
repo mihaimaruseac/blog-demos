@@ -7,10 +7,7 @@ import Control.Monad.Reader (ask)
 import Control.Monad.State (put)
 import Data.Acid
 import Data.SafeCopy
-import Data.ByteString
 import Data.Typeable (Typeable)
-
-import Prelude hiding (getLine, putStr)
 
 newtype Test = Test [Int] deriving (Show, Typeable)
 
@@ -30,18 +27,16 @@ main = do
   dump st
   _ <- clean st
   dump st
-  _ <- insert st
+  _ <- insert st 42
   dump st
   closeAcidState st
 
 dump :: AcidState (EventState QueryTest) -> IO ()
 dump st = query st QueryTest >>= print
 
-insert :: AcidState (EventState WriteTest) -> IO (EventResult WriteTest)
-insert st = do
+insert :: AcidState (EventState WriteTest) -> Int -> IO (EventResult WriteTest)
+insert st number = do
   (Test current) <- query st QueryTest
-  putStr "Enter number: "
-  number <- readLn
   update st . WriteTest . Test $ number : current
 
 clean :: AcidState (EventState WriteTest) -> IO (EventResult WriteTest)
