@@ -16,10 +16,13 @@ $(deriveSafeCopy 0 'base ''Test)
 writeTest :: Test -> Update Test ()
 writeTest = put
 
+cleanTest :: Update Test()
+cleanTest = put $ Test []
+
 queryTest :: Query Test Test
 queryTest = ask
 
-$(makeAcidic ''Test ['writeTest, 'queryTest])
+$(makeAcidic ''Test ['writeTest, 'queryTest, 'cleanTest])
 
 main :: IO ()
 main = do
@@ -40,4 +43,4 @@ insert st number = do
   update st . WriteTest . Test $ number : current
 
 clean :: AcidState (EventState WriteTest) -> IO (EventResult WriteTest)
-clean st = update st . WriteTest . Test $ []
+clean st = update st CleanTest
