@@ -13,9 +13,6 @@ newtype Test = Test [Int] deriving (Show, Typeable)
 
 $(deriveSafeCopy 0 'base ''Test)
 
-writeTest :: Test -> Update Test ()
-writeTest = put
-
 cleanTest :: Update Test()
 cleanTest = put $ Test []
 
@@ -25,7 +22,7 @@ queryTest = ask
 insertTest :: Int -> Update Test ()
 insertTest x = modify (\(Test l) -> Test $ x:l)
 
-$(makeAcidic ''Test ['writeTest, 'queryTest, 'cleanTest, 'insertTest])
+$(makeAcidic ''Test ['queryTest, 'cleanTest, 'insertTest])
 
 main :: IO ()
 main = do
@@ -40,8 +37,8 @@ main = do
 dump :: AcidState (EventState QueryTest) -> IO ()
 dump st = query st QueryTest >>= print
 
-insert :: AcidState (EventState WriteTest) -> Int -> IO (EventResult WriteTest)
+insert :: AcidState (EventState InsertTest) -> Int -> IO (EventResult InsertTest)
 insert st = update st . InsertTest
 
-clean :: AcidState (EventState WriteTest) -> IO (EventResult WriteTest)
+clean :: AcidState (EventState CleanTest) -> IO (EventResult CleanTest)
 clean st = update st CleanTest
