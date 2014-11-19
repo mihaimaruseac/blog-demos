@@ -4,7 +4,7 @@
 {-# LANGUAGE TypeFamilies #-}
 
 import Control.Monad.Reader (ask)
-import Control.Monad.State (put)
+import Control.Monad.State (put, modify)
 import Data.Acid
 import Data.SafeCopy
 import Data.Typeable (Typeable)
@@ -22,7 +22,10 @@ cleanTest = put $ Test []
 queryTest :: Query Test Test
 queryTest = ask
 
-$(makeAcidic ''Test ['writeTest, 'queryTest, 'cleanTest])
+insertTest :: Int -> Update Test ()
+insertTest x = modify (\(Test l) -> Test $ x:l)
+
+$(makeAcidic ''Test ['writeTest, 'queryTest, 'cleanTest, 'insertTest])
 
 main :: IO ()
 main = do
@@ -38,9 +41,7 @@ dump :: AcidState (EventState QueryTest) -> IO ()
 dump st = query st QueryTest >>= print
 
 insert :: AcidState (EventState WriteTest) -> Int -> IO (EventResult WriteTest)
-insert st number = do
-  (Test current) <- query st QueryTest
-  update st . WriteTest . Test $ number : current
+insert st = update st . InsertTest
 
 clean :: AcidState (EventState WriteTest) -> IO (EventResult WriteTest)
 clean st = update st CleanTest
