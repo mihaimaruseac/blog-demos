@@ -10,6 +10,8 @@ import Data.SafeCopy
 import Data.Typeable
 import System.Console.CmdArgs
 
+import qualified System.Console.CmdArgs.Explicit as CA
+
 newtype Test = Test [Int] deriving (Show, Typeable)
 
 $(deriveSafeCopy 0 'base ''Test)
@@ -29,6 +31,15 @@ main :: IO ()
 main = do
   args' <- cmdArgs testArgs
   print args'
+  case args' of
+    Help -> showHelp
+    _ -> undefined
+    {-
+    Clean -> undefined
+    Sum -> undefined
+    Insert x -> undefined
+    -}
+    {-
   st <- openLocalState $ Test []
   dump st
   _ <- clean st
@@ -36,6 +47,10 @@ main = do
   _ <- insert st 42
   dump st
   closeAcidState st
+  -}
+
+showHelp :: IO ()
+showHelp = print $ CA.helpText [] CA.HelpFormatOne $ cmdArgsMode testArgs
 
 dump :: AcidState (EventState QueryTest) -> IO ()
 dump st = query st QueryTest >>= print
