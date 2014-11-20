@@ -50,14 +50,17 @@ data TestArgs
   = Insert {number :: Int}
   | Clean
   | Sum
+  | Help
   deriving (Data, Typeable, Show)
 
 testArgs :: TestArgs
 testArgs = modes
-  [ Insert { number = def } &= help " Insert new number"
+  [ Insert { number = def &= argPos 0 } &= help " Insert new number"
   , Clean &= help "Clean DB (reset number list)"
-  , Sum &= help "Sum numbers" &= auto
+  , Sum &= help "Sum numbers"
+  , Help &= help "Show this help message" &= auto
   ]
   &= help "Test acid-state library"
   &= program "test"
   &= versionArg [ignore]
+  &= helpArg [ignore]
