@@ -71,7 +71,7 @@ data TestArgs
 
 testArgs :: TestArgs
 testArgs = modes
-  [ Insert { number = def &= argPos 0 } &= help " Insert new number"
+  [ Insert { number = def &= argPos 0 } &= help "Insert new number"
   , Clean &= help "Clean DB (reset number list)"
   , Sum &= help "Sum numbers"
   , List &= help "List numbers"
