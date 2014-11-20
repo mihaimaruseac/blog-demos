@@ -50,7 +50,7 @@ main = do
   -}
 
 showHelp :: IO ()
-showHelp = print $ CA.helpText [] CA.HelpFormatOne $ cmdArgsMode testArgs
+showHelp = print $ CA.helpText [] CA.HelpFormatAll $ cmdArgsMode testArgs
 
 dump :: AcidState (EventState QueryTest) -> IO ()
 dump st = query st QueryTest >>= print
