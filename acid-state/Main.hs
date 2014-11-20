@@ -56,7 +56,7 @@ testArgs :: TestArgs
 testArgs = modes
   [ Insert { number = def } &= help " Insert new number"
   , Clean &= help "Clean DB (reset number list)"
-  , Sum &= help "Sum numbers"
+  , Sum &= help "Sum numbers" &= auto
   ]
   &= help "Test acid-state library"
   &= program "test"
