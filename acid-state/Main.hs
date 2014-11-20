@@ -7,7 +7,8 @@ import Control.Monad.Reader (ask)
 import Control.Monad.State (put, modify)
 import Data.Acid
 import Data.SafeCopy
-import Data.Typeable (Typeable)
+import Data.Typeable
+import System.Console.CmdArgs
 
 newtype Test = Test [Int] deriving (Show, Typeable)
 
@@ -26,6 +27,8 @@ $(makeAcidic ''Test ['queryTest, 'cleanTest, 'insertTest])
 
 main :: IO ()
 main = do
+  args' <- cmdArgs testArgs
+  print args'
   st <- openLocalState $ Test []
   dump st
   _ <- clean st
@@ -42,3 +45,12 @@ insert st = update st . InsertTest
 
 clean :: AcidState (EventState CleanTest) -> IO (EventResult CleanTest)
 clean st = update st CleanTest
+
+data TestArgs
+  = Clean
+  deriving (Data, Typeable, Show)
+
+testArgs :: TestArgs
+testArgs = modes
+  [ Clean &= help "Clean the db"
+  ]
