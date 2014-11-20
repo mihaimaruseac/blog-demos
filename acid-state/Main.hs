@@ -47,10 +47,17 @@ clean :: AcidState (EventState CleanTest) -> IO (EventResult CleanTest)
 clean st = update st CleanTest
 
 data TestArgs
-  = Clean
+  = Insert {number :: Int}
+  | Clean
+  | Sum
   deriving (Data, Typeable, Show)
 
 testArgs :: TestArgs
 testArgs = modes
-  [ Clean &= help "Clean the db"
+  [ Insert { number = def } &= help " Insert new number"
+  , Clean &= help "Clean DB (reset number list)"
+  , Sum &= help "Sum numbers"
   ]
+  &= help "Test acid-state library"
+  &= program "test"
+  &= versionArg [ignore]
