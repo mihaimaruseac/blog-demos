@@ -33,7 +33,17 @@ main = do
   print args'
   case args' of
     Help -> showHelp
-    _ -> undefined
+    _ -> mainDB args'
+
+showHelp :: IO ()
+showHelp = print $ CA.helpText [] CA.HelpFormatAll $ cmdArgsMode testArgs
+
+mainDB :: TestArgs -> IO ()
+mainDB arg = do
+  st <- openLocalState $ Test []
+  _ <- case arg of
+    List -> dump st
+  closeAcidState st
     {-
     Clean -> undefined
     Sum -> undefined
@@ -48,9 +58,6 @@ main = do
   dump st
   closeAcidState st
   -}
-
-showHelp :: IO ()
-showHelp = print $ CA.helpText [] CA.HelpFormatAll $ cmdArgsMode testArgs
 
 dump :: AcidState (EventState QueryTest) -> IO ()
 dump st = query st QueryTest >>= print
