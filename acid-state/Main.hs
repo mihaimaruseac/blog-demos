@@ -44,6 +44,7 @@ mainDB arg = do
   _ <- case arg of
     List -> dump st
     Clean -> clean st
+    Insert x -> insert st x
     _ -> error "Should be handled before this point"
   closeAcidState st
 
