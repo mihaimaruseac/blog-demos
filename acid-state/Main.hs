@@ -43,6 +43,7 @@ mainDB arg = do
   st <- openLocalState $ Test []
   _ <- case arg of
     List -> dump st
+    Clean -> clean st
     _ -> error "Should be handled before this point"
   closeAcidState st
     {-
