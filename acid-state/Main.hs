@@ -46,20 +46,6 @@ mainDB arg = do
     Clean -> clean st
     _ -> error "Should be handled before this point"
   closeAcidState st
-    {-
-    Clean -> undefined
-    Sum -> undefined
-    Insert x -> undefined
-    -}
-    {-
-  st <- openLocalState $ Test []
-  dump st
-  _ <- clean st
-  dump st
-  _ <- insert st 42
-  dump st
-  closeAcidState st
-  -}
 
 dump :: AcidState (EventState QueryTest) -> IO ()
 dump st = query st QueryTest >>= print
