@@ -34,7 +34,6 @@ $(makeAcidic ''Test ['queryTest, 'cleanTest, 'insertTest, 'sumTest])
 main :: IO ()
 main = do
   args' <- cmdArgs testArgs
-  print args'
   case args' of
     Help -> showHelp
     _ -> mainDB args'
