@@ -72,21 +72,21 @@ size :: AcidState (EventState SizeTest) -> IO ()
 size st = query st SizeTest >>= print
 
 data TestArgs
-  = Insert {number :: Int}
-  | Clean
-  | Sum
+  = Clean
+  | Insert {number :: Int}
   | List
   | Size
+  | Sum
   | Help
   deriving (Data, Typeable, Show)
 
 testArgs :: TestArgs
 testArgs = modes
-  [ Insert { number = def &= argPos 0 } &= help "Insert new number"
-  , Clean &= help "Clean DB (reset number list)"
-  , Sum &= help "Sum numbers"
+  [ Clean &= help "Clean DB (reset number list)"
+  , Insert { number = def &= argPos 0 } &= help "Insert new number"
   , List &= help "List numbers"
   , Size &= help "Return size of DB"
+  , Sum &= help "Sum numbers"
   , Help &= help "Show this help message" &= auto
   ]
   &= help "Test acid-state library"
