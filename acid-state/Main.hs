@@ -11,6 +11,7 @@ import Data.SafeCopy
 import Data.Typeable
 import System.Console.CmdArgs
 
+import qualified Data.Acid.Local as DAL
 import qualified System.Console.CmdArgs.Explicit as CA
 
 newtype Test = Test [Int] deriving (Show, Typeable)
@@ -39,6 +40,7 @@ main = do
   args' <- cmdArgs testArgs
   case args' of
     Help -> showHelp
+    GC -> (openLocalState $ Test []) >>= DAL.createCheckpointAndClose
     _ -> mainDB args'
 
 showHelp :: IO ()
@@ -73,6 +75,7 @@ size st = query st SizeTest >>= print
 
 data TestArgs
   = Clean
+  | GC
   | Insert {number :: Int}
   | List
   | Size
@@ -83,6 +86,7 @@ data TestArgs
 testArgs :: TestArgs
 testArgs = modes
   [ Clean &= help "Clean DB (reset number list)"
+  , GC &= help "Garbage collect, reduce size of files to increase speed"
   , Insert { number = def &= argPos 0 } &= help "Insert new number"
   , List &= help "List numbers"
   , Size &= help "Return size of DB"
