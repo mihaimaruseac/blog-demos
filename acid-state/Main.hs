@@ -26,10 +26,13 @@ queryTest = ask
 sumTest :: Query Test Int
 sumTest = (\(Test l) -> sum l) <$> ask
 
+sizeTest :: Query Test Int
+sizeTest = (\(Test l) -> length l) <$> ask
+
 insertTest :: Int -> Update Test ()
 insertTest x = modify (\(Test l) -> Test $ x:l)
 
-$(makeAcidic ''Test ['queryTest, 'cleanTest, 'insertTest, 'sumTest])
+$(makeAcidic ''Test ['queryTest, 'cleanTest, 'insertTest, 'sumTest, 'sizeTest])
 
 main :: IO ()
 main = do
@@ -49,6 +52,7 @@ mainDB arg = do
     Clean -> clean st
     Insert x -> insert st x
     Sum -> sumDB st
+    Size -> size st
     _ -> error "Should be handled before this point"
   closeAcidState st
 
@@ -64,11 +68,15 @@ clean st = update st CleanTest
 sumDB :: AcidState (EventState SumTest) -> IO ()
 sumDB st = query st SumTest >>= print
 
+size :: AcidState (EventState SizeTest) -> IO ()
+size st = query st SizeTest >>= print
+
 data TestArgs
   = Insert {number :: Int}
   | Clean
   | Sum
   | List
+  | Size
   | Help
   deriving (Data, Typeable, Show)
 
@@ -78,6 +86,7 @@ testArgs = modes
   , Clean &= help "Clean DB (reset number list)"
   , Sum &= help "Sum numbers"
   , List &= help "List numbers"
+  , Size &= help "Return size of DB"
   , Help &= help "Show this help message" &= auto
   ]
   &= help "Test acid-state library"
