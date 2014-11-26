@@ -8,6 +8,7 @@ import Control.Monad.Reader (ask)
 import Control.Monad.State (put, modify)
 import Data.Acid
 import Data.SafeCopy
+import Data.Time.Clock
 import Data.Typeable
 import System.Console.CmdArgs
 
@@ -48,7 +49,10 @@ showHelp = print $ CA.helpText [] CA.HelpFormatAll $ cmdArgsMode testArgs
 
 mainDB :: TestArgs -> IO ()
 mainDB arg = do
+  stTime <- getCurrentTime
   st <- openLocalState $ Test []
+  endTime <- getCurrentTime
+  print $ diffUTCTime endTime stTime
   _ <- case arg of
     List -> dump st
     Clean -> clean st

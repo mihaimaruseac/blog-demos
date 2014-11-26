@@ -22,4 +22,5 @@ executable test
     bytestring >=0.10,
     cmdargs >= 0.10,
     mtl >=2.2,
-    safecopy >=0.8
+    safecopy >=0.8,
+    time >= 1.4
