@@ -15,7 +15,8 @@ import System.Console.CmdArgs
 import qualified Data.Acid.Local as DAL
 import qualified System.Console.CmdArgs.Explicit as CA
 
-newtype Test = Test [Int] deriving (Show, Typeable)
+newtype Test = Test { elems :: [Int] }
+  deriving (Show, Typeable)
 
 $(deriveSafeCopy 0 'base ''Test)
 
@@ -26,13 +27,13 @@ queryTest :: Query Test Test
 queryTest = ask
 
 sumTest :: Query Test Int
-sumTest = (\(Test l) -> sum l) <$> ask
+sumTest = sum . elems <$> ask
 
 sizeTest :: Query Test Int
-sizeTest = (\(Test l) -> length l) <$> ask
+sizeTest = length . elems <$> ask
 
 insertTest :: Int -> Update Test ()
-insertTest x = modify (\(Test l) -> Test $ x:l)
+insertTest x = modify (Test . (x:) . elems)
 
 $(makeAcidic ''Test ['queryTest, 'cleanTest, 'insertTest, 'sumTest, 'sizeTest])
 
