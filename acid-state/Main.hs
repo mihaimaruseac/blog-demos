@@ -12,7 +12,6 @@ import Data.Time.Clock
 import Data.Typeable
 import System.Console.CmdArgs
 
-import qualified Data.Acid.Local as DAL
 import qualified System.Console.CmdArgs.Explicit as CA
 
 newtype Test = Test { elems :: [Int] }
@@ -42,7 +41,6 @@ main = do
   args' <- cmdArgs testArgs
   case args' of
     Help -> showHelp
-    GC -> (openLocalState $ Test []) >>= DAL.createCheckpointAndClose
     _ -> mainDB args'
 
 showHelp :: IO ()
@@ -57,6 +55,7 @@ mainDB arg = do
   _ <- case arg of
     List -> dump st
     Clean -> clean st
+    GC -> createCheckpoint st >> createArchive st
     Insert x -> insert st x
     Sum -> sumDB st
     Size -> size st
