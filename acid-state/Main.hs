@@ -46,21 +46,27 @@ main = do
 showHelp :: IO ()
 showHelp = print $ CA.helpText [] CA.HelpFormatAll $ cmdArgsMode testArgs
 
+timeIt :: String -> IO a -> IO a
+timeIt header action = do
+  stTime <- getCurrentTime
+  a <- action
+  endTime <- getCurrentTime
+  putStr header
+  print $ diffUTCTime endTime stTime
+  return a
+
 mainDB :: TestArgs -> IO ()
 mainDB arg = do
-  stTime <- getCurrentTime
-  st <- openLocalState $ Test []
-  endTime <- getCurrentTime
-  print $ diffUTCTime endTime stTime
+  st <- timeIt "Open state: " $ openLocalState $ Test []
   _ <- case arg of
-    List -> dump st
-    Clean -> clean st
-    GC -> createCheckpoint st >> createArchive st
-    Insert x -> insert st x
-    Sum -> sumDB st
-    Size -> size st
+    List -> timeIt "List time: " $ dump st
+    Clean -> timeIt "Clean time: " $ clean st
+    GC -> timeIt "GC time: " $ createCheckpoint st >> createArchive st
+    Insert x -> timeIt "Insertion time: " $ insert st x
+    Sum -> timeIt "Sum computation: " $ sumDB st
+    Size -> timeIt "Size computation: " $ size st
     _ -> error "Should be handled before this point"
-  closeAcidState st
+  timeIt "Close state: " $ closeAcidState st
 
 dump :: AcidState (EventState QueryTest) -> IO ()
 dump st = query st QueryTest >>= print
