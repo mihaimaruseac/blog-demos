@@ -38,10 +38,10 @@ $(deriveSafeCopy 0 'base ''Test)
 initialState :: Test
 initialState = Test 0 empty
 
-{-
-cleanTest :: Update Test0()
-cleanTest = put $ Test0 []
+cleanTest :: Update Test ()
+cleanTest = put initialState
 
+{-
 queryTest :: Query Test0 Test0
 queryTest = ask
 
@@ -57,7 +57,7 @@ insertTest x = modify (Test0 . (x:) . elems)
 $(makeAcidic ''Test0 ['queryTest, 'cleanTest, 'insertTest, 'sumTest, 'sizeTest])
 -}
 
-$(makeAcidic ''Test [])
+$(makeAcidic ''Test ['cleanTest])
 
 main :: IO ()
 main = do
@@ -83,8 +83,8 @@ mainDB arg = do
   st <- timeIt "Open state: " $ openLocalState initialState
   _ <- case arg of
     -- List -> timeIt "List time: " $ dump st
-    -- Clean -> timeIt "Clean time: " $ clean st
-    -- GC -> timeIt "GC time: " $ createCheckpoint st >> createArchive st
+    Clean -> timeIt "Clean time: " $ clean st
+    GC -> timeIt "GC time: " $ createCheckpoint st >> createArchive st
     -- Insert x -> timeIt "Insertion time: " $ insert st x
     -- Sum -> timeIt "Sum computation: " $ sumDB st
     -- Size -> timeIt "Size computation: " $ size st
@@ -97,10 +97,12 @@ dump st = query st QueryTest >>= print
 
 insert :: AcidState (EventState InsertTest) -> Int -> IO (EventResult InsertTest)
 insert st = update st . InsertTest
+-}
 
 clean :: AcidState (EventState CleanTest) -> IO (EventResult CleanTest)
 clean st = update st CleanTest
 
+{-
 sumDB :: AcidState (EventState SumTest) -> IO ()
 sumDB st = query st SumTest >>= print
 
