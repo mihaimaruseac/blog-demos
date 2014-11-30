@@ -7,6 +7,7 @@ import Control.Applicative ((<$>))
 import Control.Monad.Reader (ask)
 import Control.Monad.State (put, modify)
 import Data.Acid
+import Data.IxSet
 import Data.SafeCopy
 import Data.Time.Clock
 import Data.Typeable
@@ -14,11 +15,27 @@ import System.Console.CmdArgs
 
 import qualified System.Console.CmdArgs.Explicit as CA
 
-newtype Test0 = Test0 { elems :: [Int] }
-  deriving (Show, Typeable)
+data Details = Details
+  { stringVal :: String
+  , intVals :: [Int]
+  } deriving (Eq, Ord, Typeable)
 
-$(deriveSafeCopy 0 'base ''Test0)
+$(deriveSafeCopy 0 'base ''Details)
 
+instance Indexable Details where
+  empty = ixSet
+    [ ixFun $ \dt -> [stringVal dt]
+    , ixFun $ \dt -> intVals dt
+    ]
+
+data Test = Test
+  { nextID :: Int
+  , details :: IxSet Details
+  }
+
+$(deriveSafeCopy 0 'base ''Test)
+
+{-
 cleanTest :: Update Test0()
 cleanTest = put $ Test0 []
 
@@ -35,13 +52,14 @@ insertTest :: Int -> Update Test0 ()
 insertTest x = modify (Test0 . (x:) . elems)
 
 $(makeAcidic ''Test0 ['queryTest, 'cleanTest, 'insertTest, 'sumTest, 'sizeTest])
+-}
 
 main :: IO ()
 main = do
   args' <- cmdArgs testArgs
   case args' of
     Help -> showHelp
-    _ -> mainDB args'
+    --_ -> mainDB args'
 
 showHelp :: IO ()
 showHelp = print $ CA.helpText [] CA.HelpFormatAll $ cmdArgsMode testArgs
@@ -55,6 +73,7 @@ timeIt header action = do
   print $ diffUTCTime endTime stTime
   return a
 
+{-
 mainDB :: TestArgs -> IO ()
 mainDB arg = do
   st <- timeIt "Open state: " $ openLocalState $ Test0 []
@@ -82,6 +101,7 @@ sumDB st = query st SumTest >>= print
 
 size :: AcidState (EventState SizeTest) -> IO ()
 size st = query st SizeTest >>= print
+  -}
 
 data TestArgs
   = Clean
