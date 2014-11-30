@@ -18,7 +18,7 @@ import qualified System.Console.CmdArgs.Explicit as CA
 data Details = Details
   { stringVal :: String
   , intVals :: [Int]
-  } deriving (Eq, Ord, Typeable)
+  } deriving (Eq, Ord, Show, Typeable)
 
 $(deriveSafeCopy 0 'base ''Details)
 
@@ -31,7 +31,7 @@ instance Indexable Details where
 data Test = Test
   { nextID :: Int
   , details :: IxSet Details
-  } deriving (Typeable)
+  } deriving (Show, Typeable)
 
 $(deriveSafeCopy 0 'base ''Test)
 
@@ -41,10 +41,10 @@ initialState = Test 0 empty
 cleanTest :: Update Test ()
 cleanTest = put initialState
 
-{-
-queryTest :: Query Test0 Test0
+queryTest :: Query Test Test
 queryTest = ask
 
+{-
 sumTest :: Query Test0 Int
 sumTest = sum . elems <$> ask
 
@@ -57,7 +57,7 @@ insertTest x = modify (Test0 . (x:) . elems)
 $(makeAcidic ''Test0 ['queryTest, 'cleanTest, 'insertTest, 'sumTest, 'sizeTest])
 -}
 
-$(makeAcidic ''Test ['cleanTest])
+$(makeAcidic ''Test ['cleanTest, 'queryTest])
 
 main :: IO ()
 main = do
@@ -82,7 +82,7 @@ mainDB :: TestArgs -> IO ()
 mainDB arg = do
   st <- timeIt "Open state: " $ openLocalState initialState
   _ <- case arg of
-    -- List -> timeIt "List time: " $ dump st
+    List -> timeIt "List time: " $ dump st
     Clean -> timeIt "Clean time: " $ clean st
     GC -> timeIt "GC time: " $ createCheckpoint st >> createArchive st
     -- Insert x -> timeIt "Insertion time: " $ insert st x
@@ -91,10 +91,10 @@ mainDB arg = do
     _ -> error "Should be handled before this point"
   timeIt "Close state: " $ closeAcidState st
 
-{-
 dump :: AcidState (EventState QueryTest) -> IO ()
 dump st = query st QueryTest >>= print
 
+{-
 insert :: AcidState (EventState InsertTest) -> Int -> IO (EventResult InsertTest)
 insert st = update st . InsertTest
 -}
