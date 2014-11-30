@@ -1,11 +1,12 @@
 {-# LANGUAGE DeriveDataTypeable #-}
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE TypeFamilies #-}
 
 import Control.Applicative ((<$>))
 import Control.Monad.Reader (ask)
-import Control.Monad.State (put, modify)
+import Control.Monad.State (put, get)
 import Data.Acid
 import Data.IxSet
 import Data.SafeCopy
@@ -30,7 +31,7 @@ instance Indexable Details where
 
 data Test = Test
   { nextID :: Int
-  , details :: IxSet Details
+  , dtls :: IxSet Details
   } deriving (Show, Typeable)
 
 $(deriveSafeCopy 0 'base ''Test)
@@ -45,19 +46,21 @@ queryTest :: Query Test Test
 queryTest = ask
 
 sumTest :: Query Test Int
-sumTest = sum . map (sum . intVals) . toList . Main.details <$> ask
+sumTest = sum . map (sum . intVals) . toList . dtls <$> ask
 
 sizeTest :: Query Test Int
-sizeTest = size . Main.details <$> ask
+sizeTest = size . dtls <$> ask
 
-{-
-insertTest :: Int -> Update Test0 ()
-insertTest x = modify (Test0 . (x:) . elems)
+insertTest :: Int -> Update Test ()
+insertTest x = do
+  Test{..} <- get
+  let new = Details (concat [show nextID, "-", show x]) [x]
+  put $ Test
+    { nextID = succ nextID
+    , dtls = insert new dtls
+    }
 
-$(makeAcidic ''Test0 ['queryTest, 'cleanTest, 'insertTest, 'sumTest, 'sizeTest])
--}
-
-$(makeAcidic ''Test ['cleanTest, 'queryTest, 'sizeTest, 'sumTest])
+$(makeAcidic ''Test ['cleanTest, 'queryTest, 'sizeTest, 'sumTest, 'insertTest])
 
 main :: IO ()
 main = do
@@ -85,7 +88,7 @@ mainDB arg = do
     List -> timeIt "List time: " $ dump st
     Clean -> timeIt "Clean time: " $ clean st
     GC -> timeIt "GC time: " $ createCheckpoint st >> createArchive st
-    -- Insert x -> timeIt "Insertion time: " $ insert st x
+    Insert x -> timeIt "Insertion time: " $ insertDB st x
     Sum -> timeIt "Sum computation: " $ sumDB st
     Size -> timeIt "Size computation: " $ sizeDB st
     _ -> error "Should be handled before this point"
@@ -94,10 +97,8 @@ mainDB arg = do
 dump :: AcidState (EventState QueryTest) -> IO ()
 dump st = query st QueryTest >>= print
 
-{-
-insert :: AcidState (EventState InsertTest) -> Int -> IO (EventResult InsertTest)
-insert st = update st . InsertTest
--}
+insertDB :: AcidState (EventState InsertTest) -> Int -> IO (EventResult InsertTest)
+insertDB st = update st . InsertTest
 
 clean :: AcidState (EventState CleanTest) -> IO (EventResult CleanTest)
 clean st = update st CleanTest
