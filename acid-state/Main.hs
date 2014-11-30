@@ -14,27 +14,27 @@ import System.Console.CmdArgs
 
 import qualified System.Console.CmdArgs.Explicit as CA
 
-newtype Test = Test { elems :: [Int] }
+newtype Test0 = Test0 { elems :: [Int] }
   deriving (Show, Typeable)
 
-$(deriveSafeCopy 0 'base ''Test)
+$(deriveSafeCopy 0 'base ''Test0)
 
-cleanTest :: Update Test()
-cleanTest = put $ Test []
+cleanTest :: Update Test0()
+cleanTest = put $ Test0 []
 
-queryTest :: Query Test Test
+queryTest :: Query Test0 Test0
 queryTest = ask
 
-sumTest :: Query Test Int
+sumTest :: Query Test0 Int
 sumTest = sum . elems <$> ask
 
-sizeTest :: Query Test Int
+sizeTest :: Query Test0 Int
 sizeTest = length . elems <$> ask
 
-insertTest :: Int -> Update Test ()
-insertTest x = modify (Test . (x:) . elems)
+insertTest :: Int -> Update Test0 ()
+insertTest x = modify (Test0 . (x:) . elems)
 
-$(makeAcidic ''Test ['queryTest, 'cleanTest, 'insertTest, 'sumTest, 'sizeTest])
+$(makeAcidic ''Test0 ['queryTest, 'cleanTest, 'insertTest, 'sumTest, 'sizeTest])
 
 main :: IO ()
 main = do
@@ -57,7 +57,7 @@ timeIt header action = do
 
 mainDB :: TestArgs -> IO ()
 mainDB arg = do
-  st <- timeIt "Open state: " $ openLocalState $ Test []
+  st <- timeIt "Open state: " $ openLocalState $ Test0 []
   _ <- case arg of
     List -> timeIt "List time: " $ dump st
     Clean -> timeIt "Clean time: " $ clean st
