@@ -47,17 +47,19 @@ queryTest = ask
 {-
 sumTest :: Query Test0 Int
 sumTest = sum . elems <$> ask
+-}
 
-sizeTest :: Query Test0 Int
-sizeTest = length . elems <$> ask
+sizeTest :: Query Test Int
+sizeTest = size . Main.details <$> ask
 
+{-
 insertTest :: Int -> Update Test0 ()
 insertTest x = modify (Test0 . (x:) . elems)
 
 $(makeAcidic ''Test0 ['queryTest, 'cleanTest, 'insertTest, 'sumTest, 'sizeTest])
 -}
 
-$(makeAcidic ''Test ['cleanTest, 'queryTest])
+$(makeAcidic ''Test ['cleanTest, 'queryTest, 'sizeTest])
 
 main :: IO ()
 main = do
@@ -87,7 +89,7 @@ mainDB arg = do
     GC -> timeIt "GC time: " $ createCheckpoint st >> createArchive st
     -- Insert x -> timeIt "Insertion time: " $ insert st x
     -- Sum -> timeIt "Sum computation: " $ sumDB st
-    -- Size -> timeIt "Size computation: " $ size st
+    Size -> timeIt "Size computation: " $ Main.size st
     _ -> error "Should be handled before this point"
   timeIt "Close state: " $ closeAcidState st
 
@@ -105,10 +107,10 @@ clean st = update st CleanTest
 {-
 sumDB :: AcidState (EventState SumTest) -> IO ()
 sumDB st = query st SumTest >>= print
+-}
 
 size :: AcidState (EventState SizeTest) -> IO ()
 size st = query st SizeTest >>= print
-  -}
 
 data TestArgs
   = Clean
