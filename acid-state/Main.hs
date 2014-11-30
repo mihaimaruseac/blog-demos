@@ -44,10 +44,8 @@ cleanTest = put initialState
 queryTest :: Query Test Test
 queryTest = ask
 
-{-
-sumTest :: Query Test0 Int
-sumTest = sum . elems <$> ask
--}
+sumTest :: Query Test Int
+sumTest = sum . map (sum . intVals) . toList . Main.details <$> ask
 
 sizeTest :: Query Test Int
 sizeTest = size . Main.details <$> ask
@@ -59,7 +57,7 @@ insertTest x = modify (Test0 . (x:) . elems)
 $(makeAcidic ''Test0 ['queryTest, 'cleanTest, 'insertTest, 'sumTest, 'sizeTest])
 -}
 
-$(makeAcidic ''Test ['cleanTest, 'queryTest, 'sizeTest])
+$(makeAcidic ''Test ['cleanTest, 'queryTest, 'sizeTest, 'sumTest])
 
 main :: IO ()
 main = do
@@ -88,8 +86,8 @@ mainDB arg = do
     Clean -> timeIt "Clean time: " $ clean st
     GC -> timeIt "GC time: " $ createCheckpoint st >> createArchive st
     -- Insert x -> timeIt "Insertion time: " $ insert st x
-    -- Sum -> timeIt "Sum computation: " $ sumDB st
-    Size -> timeIt "Size computation: " $ Main.size st
+    Sum -> timeIt "Sum computation: " $ sumDB st
+    Size -> timeIt "Size computation: " $ sizeDB st
     _ -> error "Should be handled before this point"
   timeIt "Close state: " $ closeAcidState st
 
@@ -104,13 +102,11 @@ insert st = update st . InsertTest
 clean :: AcidState (EventState CleanTest) -> IO (EventResult CleanTest)
 clean st = update st CleanTest
 
-{-
 sumDB :: AcidState (EventState SumTest) -> IO ()
 sumDB st = query st SumTest >>= print
--}
 
-size :: AcidState (EventState SizeTest) -> IO ()
-size st = query st SizeTest >>= print
+sizeDB :: AcidState (EventState SizeTest) -> IO ()
+sizeDB st = query st SizeTest >>= print
 
 data TestArgs
   = Clean
