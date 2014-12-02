@@ -133,3 +133,22 @@ testArgs = modes
   &= program "test"
   &= versionArg [ignore]
   &= helpArg [ignore]
+
+{-
+ - Plan:
+ -
+ - 1. Have a DB with a collection of integers mapped to the same String
+ - (Details) + counter
+ - 2. Dump the entire database (List)
+ - 3. Print size of database (Size)
+ - 4. Insert new numbers (Insert)
+ -    a. empty key => compute default key based on size, current counter
+ -    b. given key => add to the same key as before
+ - 5. Retrieve numbers for a key (Search)
+ - 6. Sum numbers (Sum)
+ -    a. no key => sum everything
+ -    b. given key => sum only numbers belonging to the key
+ - 7. Clear database (Clean)
+ - 8. Garbage collect acid state
+ - 9. Get keys for a number (RevSearch)
+ -}
