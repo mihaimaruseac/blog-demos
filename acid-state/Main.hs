@@ -91,7 +91,7 @@ mainDB arg = do
     Insert x -> timeIt "Insertion time: " $ insertDB st x
     Sum -> timeIt "Sum computation: " $ sumDB st
     Size -> timeIt "Size computation: " $ sizeDB st
-    _ -> error "Should be handled before this point"
+    _ -> error $ concat [show arg, " should be handled before this point"]
   timeIt "Close state: " $ closeAcidState st
 
 dump :: AcidState (EventState QueryTest) -> IO ()
