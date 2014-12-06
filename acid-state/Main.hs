@@ -125,6 +125,8 @@ testArgs = modes
   , GC &= help "Garbage collect, reduce size of files to increase speed"
   , Insert { number = def &= argPos 0 } &= help "Insert new entry"
   , List &= help "List entries"
+  , RevSearch &= help "Search for keys which contain a number"
+  , Search &= help "Search for numbers belonging to a key"
   , Size &= help "Return size of DB"
   , Sum &= help "Sum numbers from entries"
   , Help &= help "Show this help message" &= auto
