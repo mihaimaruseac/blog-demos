@@ -149,6 +149,6 @@ testArgs = modes
  -    a. no key => sum everything
  -    b. given key => sum only numbers belonging to the key
  - 7. Clear database (Clean)
- - 8. Garbage collect acid state
+ - 8. Garbage collect acid state (GC)
  - 9. Get keys for a number (RevSearch)
  -}
