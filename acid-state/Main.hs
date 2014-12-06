@@ -114,6 +114,8 @@ data TestArgs
   | GC
   | Insert {number :: Int}
   | List
+  | RevSearch
+  | Search
   | Size
   | Sum
   | Help
