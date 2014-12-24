@@ -115,7 +115,7 @@ data TestArgs
   | Insert { key :: String, number :: [Int] }
   | List
   | RevSearch { number :: [Int] }
-  | Search
+  | Search { key :: String }
   | Size
   | Sum
   | Help
@@ -128,7 +128,7 @@ testArgs = modes
   , Insert { key = def &= typ "KEY", number = def &= args &= typ "NUMBER"} &= help "Insert/merge new entry"
   , List &= help "List entries"
   , RevSearch { number = def &= args &= typ "NUMBER" } &= help "Search for keys which contain a number"
-  , Search &= help "Search for numbers belonging to a key"
+  , Search { key = def &= typ "KEY" &= argPos 0 } &= help "Search for numbers belonging to a key"
   , Size &= help "Return size of DB"
   , Sum &= help "Sum numbers from entries"
   , Help &= help "Show this help message" &= auto
