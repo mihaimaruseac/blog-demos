@@ -114,7 +114,7 @@ data TestArgs
   | GC
   | Insert { key :: String, number :: [Int] }
   | List
-  | RevSearch
+  | RevSearch { number :: [Int] }
   | Search
   | Size
   | Sum
@@ -127,7 +127,7 @@ testArgs = modes
   , GC &= help "Garbage collect, reduce size of files to increase speed"
   , Insert { key = def &= typ "KEY", number = def &= args &= typ "NUMBER"} &= help "Insert/merge new entry"
   , List &= help "List entries"
-  , RevSearch &= help "Search for keys which contain a number"
+  , RevSearch { number = def &= args &= typ "NUMBER" } &= help "Search for keys which contain a number"
   , Search &= help "Search for numbers belonging to a key"
   , Size &= help "Return size of DB"
   , Sum &= help "Sum numbers from entries"
