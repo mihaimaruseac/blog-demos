@@ -45,6 +45,9 @@ cleanTest = put initialState
 queryTest :: Query Test Test
 queryTest = ask
 
+searchTest :: String -> Query Test (Maybe Details)
+searchTest k = getOne . (@= k) . dtls <$> ask
+
 sumTest :: Query Test Int
 sumTest = sum . map (sum . intVals) . toList . dtls <$> ask
 
@@ -60,7 +63,7 @@ insertTest x = do
     , dtls = insert new dtls
     }
 
-$(makeAcidic ''Test ['cleanTest, 'queryTest, 'sizeTest, 'sumTest, 'insertTest])
+$(makeAcidic ''Test ['cleanTest, 'queryTest, 'sizeTest, 'sumTest, 'insertTest, 'searchTest])
 
 main :: IO ()
 main = do
@@ -90,6 +93,7 @@ mainDB arg = do
     GC -> timeIt "GC time: " $ createCheckpoint st >> createArchive st
     --Insert _ x -> timeIt "Insertion time: " $ insertDB st x
     --Sum -> timeIt "Sum computation: " $ sumDB st
+    Search (Just k) -> timeIt "Search: " $ searchDB k st
     Size -> timeIt "Size computation: " $ sizeDB st
     _ -> error $ concat [show arg, " should be handled before this point"]
   timeIt "Close state: " $ closeAcidState st
@@ -102,6 +106,9 @@ insertDB st = update st . InsertTest
 
 clean :: AcidState (EventState CleanTest) -> IO (EventResult CleanTest)
 clean st = update st CleanTest
+
+searchDB :: String -> AcidState (EventState SearchTest) -> IO ()
+searchDB k st = query st (SearchTest k) >>= print . maybe [] intVals
 
 sumDB :: AcidState (EventState SumTest) -> IO ()
 sumDB st = query st SumTest >>= print
