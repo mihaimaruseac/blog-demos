@@ -88,7 +88,7 @@ mainDB arg = do
     List -> timeIt "List time: " $ dump st
     Clean -> timeIt "Clean time: " $ clean st
     GC -> timeIt "GC time: " $ createCheckpoint st >> createArchive st
-    Insert _ x -> timeIt "Insertion time: " $ insertDB st x
+    --Insert _ x -> timeIt "Insertion time: " $ insertDB st x
     Sum -> timeIt "Sum computation: " $ sumDB st
     Size -> timeIt "Size computation: " $ sizeDB st
     _ -> error $ concat [show arg, " should be handled before this point"]
@@ -112,7 +112,7 @@ sizeDB st = query st SizeTest >>= print
 data TestArgs
   = Clean
   | GC
-  | Insert {key :: String, number :: Int}
+  | Insert {key :: String, number :: [Int]}
   | List
   | RevSearch
   | Search
@@ -125,7 +125,7 @@ testArgs :: TestArgs
 testArgs = modes
   [ Clean &= help "Clean DB"
   , GC &= help "Garbage collect, reduce size of files to increase speed"
-  , Insert { key = def, number = def &= argPos 0 } &= help "Insert new entry"
+  , Insert { key = def &= typ "KEY", number = def &= args &= typ "NUMBER"} &= help "Insert new entry"
   , List &= help "List entries"
   , RevSearch &= help "Search for keys which contain a number"
   , Search &= help "Search for numbers belonging to a key"
