@@ -89,7 +89,7 @@ mainDB arg = do
     Clean -> timeIt "Clean time: " $ clean st
     GC -> timeIt "GC time: " $ createCheckpoint st >> createArchive st
     --Insert _ x -> timeIt "Insertion time: " $ insertDB st x
-    Sum -> timeIt "Sum computation: " $ sumDB st
+    --Sum -> timeIt "Sum computation: " $ sumDB st
     Size -> timeIt "Size computation: " $ sizeDB st
     _ -> error $ concat [show arg, " should be handled before this point"]
   timeIt "Close state: " $ closeAcidState st
@@ -112,12 +112,12 @@ sizeDB st = query st SizeTest >>= print
 data TestArgs
   = Clean
   | GC
-  | Insert { key :: String, number :: [Int] }
+  | Insert { key :: Maybe String, number :: [Int] }
   | List
   | RevSearch { number :: [Int] }
-  | Search { key :: String }
+  | Search { key :: Maybe String }
   | Size
-  | Sum
+  | Sum { key :: Maybe String}
   | Help
   deriving (Data, Typeable, Show)
 
@@ -127,10 +127,10 @@ testArgs = modes
   , GC &= help "Garbage collect, reduce size of files to increase speed"
   , Insert { key = def &= typ "KEY", number = def &= args &= typ "NUMBER"} &= help "Insert/merge new entry"
   , List &= help "List entries"
-  , RevSearch { number = def &= args &= typ "NUMBER" } &= help "Search for keys which contain a number"
+  , RevSearch { number = def &= args &= typ "NUMBER" } &= help "Search for keys which contain a (set of) number(s)"
   , Search { key = def &= typ "KEY" &= argPos 0 } &= help "Search for numbers belonging to a key"
   , Size &= help "Return size of DB"
-  , Sum &= help "Sum numbers from entries"
+  , Sum {key = def &= typ "KEY" } &= help "Sum numbers from (key) entries"
   , Help &= help "Show this help message" &= auto
   ]
   &= help "Test acid-state library"
