@@ -112,7 +112,7 @@ sizeDB st = query st SizeTest >>= print
 data TestArgs
   = Clean
   | GC
-  | Insert {key :: String, number :: [Int]}
+  | Insert { key :: String, numbers :: [Int] }
   | List
   | RevSearch
   | Search
@@ -125,7 +125,7 @@ testArgs :: TestArgs
 testArgs = modes
   [ Clean &= help "Clean DB"
   , GC &= help "Garbage collect, reduce size of files to increase speed"
-  , Insert { key = def &= typ "KEY", number = def &= args &= typ "NUMBER"} &= help "Insert new entry"
+  , Insert { key = def &= typ "KEY", numbers = def &= args &= typ "NUMBER"} &= help "Insert new entry"
   , List &= help "List entries"
   , RevSearch &= help "Search for keys which contain a number"
   , Search &= help "Search for numbers belonging to a key"
