@@ -22,6 +22,7 @@ executable test
     clock >=0.4,
     bytestring >=0.10,
     cmdargs >= 0.10,
+    formatting >= 6.0,
     ixset >= 1.0,
     mtl >=2.2,
     safecopy >=0.8,
