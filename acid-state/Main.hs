@@ -12,6 +12,7 @@ import Data.IxSet
 import Data.SafeCopy
 import Data.Time.Clock
 import Data.Typeable
+import System.Clock
 import System.Console.CmdArgs
 
 import qualified System.Console.CmdArgs.Explicit as CA
@@ -75,13 +76,41 @@ main = do
 showHelp :: IO ()
 showHelp = print $ CA.helpText [] CA.HelpFormatAll $ cmdArgsMode testArgs
 
+{- Adapted from
+ - https://hackage.haskell.org/package/formatting-6.1.1/docs/src/Formatting-Clock.html#timeSpecs
+ - since we need a better GHC to use the proper formatters package.
+ -}
+timeDeltaStr :: TimeSpec -> TimeSpec -> String
+timeDeltaStr (TimeSpec s1 n1) (TimeSpec s2 n2)
+  | Just i <- scale ((10 ^ 9) * 60 * 60 * 24) = fixed i ++ " d"
+  | Just i <- scale ((10 ^ 9) * 60 * 60) = fixed i ++ " h"
+  | Just i <- scale ((10 ^ 9) * 60) = fixed i ++ " m"
+  | Just i <- scale (10 ^ 9) = fixed i ++ " s"
+  | Just i <- scale (10 ^ 6) = fixed i ++ " ms"
+  | Just i <- scale (10 ^ 3) = fixed i ++ " µs"
+  | otherwise = show diff ++ " ns"
+  where
+    fixed :: Double -> String
+    fixed i = take 4 $ show i
+    scale :: Integer -> Maybe Double
+    scale i
+      | diff >= i = Just (fromIntegral diff / fromIntegral i)
+      | otherwise = Nothing
+    diff :: Integer
+    diff = a1 - a2
+    a1 = (fromIntegral s1 * 10 ^ 9) + fromIntegral n1
+    a2 = (fromIntegral s2 * 10 ^ 9) + fromIntegral n2
+
 timeIt :: String -> IO a -> IO a
 timeIt header action = do
-  stTime <- getCurrentTime
+  stTime <- getTime Monotonic
+  stTime' <- getCurrentTime
   a <- action
-  endTime <- getCurrentTime
+  endTime <- getTime Monotonic
+  endTime' <- getCurrentTime
   putStr header
-  print $ diffUTCTime endTime stTime
+  putStr $ timeDeltaStr endTime stTime
+  print $ diffUTCTime endTime' stTime'
   return a
 
 mainDB :: TestArgs -> IO ()
