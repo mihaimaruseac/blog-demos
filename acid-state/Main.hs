@@ -10,7 +10,6 @@ import Control.Monad.State (put, get)
 import Data.Acid
 import Data.IxSet
 import Data.SafeCopy
-import Data.Time.Clock
 import Data.Typeable
 import System.Clock
 import System.Console.CmdArgs
@@ -104,13 +103,10 @@ timeDeltaStr (TimeSpec s1 n1) (TimeSpec s2 n2)
 timeIt :: String -> IO a -> IO a
 timeIt header action = do
   stTime <- getTime Monotonic
-  stTime' <- getCurrentTime
   a <- action
   endTime <- getTime Monotonic
-  endTime' <- getCurrentTime
   putStr header
-  putStr $ timeDeltaStr endTime stTime
-  print $ diffUTCTime endTime' stTime'
+  putStrLn $ timeDeltaStr endTime stTime
   return a
 
 mainDB :: TestArgs -> IO ()
