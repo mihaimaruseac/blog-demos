@@ -81,12 +81,12 @@ showHelp = print $ CA.helpText [] CA.HelpFormatAll $ cmdArgsMode testArgs
  -}
 timeDeltaStr :: TimeSpec -> TimeSpec -> String
 timeDeltaStr (TimeSpec s1 n1) (TimeSpec s2 n2)
-  | Just i <- scale ((10 ^ 9) * 60 * 60 * 24) = fixed i ++ " d"
-  | Just i <- scale ((10 ^ 9) * 60 * 60) = fixed i ++ " h"
-  | Just i <- scale ((10 ^ 9) * 60) = fixed i ++ " m"
-  | Just i <- scale (10 ^ 9) = fixed i ++ " s"
-  | Just i <- scale (10 ^ 6) = fixed i ++ " ms"
-  | Just i <- scale (10 ^ 3) = fixed i ++ " µs"
+  | Just i <- scale (_109 * 60 * 60 * 24) = fixed i ++ " d"
+  | Just i <- scale (_109 * 60 * 60) = fixed i ++ " h"
+  | Just i <- scale (_109 * 60) = fixed i ++ " m"
+  | Just i <- scale _109 = fixed i ++ " s"
+  | Just i <- scale _106 = fixed i ++ " ms"
+  | Just i <- scale _103 = fixed i ++ " µs"
   | otherwise = show diff ++ " ns"
   where
     fixed :: Double -> String
@@ -97,8 +97,11 @@ timeDeltaStr (TimeSpec s1 n1) (TimeSpec s2 n2)
       | otherwise = Nothing
     diff :: Integer
     diff = a1 - a2
-    a1 = (fromIntegral s1 * 10 ^ 9) + fromIntegral n1
-    a2 = (fromIntegral s2 * 10 ^ 9) + fromIntegral n2
+    a1 = fromIntegral s1 * _109 + fromIntegral n1
+    a2 = fromIntegral s2 * _109 + fromIntegral n2
+    _109 = 10 ^ (9 :: Integer)
+    _106 = 10 ^ (6 :: Integer)
+    _103 = 10 ^ (3 :: Integer)
 
 timeIt :: String -> IO a -> IO a
 timeIt header action = do
