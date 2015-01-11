@@ -58,7 +58,7 @@ insertTest :: Int -> Update Test ()
 insertTest x = do
   Test{..} <- get
   let new = Details (concat [show nextID, "-", show x]) [x]
-  put $ Test
+  put Test
     { nextID = succ nextID
     , dtls = insert new dtls
     }
@@ -123,7 +123,7 @@ mainDB arg = do
     --Sum -> timeIt "Sum computation: " $ sumDB st
     Search (Just k) -> timeIt "Search: " $ searchDB k st
     Size -> timeIt "Size computation: " $ sizeDB st
-    _ -> error $ concat [show arg, " should be handled before this point"]
+    _ -> error $ show arg ++ " should be handled before this point"
   timeIt "Close state: " $ closeAcidState st
 
 dump :: AcidState (EventState QueryTest) -> IO ()
