@@ -54,10 +54,18 @@ sumTest = sum . map (sum . intVals) . toList . dtls <$> ask
 sizeTest :: Query Test Int
 sizeTest = size . dtls <$> ask
 
-insertTest :: Int -> Update Test ()
-insertTest x = do
+insertTest :: Maybe String -> [Int] -> Update Test ()
+insertTest (Just k) xs = do
   Test{..} <- get
-  let new = Details (concat [show nextID, "-", show x]) [x]
+  let old = getOneOr (Details k []) $ dtls @= k
+  let new = old { intVals = intVals old ++ xs }
+  put $ Test
+    { nextID = succ nextID
+    , dtls = insert new dtls
+    }
+insertTest Nothing xs = do
+  Test{..} <- get
+  let new = Details (concat [show nextID, "-", show (length xs)]) xs
   put $ Test
     { nextID = succ nextID
     , dtls = insert new dtls
@@ -119,7 +127,7 @@ mainDB arg = do
     List -> timeIt "List time: " $ dump st
     Clean -> timeIt "Clean time: " $ clean st
     GC -> timeIt "GC time: " $ createCheckpoint st >> createArchive st
-    --Insert _ x -> timeIt "Insertion time: " $ insertDB st x
+    Insert k x -> timeIt "Insertion time: " $ insertDB st k x
     --Sum -> timeIt "Sum computation: " $ sumDB st
     Search (Just k) -> timeIt "Search: " $ searchDB k st
     Size -> timeIt "Size computation: " $ sizeDB st
@@ -129,8 +137,8 @@ mainDB arg = do
 dump :: AcidState (EventState QueryTest) -> IO ()
 dump st = query st QueryTest >>= print
 
-insertDB :: AcidState (EventState InsertTest) -> Int -> IO (EventResult InsertTest)
-insertDB st = update st . InsertTest
+insertDB :: AcidState (EventState InsertTest) -> Maybe String -> [Int] -> IO (EventResult InsertTest)
+insertDB st k = update st . InsertTest k
 
 clean :: AcidState (EventState CleanTest) -> IO (EventResult CleanTest)
 clean st = update st CleanTest
