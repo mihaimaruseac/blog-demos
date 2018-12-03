@@ -3,3 +3,26 @@ html {
   max-height: 100%;
   font-size: 25px;
 }
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template: auto / 1fr [content]min-content 1fr;
+  min-height: 100%;
+}
+
+* {
+  border: 1px solid red;
+  box-sizing: border-box;
+}
+
+html {
+  border: none;
+}
+
+div {
+  border-color: blue;
+  padding: 1em;
+  grid-column: content;
+  width: 1200px;
+}
