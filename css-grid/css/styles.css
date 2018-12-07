@@ -9,6 +9,8 @@ body {
   display: grid;
   grid-template: auto / 1fr [content]min-content 1fr;
   min-height: 100%;
+  grid-row-gap: 15px;
+  background-color: #dedede;
 }
 
 * {
@@ -25,4 +27,5 @@ div {
   padding: 1em;
   grid-column: content;
   width: 1200px;
+  background-color: #fff;
 }
