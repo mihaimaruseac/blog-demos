@@ -10,7 +10,7 @@ body {
   min-height: 100%;
   /* grid setup */
   display: grid;
-  grid-template: auto / 1fr [content]min-content 1fr;
+  grid-template: auto / 1fr [content]min-content 1fr; /* TODO: responsive design */
   grid-row-gap: 15px;
   /* colors, text, extra */
   background-color: #dedede;
