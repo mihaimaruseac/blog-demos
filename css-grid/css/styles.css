@@ -5,27 +5,35 @@ html {
 }
 
 body {
+  /* to cover entire space, always */
   margin: 0;
+  min-height: 100%;
+  /* grid setup */
   display: grid;
   grid-template: auto / 1fr [content]min-content 1fr;
-  min-height: 100%;
   grid-row-gap: 15px;
+  /* colors, text, extra */
   background-color: #dedede;
 }
 
+/* debug, might not need */
 * {
   border: 1px solid red;
   box-sizing: border-box;
 }
 
+/* debug, might not need */
 html {
   border: none;
 }
 
 div {
+  /* debug */
   border-color: blue;
   padding: 1em;
-  grid-column: content;
   width: 1200px;
+  /* grid */
+  grid-column: content;
+  /* color */
   background-color: #fff;
 }
