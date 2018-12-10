@@ -36,4 +36,7 @@ div {
   grid-column: content;
   /* color */
   background-color: #fff;
+  box-shadow: 0 0 12px 1px rgba(42, 42, 42, 0.2);
+  /* look */
+  border-radius: 10px;
 }
