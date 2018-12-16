@@ -30,7 +30,7 @@ html {
 div {
   /* debug */
   border-color: blue;
-  width: 1200px;
+  width: 1200px; /* TODO: needs replacement with text or might actually be needed */
   /* grid */
   grid-column: content;
   /* color */
