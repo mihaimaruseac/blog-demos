@@ -30,7 +30,6 @@ html {
 div {
   /* debug */
   border-color: blue;
-  padding: 1em;
   width: 1200px;
   /* grid */
   grid-column: content;
@@ -39,4 +38,6 @@ div {
   box-shadow: 0 0 12px 1px rgba(42, 42, 42, 0.2);
   /* look */
   border-radius: 10px;
+  /* NOTE: padding is internal */
+  /* NOTE: margin might not be needed, except for responsive? */
 }
