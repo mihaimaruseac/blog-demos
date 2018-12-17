@@ -27,7 +27,7 @@ html {
   border: none;
 }
 
-div {
+.content {
   /* debug */
   border-color: blue;
   width: 1200px; /* TODO: needs replacement with text or might actually be needed */
