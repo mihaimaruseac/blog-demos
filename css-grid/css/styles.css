@@ -41,3 +41,18 @@ html {
   /* NOTE: padding is internal */
   /* NOTE: margin might not be needed, except for responsive? */
 }
+
+/* To be replaced with text at a later time */
+.header {
+  height: 42px;
+}
+
+/* To be replaced with text at a later time */
+.footer {
+  height: 15px;
+}
+
+/* To be replaced with text at a later time, varying height */
+.article {
+  height: 100px;
+}
