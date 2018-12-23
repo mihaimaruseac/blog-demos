@@ -44,15 +44,18 @@ html {
 
 /* To be replaced with text at a later time */
 .header {
+  align-self: start;
   height: 42px;
 }
 
 /* To be replaced with text at a later time */
 .footer {
+  align-self: end;
   height: 15px;
 }
 
 /* To be replaced with text at a later time, varying height */
 .article {
+  align-self: stretch;
   height: 100px;
 }
