@@ -57,7 +57,12 @@ html {
 /* To be replaced with text at a later time, varying height */
 .article {
   align-self: stretch;
-  height: 100px;
+}
+
+/* To be replaced later with the different components */
+.article div {
+  width: 100%;
+  height: 50px;
 }
 
 /* Responsive design here, for mobile only */
