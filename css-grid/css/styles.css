@@ -10,7 +10,7 @@ body {
   min-height: 100%;
   /* grid setup */
   display: grid;
-  grid-template: auto / 1fr [content]min-content 1fr; /* TODO: responsive design */
+  grid-template: auto / 1fr [content]min-content 1fr;
   grid-row-gap: 15px;
   /* colors, text, extra */
   background-color: #dedede;
@@ -58,4 +58,16 @@ html {
 .article {
   align-self: stretch;
   height: 100px;
+}
+
+/* Responsive design here, for mobile only */
+@media (max-width: 650px) {
+  body {
+    grid-template: auto / [content]1fr;
+  }
+
+  /* debug, to be removed */
+  .content {
+    width: 100%;
+  }
 }
