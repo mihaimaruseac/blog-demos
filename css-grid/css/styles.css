@@ -16,21 +16,7 @@ body {
   background-color: #dedede;
 }
 
-/* debug, might not need */
-* {
-  border: 1px solid red;
-  box-sizing: border-box;
-}
-
-/* debug, might not need */
-html {
-  border: none;
-}
-
 .content {
-  /* debug */
-  border-color: blue;
-  width: 1200px; /* TODO: needs replacement with text or might actually be needed */
   /* grid */
   grid-column: content;
   /* color */
@@ -38,8 +24,6 @@ html {
   box-shadow: 0 0 12px 1px rgba(42, 42, 42, 0.2);
   /* look */
   border-radius: 10px;
-  /* NOTE: padding is internal */
-  /* NOTE: margin might not be needed, except for responsive? */
 }
 
 /* To be replaced with text at a later time */
@@ -61,8 +45,10 @@ html {
 
 /* To be replaced later with the different components */
 .article div {
-  width: 100%;
+  width: 1200px; /* TODO: needs replacement with text or might actually be needed */
   height: 50px;
+  border: 1px solid red;
+  box-sizing: border-box;
 }
 
 /* Responsive design here, for mobile only */
@@ -73,6 +59,11 @@ html {
 
   /* debug, to be removed */
   .content {
+    width: 100%;
+  }
+
+  /* debug, to be removed */
+  .article div {
     width: 100%;
   }
 }
