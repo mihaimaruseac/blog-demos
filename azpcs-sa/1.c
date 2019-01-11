@@ -78,6 +78,12 @@ static inline void build_initial_state(void)
 		state[i] = i;
 }
 
+static inline void copy_to(int src[], int dst[])
+{
+	for (int i = 0; i < N2; i++)
+		dst[i] = src[i];
+}
+
 int main()
 {
 	init_rng();
@@ -85,7 +91,11 @@ int main()
 	build_initial_state();
 
 	unsigned int score = compute_score(state);
-	printf("Score: %d\n", score);
+	if (score < best_score) {
+		best_score = score;
+		copy_to(state, best);
+	}
+	printf("Best score: %ld\n", best_score);
 
 	return 0;
 }
