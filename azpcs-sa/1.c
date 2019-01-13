@@ -63,9 +63,12 @@ static inline void compute_initial_distances()
 static inline unsigned long compute_score(const int x[])
 {
 	unsigned long s = 0;
+	unsigned long contrib;
 	for (int i = 0; i < N2; i++)
-		for (int j = i + 1; j < N2; j++)
-			s += d[i][j] * dist(x[i], x[j]);
+		for (int j = i + 1; j < N2; j++) {
+			contrib = d[i][j] * dist(x[i], x[j]);
+			s += contrib;
+		}
 	return s - MIN_BOUND;
 }
 
