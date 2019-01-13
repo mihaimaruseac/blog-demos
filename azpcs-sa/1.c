@@ -37,6 +37,13 @@ start:
 	printf(")\n");
 }
 
+static inline void short_print(const int x[])
+{
+	for (int i = 0; i < N2; i++)
+		printf("%d ", x[i]);
+	printf("\n");
+}
+
 static inline unsigned long dist(int i, int j)
 {
 	unsigned long dx = abs((i % N) - (j % N));
@@ -96,6 +103,7 @@ int main()
 		copy_to(state, best);
 	}
 	printf("Best score: %ld\n", best_score);
+	short_print(best);
 
 	return 0;
 }
