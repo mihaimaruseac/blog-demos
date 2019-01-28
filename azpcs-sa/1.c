@@ -104,8 +104,8 @@ int main()
 	if (score < best_score) {
 		best_score = score;
 		copy_to(state, best);
+		printf("Best score: %ld\n", best_score);
 	}
-	printf("Best score: %ld\n", best_score);
 	short_print(best);
 
 	return 0;
