@@ -105,6 +105,8 @@ int main()
 		best_score = score;
 		copy_to(state, best);
 		printf("Best score: %ld\n", best_score);
+		print_grid(best);
+		printf("\n");
 	}
 	short_print(best);
 
