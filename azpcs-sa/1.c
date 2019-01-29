@@ -14,6 +14,7 @@ static unsigned long d[N2][N2];
 static int state[N2];
 static unsigned long best_score = OO;
 static int best[N2];
+static int ci, cj;
 
 static inline void print_one(int x)
 {
@@ -64,10 +65,18 @@ static inline unsigned long compute_score(const int x[])
 {
 	unsigned long s = 0;
 	unsigned long contrib;
+	unsigned long largest_contrib = 0;
+
 	for (int i = 0; i < N2; i++)
 		for (int j = i + 1; j < N2; j++) {
 			contrib = d[i][j] * dist(x[i], x[j]);
 			s += contrib;
+
+			if (contrib > largest_contrib) {
+				largest_contrib = contrib;
+				ci = i;
+				cj = j;
+			}
 		}
 	return s - MIN_BOUND;
 }
@@ -108,7 +117,8 @@ int main()
 		print_grid(best);
 		printf("\n");
 	}
-	short_print(best);
+	short_print(state);
+	printf("Largest contrib bw. %d %d\n", ci, cj);
 
 	return 0;
 }
