@@ -54,7 +54,7 @@ static inline unsigned long dist(int i, int j)
 	return dx * dx + dy * dy;
 }
 
-static inline void compute_initial_distances()
+static inline void compute_initial_distances(void)
 {
 	for (int i = 0; i < N2; i++)
 		for (int j = 0; j < N2; j++)
