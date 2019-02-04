@@ -103,6 +103,39 @@ static inline void copy_to(int src[], int dst[])
 		dst[i] = src[i];
 }
 
+static inline void swap(int x[], int ix1, int ix2)
+{
+	int t = x[ix1];
+	x[ix1] = x[ix2];
+	x[ix2] = t;
+}
+
+static inline void try_swap(int x[], int ix, unsigned long score_now)
+{
+	unsigned long best_score_now = OO;
+	unsigned int score;
+	int best_ix = ix;
+
+	for (int i = 0; i < N2; i++) {
+		if (i == ix)
+			continue;
+		swap(x, i, ix);
+		score = compute_score(x, /*update_contrib=*/0);
+		swap(x, i, ix);
+
+		if (score < best_score_now) {
+			best_score_now = score;
+			best_ix = i;
+		}
+	}
+
+	// TODO: add annealing
+	if (best_score_now < score_now) {
+		score_now = best_score_now;
+		swap(x, ix, best_ix);
+	}
+}
+
 int main()
 {
 	init_rng();
@@ -119,6 +152,11 @@ int main()
 	}
 	short_print(state);
 	printf("Largest contrib bw. %d %d\n", ci, cj);
+	try_swap(state, ci, score);
+	// try_swap(state, cj, score); // TODO: also enable me
+	score = compute_score(state, /*update_contrib=*/0);
+	printf("%d\n", score);
+	short_print(state);
 
 	return 0;
 }
