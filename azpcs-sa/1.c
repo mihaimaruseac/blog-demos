@@ -110,30 +110,40 @@ static inline void swap(int x[], int ix1, int ix2)
 	x[ix2] = t;
 }
 
-static inline void try_swap(int x[], int ix, unsigned long score_now)
+static inline void try_swap(int x[], int ix1, int ix2, unsigned long score_now)
 {
-	unsigned long best_score_now = OO;
+	unsigned long best_scores[2] = {OO, OO};
+	int best_ixs[2] = {ix1, ix2};
+	int ixs[2] = {ix1, ix2};
 	unsigned int score;
-	int best_ix = ix;
 
-	for (int i = 0; i < N2; i++) {
-		if (i == ix)
-			continue;
-		swap(x, i, ix);
-		score = compute_score(x, /*update_contrib=*/0);
-		swap(x, i, ix);
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < N2; j++) {
+			if (j == ixs[i])
+				continue;
+			swap(x, j, ixs[i]);
+			score = compute_score(x, /*update_contrib=*/0);
+			swap(x, j, ixs[i]);
 
-		if (score < best_score_now) {
-			best_score_now = score;
-			best_ix = i;
+			if (score < best_scores[i]) {
+				best_scores[i] = score;
+				best_ixs[i] = j;
+			}
 		}
 	}
 
-	// TODO: add annealing
-	if (best_score_now < score_now) {
-		score_now = best_score_now;
-		swap(x, ix, best_ix);
+	unsigned long best_score_here = best_scores[0];
+	unsigned long moving_ix1 = best_ixs[0];
+	unsigned long moving_ix2 = ixs[0];
+	if (best_score_here > best_scores[1]) {
+		best_score_here = best_scores[1];
+		moving_ix1 = best_ixs[1];
+		moving_ix2 = ixs[1];
 	}
+
+	// TODO: annealing
+	if (best_score_here < score_now)
+		swap(x, moving_ix1, moving_ix2);
 }
 
 int main()
@@ -152,8 +162,7 @@ int main()
 	}
 	short_print(state);
 	printf("Largest contrib bw. %d %d\n", ci, cj);
-	try_swap(state, ci, score);
-	// try_swap(state, cj, score); // TODO: also enable me
+	try_swap(state, ci, cj, score);
 	score = compute_score(state, /*update_contrib=*/0);
 	printf("%d\n", score);
 	short_print(state);
