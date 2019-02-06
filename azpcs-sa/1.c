@@ -6,6 +6,7 @@
 #define N 3
 #define N2 (N * N)
 #define MIN_BOUND 72
+#define MAX_EPOCH 1000
 
 #define OO 99999999999L
 
@@ -152,20 +153,17 @@ int main()
 	compute_initial_distances();
 	build_initial_state();
 
-	unsigned int score = compute_score(state, /*update_contrib=*/1);
-	if (score < best_score) {
-		best_score = score;
-		copy_to(state, best);
-		printf("Best score: %ld\n", best_score);
-		print_grid(best);
-		printf("\n");
+	for (int epoch = 0; epoch < MAX_EPOCH; epoch++) {
+		unsigned int score = compute_score(state, /*update_contrib=*/1);
+		if (score < best_score) {
+			best_score = score;
+			copy_to(state, best);
+			printf("Best score: %ld\n", best_score);
+			print_grid(best);
+			printf("\n");
+		}
+		try_swap(state, ci, cj, score);
 	}
-	short_print(state);
-	printf("Largest contrib bw. %d %d\n", ci, cj);
-	try_swap(state, ci, cj, score);
-	score = compute_score(state, /*update_contrib=*/0);
-	printf("%d\n", score);
-	short_print(state);
 
 	return 0;
 }
