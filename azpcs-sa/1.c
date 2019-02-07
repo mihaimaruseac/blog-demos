@@ -62,7 +62,7 @@ static inline void compute_initial_distances(void)
 			d[i][j] = dist(i, j);
 }
 
-static inline unsigned long compute_score(const int x[], int update_contrib)
+static inline unsigned long compute_score(const int x[], int update)
 {
 	unsigned long s = 0;
 	unsigned long contrib;
@@ -73,7 +73,7 @@ static inline unsigned long compute_score(const int x[], int update_contrib)
 			contrib = d[i][j] * dist(x[i], x[j]);
 			s += contrib;
 
-			if (contrib > largest_contrib && update_contrib) {
+			if (contrib > largest_contrib && update) {
 				largest_contrib = contrib;
 				ci = i;
 				cj = j;
@@ -123,7 +123,7 @@ static inline void try_swap(int x[], int ix1, int ix2, unsigned long score_now)
 			if (j == ixs[i])
 				continue;
 			swap(x, j, ixs[i]);
-			score = compute_score(x, /*update_contrib=*/0);
+			score = compute_score(x, /*update=*/0);
 			swap(x, j, ixs[i]);
 
 			if (score < best_scores[i]) {
@@ -154,7 +154,7 @@ int main()
 	build_initial_state();
 
 	for (int epoch = 0; epoch < MAX_EPOCH; epoch++) {
-		unsigned int score = compute_score(state, /*update_contrib=*/1);
+		unsigned int score = compute_score(state, /*update=*/1);
 		if (score < best_score) {
 			best_score = score;
 			copy_to(state, best);
