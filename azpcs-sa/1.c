@@ -7,6 +7,7 @@
 #define N2 (N * N)
 #define MIN_BOUND 72
 #define MAX_EPOCH 1000
+#define UPDATE_ANYWAY 100
 
 #define OO 99999999999L
 
@@ -111,7 +112,9 @@ static inline void swap(int x[], int ix1, int ix2)
 	x[ix2] = t;
 }
 
-static inline void try_swap(int x[], int ix1, int ix2, unsigned long score_now)
+static inline void try_swap(
+		int x[], int ix1, int ix2,
+		unsigned long score_now, int t)
 {
 	unsigned long best_scores[2] = {OO, OO};
 	int best_ixs[2] = {ix1, ix2};
@@ -142,8 +145,8 @@ static inline void try_swap(int x[], int ix1, int ix2, unsigned long score_now)
 		moving_ix2 = ixs[1];
 	}
 
-	// TODO: annealing
-	if (best_score_here < score_now)
+	double sched_func = t <= UPDATE_ANYWAY ? 1 : 1 / (t - UPDATE_ANYWAY);
+	if ((best_score_here < score_now) || (drand48() < sched_func))
 		swap(x, moving_ix1, moving_ix2);
 }
 
@@ -162,7 +165,7 @@ int main()
 			print_grid(best);
 			printf("\n");
 		}
-		try_swap(state, ci, cj, score);
+		try_swap(state, ci, cj, score, epoch);
 	}
 
 	return 0;
