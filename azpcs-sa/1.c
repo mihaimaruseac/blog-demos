@@ -1,13 +1,14 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/time.h>
 
-#define N 3
+#define N 6
 #define N2 (N * N)
-#define MIN_BOUND 72
-#define MAX_EPOCH 1000
-#define UPDATE_ANYWAY 100
+#define MIN_BOUND 16902
+#define MAX_EPOCH 100000
+#define UPDATE_IT 1000
 
 #define OO 99999999999L
 
@@ -145,7 +146,7 @@ static inline void try_swap(
 		moving_ix2 = ixs[1];
 	}
 
-	double sched_func = t <= UPDATE_ANYWAY ? 1 : 1 / (t - UPDATE_ANYWAY);
+	double sched_func = t <= UPDATE_IT ? 1 : 1 / sqrt(t - UPDATE_IT);
 	if ((best_score_here < score_now) || (drand48() < sched_func))
 		swap(x, moving_ix1, moving_ix2);
 }
