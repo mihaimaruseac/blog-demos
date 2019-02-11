@@ -4,9 +4,9 @@
 #include <string.h>
 #include <sys/time.h>
 
-#define N 6
+#define N 29
 #define N2 (N * N)
-#define MIN_BOUND 16902
+#define MIN_BOUND 4294801980l
 #define MAX_EPOCH 100000
 #define UPDATE_IT 1000
 
@@ -89,7 +89,6 @@ static inline void init_rng(void)
 	struct timeval now;
 	gettimeofday(&now, NULL);
 	long int seedval = now.tv_usec + now.tv_sec;
-	seedval = 42;
 	printf("Using seed %ld\n", seedval);
 	srand48(seedval);
 }
@@ -120,7 +119,7 @@ static inline void try_swap(
 	unsigned long best_scores[2] = {OO, OO};
 	int best_ixs[2] = {ix1, ix2};
 	int ixs[2] = {ix1, ix2};
-	unsigned int score;
+	unsigned long score;
 
 	for (int i = 0; i < 2; i++) {
 		for (int j = 0; j < N2; j++) {
@@ -158,7 +157,7 @@ int main()
 	build_initial_state();
 
 	for (int epoch = 0; epoch < MAX_EPOCH; epoch++) {
-		unsigned int score = compute_score(state, /*update=*/1);
+		unsigned long score = compute_score(state, /*update=*/1);
 		if (score < best_score) {
 			best_score = score;
 			copy_to(state, best);
