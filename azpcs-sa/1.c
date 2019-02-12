@@ -4,9 +4,9 @@
 #include <string.h>
 #include <sys/time.h>
 
-#define N 29
+#define N 30
 #define N2 (N * N)
-#define MIN_BOUND 4294801980l
+#define MIN_BOUND 5643997650l
 #define MAX_EPOCH 100000
 #define UPDATE_IT 1000
 
