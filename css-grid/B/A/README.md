@@ -1,1 +1,1 @@
-Blog setup
+Blog setup :: Article
