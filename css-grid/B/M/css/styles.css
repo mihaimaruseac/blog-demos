@@ -45,7 +45,9 @@ body {
 
 /* To be replaced later with the different components */
 .article div {
-  width: 1200px; /* TODO: needs replacement with text or might actually be needed */
+  /* TODO: needs replacement with text or might actually be needed */
+  /* TODO: without this, there is no width constraint so everything collapses */
+  width: 1200px;
   height: 50px;
   border: 1px solid red;
   box-sizing: border-box;
