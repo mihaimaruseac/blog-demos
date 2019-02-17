@@ -16,6 +16,7 @@ body {
   background-color: #dedede;
 }
 
+/* meta class to format the content bubbles */
 .content {
   /* grid */
   grid-column: content;
@@ -26,10 +27,9 @@ body {
   border-radius: 10px;
 }
 
-/* To be replaced with text at a later time */
+/* Header section: title, subtitle, navigation */
 .header {
   align-self: start;
-  height: 42px;
 }
 
 /* To be replaced with text at a later time */
