@@ -30,6 +30,8 @@ body {
 /* Header section: title, subtitle, navigation */
 .header {
   align-self: start;
+  /* ensure text is centered here */
+  text-align: center;
 }
 
 /* To be replaced with text at a later time */
