@@ -40,7 +40,7 @@ body {
   height: 15px;
 }
 
-/* To be replaced with text at a later time, varying height */
+/* Article contents */
 .article {
   align-self: stretch;
 }
