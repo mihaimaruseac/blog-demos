@@ -37,7 +37,7 @@ body {
 /* To be replaced with text at a later time */
 .footer {
   align-self: end;
-  height: 15px;
+  text-align: center;
 }
 
 /* Article contents */
