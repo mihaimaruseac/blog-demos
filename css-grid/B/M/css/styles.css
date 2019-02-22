@@ -12,6 +12,7 @@ body {
   display: grid;
   grid-template: auto / 1fr [content]min-content 1fr;
   grid-row-gap: 15px;
+  align-content: space-between;
   /* colors, text, extra */
   background-color: #dedede;
 }
@@ -25,31 +26,29 @@ body {
   box-shadow: 0 0 12px 1px rgba(42, 42, 42, 0.2);
   /* look */
   border-radius: 10px;
+  /* we need to ensure a width */
+  width: 1200px;
 }
 
 /* Header section: title, subtitle, navigation */
 .header {
-  align-self: start;
   /* ensure text is centered here */
   text-align: center;
 }
 
 /* To be replaced with text at a later time */
 .footer {
-  align-self: end;
   text-align: center;
 }
 
 /* Article contents */
 .article {
-  align-self: stretch;
 }
 
 /* To be replaced later with the different components */
 .article div {
   /* TODO: needs replacement with text or might actually be needed */
   /* TODO: without this, there is no width constraint so everything collapses */
-  width: 1200px;
   height: 50px;
   border: 1px solid red;
   box-sizing: border-box;
