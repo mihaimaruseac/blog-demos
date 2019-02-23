@@ -29,6 +29,32 @@
     <article class="article content" role="article">
       <p>This is an introductory paragraph to not hit users with TOC only. It
       can go over multiple lines, we should not expect it to be short.</p>
+      <!-- TODO: If this cannot be made responsive as a table, shift to a
+        inner CSS Grid -->
+      <table class="table-of-contents">
+        <tr>
+          <th>Article title</th>
+          <th>Publication date</th>
+          <th>Last edit date</th>
+          <th>Number of comments</th>
+          <th>Author expertise</th>
+        </tr>
+        <tr>
+          <td>Some title</td>
+          <td>12-12-2018</td>
+          <td>24-02-2018</td>
+          <td>42</td>
+          <td>expert</td>
+        </tr>
+        <tr>
+          <td>Some other title</td>
+          <td>23-12-2018</td>
+          <td>21-01-2018</td>
+          <td>13132</td>
+          <td>novice</td>
+        </tr>
+      </table>
+      <p>Finally, it's nice to conclude with a paragraph.
     </article>
 
     <footer class="footer content" role="contentinfo">
