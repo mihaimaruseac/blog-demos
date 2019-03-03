@@ -45,14 +45,16 @@ body {
 .article {
 }
 
-// /* To be replaced later with the different components */
-// .article div {
-//   /* TODO: needs replacement with text or might actually be needed */
-//   /* TODO: without this, there is no width constraint so everything collapses */
-//   height: 50px;
-//   border: 1px solid red;
-//   box-sizing: border-box;
-// }
+/*
+ * /* To be replaced later with the different components *
+.article div {
+  /* TODO: needs replacement with text or might actually be needed *
+  /* TODO: without this, there is no width constraint so everything collapses *
+  height: 50px;
+  border: 1px solid red;
+  box-sizing: border-box;
+}
+*/
 
 /* Responsive design here, for mobile only */
 @media (max-width: 650px) {
@@ -60,13 +62,15 @@ body {
     grid-template: auto / [content]1fr;
   }
 
-  /* debug, to be removed */
+  /*
+   * /* debug, to be removed *
   .content {
     width: 100%;
   }
 
-  // /* debug, to be removed */
-  // .article div {
-  //   width: 100%;
-  // }
+  /* debug, to be removed *
+  .article div {
+    width: 100%;
+  }
+  */
 }
