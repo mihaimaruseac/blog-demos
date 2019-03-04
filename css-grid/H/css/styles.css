@@ -12,10 +12,12 @@ body {
   display: grid;
   grid-template: auto / 1fr [content]min-content 1fr;
   grid-row-gap: 15px;
+  align-content: space-between;
   /* colors, text, extra */
   background-color: #dedede;
 }
 
+/* meta class to format the content bubbles */
 .content {
   /* grid */
   grid-column: content;
@@ -24,16 +26,21 @@ body {
   box-shadow: 0 0 12px 1px rgba(42, 42, 42, 0.2);
   /* look */
   border-radius: 10px;
+  /* we need to ensure a width */
+  width: 1200px;
 }
 
-/* To be replaced with text at a later time */
+/* Header section: title, subtitle, navigation */
 .header {
+  /* ensure text is centered here */
+  text-align: center;
   align-self: start;
   height: 42px;
 }
 
 /* To be replaced with text at a later time */
 .footer {
+  text-align: center;
   align-self: end;
   height: 15px;
 }
