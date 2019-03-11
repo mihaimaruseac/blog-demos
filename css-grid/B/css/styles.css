@@ -28,6 +28,8 @@ body {
   border-radius: 10px;
   /* we need to ensure a width */
   width: 1200px;
+  /* set a max width for very wide screens */
+  max-width: 1500px;
 }
 
 /* Header section: title, subtitle, navigation */
