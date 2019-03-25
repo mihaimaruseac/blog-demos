@@ -10,7 +10,7 @@ body {
   min-height: 100%;
   /* grid setup */
   display: grid;
-  grid-template: auto / 1fr [content]min-content 1fr;
+  grid-template: auto / 1fr [content]max-content 1fr;
   grid-row-gap: 15px;
   align-content: space-between;
   /* colors, text, extra */
@@ -26,10 +26,11 @@ body {
   box-shadow: 0 0 12px 1px rgba(42, 42, 42, 0.2);
   /* look */
   border-radius: 10px;
-  /* we need to ensure a width */
+  /* we need to ensure a width *
   width: 1200px;
-  /* set a max width for very wide screens */
+  /* set a max width for very wide screens *
   max-width: 1500px;
+  */
 }
 
 /* Header section: title, subtitle, navigation */
@@ -47,7 +48,7 @@ body {
 .article {
 }
 
-/* Responsive design here, for mobile only */
+/* Responsive design here, for mobile only *
 @media (max-width: 650px) {
   body {
     grid-template: auto / [content]1fr;
@@ -57,3 +58,4 @@ body {
     width: 100%;
   }
 }
+*/
