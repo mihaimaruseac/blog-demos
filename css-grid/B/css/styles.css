@@ -48,14 +48,15 @@ body {
 .article {
 }
 
-/* Responsive design here, for mobile only *
-@media (max-width: 650px) {
+/* Responsive design here, for mobile only */
+@media (max-width: 600px) {
   body {
     grid-template: auto / [content]1fr;
   }
 
+  /*
   .content {
     width: 100%;
   }
+  */
 }
-*/
