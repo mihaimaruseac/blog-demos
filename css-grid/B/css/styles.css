@@ -26,11 +26,6 @@ body {
   box-shadow: 0 0 12px 1px rgba(42, 42, 42, 0.2);
   /* look */
   border-radius: 10px;
-  /* we need to ensure a width *
-  width: 1200px;
-  /* set a max width for very wide screens *
-  max-width: 1500px;
-  */
 }
 
 /* Header section: title, subtitle, navigation */
@@ -53,10 +48,4 @@ body {
   body {
     grid-template: auto / [content]1fr;
   }
-
-  /*
-  .content {
-    width: 100%;
-  }
-  */
 }

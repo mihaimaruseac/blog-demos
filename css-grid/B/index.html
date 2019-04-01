@@ -29,8 +29,10 @@
     <article class="article content" role="article">
       <p>This is an introductory paragraph to not hit users with TOC only. It
       can go over multiple lines, we should not expect it to be short.</p>
-      <!-- TODO: If this cannot be made responsive as a table, shift to a
-        inner CSS Grid -->
+      <!-- TODO: On chrome this is responsive, but on firefox the table
+        enforces a minimal width and breaks responsivity. So, we should fix
+        accordingly by removing columns. If this cannot be made responsive as
+        a table, shift to a inner CSS Grid, where supported. -->
       <table class="table-of-contents">
         <tr>
           <th>Article title</th>
