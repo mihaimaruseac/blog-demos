@@ -43,6 +43,11 @@ body {
 .article {
 }
 
+/* Separate components of an article */
+.section {
+  border-bottom: #dedede inset;
+}
+
 /* Responsive design here, for mobile only */
 @media (max-width: 600px) {
   body {
