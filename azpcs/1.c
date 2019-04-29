@@ -5,7 +5,7 @@
 
 #define N 2 //5
 #define N2 (N * N)
-#define MIN_BOUND 3800
+#define MIN_BOUND 10 //3800
 #define POPSZ 4 //100
 #define FAMSZ 3
 
