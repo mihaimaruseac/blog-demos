@@ -108,6 +108,12 @@ static inline void initialize_population(void)
 	}
 }
 
+static inline void copy_to(int src[], int dst[])
+{
+	for (int i = 0; i < N2; i++)
+		dst[i] = src[i];
+}
+
 static inline void compute_scores()
 {
 	if (epoch % 2 == 0) {
@@ -129,11 +135,9 @@ static inline void compute_scores()
 	if (best_score > best_now) {
 		best_score = best_now;
 		if (epoch % 2 == 0)
-			for (int i = 0; i < N2; i++)
-				best[i] = pop1[best_ix][i];
+			copy_to(pop1[best_ix], best);
 		else
-			for (int i = 0; i < N2; i++)
-				best[i] = pop2[best_ix][i];
+			copy_to(pop2[best_ix], best);
 	}
 
 	// debug
