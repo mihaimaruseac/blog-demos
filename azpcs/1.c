@@ -72,7 +72,7 @@ static inline void init_rng(void)
 {
 	struct timeval now;
 	gettimeofday(&now, NULL);
-	srand48(42);//now.tv_usec + now.tv_sec);
+	srand48(41);//now.tv_usec + now.tv_sec);
 }
 
 static inline void random_init(int x[])
