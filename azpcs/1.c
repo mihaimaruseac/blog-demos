@@ -75,13 +75,13 @@ static inline void init_rng(void)
 	srand48(41);//now.tv_usec + now.tv_sec);
 }
 
-static inline void random_init(int x[])
+static inline void shuffle(int x[], int n)
 {
 	/* first write array in order */
-	for (int i = 0; i < N2; i++) x[i] = i;
+	for (int i = 0; i < n; i++) x[i] = i;
 
 	/* now do a Fisher-Yates shuffle of x */
-	for (int i = N2 - 1; i > 0; i--) {
+	for (int i = n - 1; i > 0; i--) {
 		int j = drand48() * i;
 		int t = x[i];
 		x[i] = x[j];
@@ -96,7 +96,7 @@ static inline void random_init(int x[])
 static inline void initialize_population(void)
 {
 	for (int i = 0; i < POPSZ; i++)
-		random_init(pop1[i]);
+		shuffle(pop1[i], N2);
 
 	// debug print
 	for (int i = 0; i < POPSZ; i++) {
