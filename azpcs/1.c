@@ -3,9 +3,9 @@
 #include <string.h>
 #include <sys/time.h>
 
-#define N 2 //5
+#define N 3 //5
 #define N2 (N * N)
-#define MIN_BOUND 10 //3800
+#define MIN_BOUND 72 //3800
 #define POPSZ 4 //100
 #define FAMSZ 3
 
@@ -126,11 +126,25 @@ static inline void compute_scores()
 			best_ix = i;
 		}
 
+	if (best_score > best_now) {
+		best_score = best_now;
+		if (epoch % 2 == 0)
+			for (int i = 0; i < N2; i++)
+				best[i] = pop1[best_ix][i];
+		else
+			for (int i = 0; i < N2; i++)
+				best[i] = pop2[best_ix][i];
+	}
+
 	// debug
 	printf("Scores: ");
 	for (int i = 0; i < POPSZ; i++)
 		printf("%lu ", scores[i]);
 	printf("\nBest: %lu (%d)\n", best_now, best_ix);
+	printf("At generation %d best score is %lu for: ", epoch, best_score);
+	for (int i = 0; i < N2; i++)
+		printf("%d ", best[i]);
+	printf("\n");
 }
 
 int main()
@@ -138,8 +152,8 @@ int main()
 	init_rng();
 	compute_initial_distances();
 	initialize_population();
-	compute_scores();
 
+	compute_scores();
 
 	return 0;
 }
