@@ -87,10 +87,6 @@ static inline void shuffle(int x[], int n)
 		x[i] = x[j];
 		x[j] = t;
 	}
-	
-	// debug; print array fast
-	for (int i = 0; i < N2; i++) printf("%d ", x[i]);
-	printf("\n");
 }
 
 static inline void initialize_population(void)
