@@ -110,7 +110,7 @@ static inline void copy_to(int src[], int dst[])
 		dst[i] = src[i];
 }
 
-static inline void compute_scores()
+static inline void compute_scores(void)
 {
 	if (epoch % 2 == 0) {
 		for (int i = 0; i < POPSZ; i++)
