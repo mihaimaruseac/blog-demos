@@ -272,6 +272,10 @@ int main()
 	initialize_population();
 
 	compute_scores();
+	next_generation();
+
+	compute_scores();
+	next_generation();
 
 	return 0;
 }
