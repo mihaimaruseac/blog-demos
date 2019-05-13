@@ -147,6 +147,124 @@ static inline void compute_scores(void)
 	printf("\n");
 }
 
+static inline void combine(int son_ix, int parent1_ix, int parent2_ix)
+{
+	/* crossover */
+	int x1 = drand48() * (N2 - 2);
+	int x2 = x1 + 1 + (drand48() * (N2 / 2));
+	if (x2 > N2) x2 = N2;
+	printf("Indices:[%d %d)\n", x1, x2);
+
+	if (epoch % 2 == 0) {
+		/* from pop1 to pop2 */
+		for (int i = x1; i < x2; i++)
+			pop2[son_ix][i] = pop1[parent1_ix][i];
+		int i = 0, j = 0;
+		while (i < x1) {
+			int found = 0;
+			for (int k = x1; k < x2; k++)
+				if (pop2[son_ix][k] == pop1[parent2_ix][j]) {
+					found = 1;
+					break;
+				}
+			if (!found)
+				pop2[son_ix][i++] = pop1[parent2_ix][j];
+			j++;
+		}
+		i = x2;
+		while (i < N2) {
+			int found = 0;
+			for (int k = x1; k < x2; k++)
+				if (pop2[son_ix][k] == pop1[parent2_ix][j]) {
+					found = 1;
+					break;
+				}
+			if (!found)
+				pop2[son_ix][i++] = pop1[parent2_ix][j];
+			j++;
+		}
+	} else {
+		/* from pop2 to pop1 */
+		for (int i = x1; i < x2; i++)
+			pop1[son_ix][i] = pop2[parent1_ix][i];
+		int i = 0, j = 0;
+		while (i < x1) {
+			int found = 0;
+			for (int k = x1; k < x2; k++)
+				if (pop1[son_ix][k] == pop2[parent2_ix][j]) {
+					found = 1;
+					break;
+				}
+			if (!found)
+				pop1[son_ix][i++] = pop2[parent2_ix][j];
+			j++;
+		}
+		i = x2;
+		while (i < N2) {
+			int found = 0;
+			for (int k = x1; k < x2; k++)
+				if (pop1[son_ix][k] == pop2[parent2_ix][j]) {
+					found = 1;
+					break;
+				}
+			if (!found)
+				pop1[son_ix][i++] = pop2[parent2_ix][j];
+			j++;
+		}
+	}
+
+	/* mutation */
+}
+
+static inline void next_generation(void)
+{
+	static int family[POPSZ];
+	unsigned long best1, best2;
+	int best1_ix, best2_ix;
+
+	for (int i = 0; i < POPSZ; i++) {
+		/* generate new group to reproduce from */
+		shuffle(family, POPSZ);
+
+		/* first parent */
+		best1 = scores[family[0]];
+		best1_ix = 0;
+		for (int j = 1; j < FAMSZ; j++)
+			if (scores[family[j]] < best1) {
+				best1 = scores[family[j]];
+				best1_ix = j;
+			}
+
+		/* second parent */
+		best2_ix = best1_ix == 0 ? 1 : 0;
+		best2 = scores[family[best2_ix]];
+		for (int j = 1; j < FAMSZ; j++)
+			if (j != best1_ix && scores[family[j]] < best2) {
+				best2 = scores[family[j]];
+				best2_ix = j;
+			}
+
+		printf("Combination group: ");
+		for (int j = 0; j < FAMSZ; j++) printf("%d ", family[j]);
+		printf("Parents: %d(%d,%lu) %d(%d,%lu)\n",
+				family[best1_ix], best1_ix, best1,
+				family[best2_ix], best2_ix, best2);
+		combine(i, family[best1_ix], family[best2_ix]);
+	}
+	epoch++;
+
+	// debug print
+	for (int i = 0; i < POPSZ; i++) {
+		printf("Pop %d: ", i);
+		for (int j = 0; j < N2; j++)
+			if (epoch % 2 == 0)
+				printf("%d ", pop1[i][j]);
+			else
+				printf("%d ", pop2[i][j]);
+		printf("\n");
+	}
+}
+
 int main()
 {
 	init_rng();
