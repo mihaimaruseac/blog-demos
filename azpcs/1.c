@@ -8,6 +8,7 @@
 #define MIN_BOUND 72 //3800
 #define POPSZ 5 //100
 #define FAMSZ 3
+#define MAX_EPOCH 1000
 
 #define OO 99999999999L
 
@@ -271,11 +272,10 @@ int main()
 	compute_initial_distances();
 	initialize_population();
 
-	compute_scores();
-	next_generation();
-
-	compute_scores();
-	next_generation();
+	while (epoch < MAX_EPOCH) {
+		compute_scores();
+		next_generation();
+	}
 
 	return 0;
 }
