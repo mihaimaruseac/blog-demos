@@ -154,7 +154,6 @@ static inline void combine(int son_ix, int parent1_ix, int parent2_ix)
 	int x1 = drand48() * (N2 - 2);
 	int x2 = x1 + 1 + (drand48() * (N2 / 2));
 	if (x2 > N2) x2 = N2;
-	printf("Indices:[%d %d)\n", x1, x2);
 
 	if (epoch % 2 == 0) {
 		/* from pop1 to pop2 */
@@ -245,11 +244,6 @@ static inline void next_generation(void)
 				best2_ix = j;
 			}
 
-		printf("Combination group: ");
-		for (int j = 0; j < FAMSZ; j++) printf("%d ", family[j]);
-		printf("Parents: %d(%d,%lu) %d(%d,%lu)\n",
-				family[best1_ix], best1_ix, best1,
-				family[best2_ix], best2_ix, best2);
 		combine(i, family[best1_ix], family[best2_ix]);
 	}
 	epoch++;
