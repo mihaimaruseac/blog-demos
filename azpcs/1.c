@@ -6,8 +6,8 @@
 #define N 3 //5
 #define N2 (N * N)
 #define MIN_BOUND 72 //3800
-#define POPSZ 5 //100
-#define FAMSZ 3
+#define POPSZ 100
+#define FAMSZ 5
 #define MAX_EPOCH 1000
 
 #define OO 99999999999L
@@ -247,17 +247,6 @@ static inline void next_generation(void)
 		combine(i, family[best1_ix], family[best2_ix]);
 	}
 	epoch++;
-
-	// debug print
-	for (int i = 0; i < POPSZ; i++) {
-		printf("Pop %d: ", i);
-		for (int j = 0; j < N2; j++)
-			if (epoch % 2 == 0)
-				printf("%d ", pop1[i][j]);
-			else
-				printf("%d ", pop2[i][j]);
-		printf("\n");
-	}
 }
 
 int main()
