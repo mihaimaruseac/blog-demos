@@ -136,16 +136,6 @@ static inline void compute_scores(void)
 		else
 			copy_to(pop2[best_ix], best);
 	}
-
-	// debug
-	printf("Scores: ");
-	for (int i = 0; i < POPSZ; i++)
-		printf("%lu ", scores[i]);
-	printf("\nBest: %lu (%d)\n", best_now, best_ix);
-	printf("At generation %d best score is %lu for: ", epoch, best_score);
-	for (int i = 0; i < N2; i++)
-		printf("%d ", best[i]);
-	printf("\n");
 }
 
 static inline void combine(int son_ix, int parent1_ix, int parent2_ix)
