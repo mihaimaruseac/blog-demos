@@ -94,15 +94,6 @@ static inline void initialize_population(void)
 {
 	for (int i = 0; i < POPSZ; i++)
 		shuffle(pop1[i], N2);
-
-	// debug print
-	for (int i = 0; i < POPSZ; i++) {
-		printf("Pop %d: ", i);
-		for (int j = 0; j < N2; j++) {
-			printf("%d ", pop1[i][j]);
-		}
-		printf("\n");
-	}
 }
 
 static inline void copy_to(int src[], int dst[])
