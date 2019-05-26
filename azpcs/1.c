@@ -74,6 +74,7 @@ static inline void init_rng(void)
 	struct timeval now;
 	gettimeofday(&now, NULL);
 	long int seedval = 41;//now.tv_usec + now.tv_sec;
+	printf("Using seed %ld\n", seedval);
 	srand48(seedval);
 }
 
