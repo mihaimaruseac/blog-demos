@@ -128,6 +128,11 @@ static inline void compute_scores(void)
 			copy_to(pop1[best_ix], best);
 		else
 			copy_to(pop2[best_ix], best);
+
+		/* also print best score */
+		printf("Next best score: %ld (epoch: %d)\n", best_score, epoch);
+		print_grid(best);
+		printf("\n");
 	}
 }
 
