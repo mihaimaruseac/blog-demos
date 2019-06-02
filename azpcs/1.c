@@ -9,6 +9,7 @@
 #define POPSZ 100
 #define FAMSZ 5
 #define MAX_EPOCH 1000
+#define MUTATION_PROBABILITY 0.1
 
 #define OO 99999999999L
 
@@ -202,6 +203,18 @@ static inline void combine(int son_ix, int parent1_ix, int parent2_ix)
 	}
 
 	/* mutation */
+	if (drand48() < MUTATION_PROBABILITY) {
+		int ix = drand48() * (N2 - 1);
+		if (epoch % 2 == 0) {
+			int t = pop2[son_ix][ix];
+			pop2[son_ix][ix] = pop2[son_ix][ix + 1];
+			pop2[son_ix][ix + 1] = t;
+		} else {
+			int t = pop1[son_ix][ix];
+			pop1[son_ix][ix] = pop1[son_ix][ix + 1];
+			pop1[son_ix][ix + 1] = t;
+		}
+	}
 }
 
 static inline void next_generation(void)
