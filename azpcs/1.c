@@ -3,12 +3,12 @@
 #include <string.h>
 #include <sys/time.h>
 
-#define N 3 //5
+#define N 5
 #define N2 (N * N)
-#define MIN_BOUND 72 //3800
+#define MIN_BOUND 3800
 #define POPSZ 100
 #define FAMSZ 5
-#define MAX_EPOCH 1000
+#define MAX_EPOCH 100000
 #define MUTATION_PROBABILITY 0.1
 
 #define OO 99999999999L
@@ -74,7 +74,7 @@ static inline void init_rng(void)
 {
 	struct timeval now;
 	gettimeofday(&now, NULL);
-	long int seedval = 41;//now.tv_usec + now.tv_sec;
+	long int seedval = now.tv_usec + now.tv_sec;
 	printf("Using seed %ld\n", seedval);
 	srand48(seedval);
 }
