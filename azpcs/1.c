@@ -3,9 +3,9 @@
 #include <string.h>
 #include <sys/time.h>
 
-#define N 5
+#define N 6
 #define N2 (N * N)
-#define MIN_BOUND 3800
+#define MIN_BOUND 16902
 #define POPSZ 100
 #define FAMSZ 5
 #define MAX_EPOCH 100000
