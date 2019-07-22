@@ -48,6 +48,15 @@ body {
   border-bottom: #dedede inset;
 }
 
+/* Font styling */
+body {
+  font-family: 'CMU', serif;
+  font-size: 25px;
+  line-height: 1.2;
+  font-weight: 300;
+  hyphens: auto;
+}
+
 /* Responsive design here, for mobile only */
 @media (max-width: 600px) {
   body {
