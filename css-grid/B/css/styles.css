@@ -57,6 +57,14 @@ body {
   hyphens: auto;
 }
 
+em, q {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
 /* Responsive design here, for mobile only */
 @media (max-width: 600px) {
   body {
