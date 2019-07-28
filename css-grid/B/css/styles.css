@@ -100,6 +100,10 @@ h6 {
   font-size: 1rem;
 }
 
+.header {
+  font-family: CormorantInfant;
+}
+
 /* Responsive design here, for mobile only */
 @media (max-width: 600px) {
   body {
