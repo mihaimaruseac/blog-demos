@@ -41,6 +41,7 @@ body {
 
 /* Article contents */
 .article {
+  text-align: justify;
 }
 
 /* Separate components of an article */
