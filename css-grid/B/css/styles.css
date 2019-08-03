@@ -42,6 +42,7 @@ body {
 /* Article contents */
 .article {
   text-align: justify;
+  padding: 1em 2em;
 }
 
 /* Separate components of an article */
