@@ -15,6 +15,12 @@ body {
   align-content: space-between;
   /* colors, text, extra */
   background-color: #dedede;
+  /* font styling */
+  font-family: 'CMU', serif;
+  font-size: 25px;
+  line-height: 1.2;
+  font-weight: 300;
+  hyphens: auto;
 }
 
 /* meta class to format the content bubbles */
@@ -32,6 +38,8 @@ body {
 .header {
   /* ensure text is centered here */
   text-align: center;
+  /* font */
+  font-family: CormorantInfant;
 }
 
 /* To be replaced with text at a later time */
@@ -48,15 +56,6 @@ body {
 /* Separate components of an article */
 .section {
   border-bottom: #dedede inset;
-}
-
-/* Font styling */
-body {
-  font-family: 'CMU', serif;
-  font-size: 25px;
-  line-height: 1.2;
-  font-weight: 300;
-  hyphens: auto;
 }
 
 em, q {
@@ -108,10 +107,6 @@ h5 {
 
 h6 {
   font-size: 1rem;
-}
-
-.header {
-  font-family: CormorantInfant;
 }
 
 /* Responsive design here, for mobile only */
