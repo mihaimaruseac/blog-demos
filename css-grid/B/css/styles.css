@@ -5,17 +5,13 @@ html {
 }
 
 body {
-  /* to cover entire space, always */
   margin: 0;
   min-height: 100%;
-  /* grid setup */
   display: grid;
   grid-template: auto / 1fr [content]minmax(600px,3fr) 1fr;
   grid-row-gap: 15px;
   align-content: space-between;
-  /* colors, text, extra */
   background-color: #dedede;
-  /* font styling */
   font-family: 'CMU', serif;
   font-size: 25px;
   line-height: 1.2;
@@ -23,37 +19,27 @@ body {
   hyphens: auto;
 }
 
-/* meta class to format the content bubbles */
 .content {
-  /* grid */
   grid-column: content;
-  /* color */
   background-color: #fff;
   box-shadow: 0 0 12px 1px rgba(42, 42, 42, 0.2);
-  /* look */
   border-radius: 10px;
 }
 
-/* Header section: title, subtitle, navigation */
 .header {
-  /* ensure text is centered here */
   text-align: center;
-  /* font */
   font-family: CormorantInfant;
 }
 
-/* To be replaced with text at a later time */
 .footer {
   text-align: center;
 }
 
-/* Article contents */
 .article {
   text-align: justify;
   padding: 1em 2em;
 }
 
-/* Separate components of an article */
 .section {
   border-bottom: #dedede inset;
 }
@@ -109,7 +95,6 @@ h6 {
   font-size: 1rem;
 }
 
-/* Responsive design here, for mobile only */
 @media (max-width: 600px) {
   body {
     grid-template: auto / [content]1fr;
