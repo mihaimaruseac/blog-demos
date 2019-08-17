@@ -8,7 +8,6 @@ body {
   background-color: #dedede;
   display: grid;
   font-family: 'CMU', serif;
-  font-size: 25px;
   font-weight: 300;
   grid-row-gap: 15px;
   grid-template: auto / 1fr [content]minmax(600px,3fr) 1fr;
