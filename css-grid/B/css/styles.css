@@ -43,6 +43,11 @@ body {
   border-bottom: #dedede inset;
 }
 
+.article > nav {
+  border-bottom: 1px inset #dedede;
+  font-style: italic;
+}
+
 em, q {
   font-style: italic;
 }
