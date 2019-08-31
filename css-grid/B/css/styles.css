@@ -39,13 +39,13 @@ body {
   text-align: justify;
 }
 
-.section {
-  border-bottom: #dedede inset;
-}
-
 .article > nav {
   border-bottom: 1px inset #dedede;
   font-style: italic;
+}
+
+.article > aside {
+  border-top: 1px inset #dedede;
 }
 
 em, q {
