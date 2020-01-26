@@ -1,5 +1,4 @@
 import Data.Maybe
-import Debug.Trace
 
 -- If on day 1 we deposit x and on day 2 we deposit y, then the balance is:
 --
