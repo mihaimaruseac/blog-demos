@@ -4,7 +4,7 @@ def print_matrix(matrix):
     for line in matrix:
         print(''.join([f'{x:3}' if x else '   ' for x in line]))
 
-def solve(matrix, dV=1, debug=False):
+def solve(matrix, dV=1, dW=0, debug=False):
     I = len(matrix)
     J = len(matrix[0])
     Vmin = max([max(l) for l in matrix])
@@ -45,7 +45,7 @@ def solve(matrix, dV=1, debug=False):
                  for w in Vrange if w < v
                  for (x,y) in neighs]
             solver.Add(v*vs[v,i,j] - solver.Sum(l) <= fixed_sum)
-            solver.Add(v*vs[v,i,j] + solver.Sum(l) <= 2 * v - fixed_sum)
+            solver.Add(v*vs[v,i,j] + solver.Sum(l) <= 2 * v - fixed_sum + dW)
     if debug: print(f'Num constraints: {solver.NumConstraints()}')
 
     solver.Maximize(solver.Sum([vs[V,i,j] for (i,j) in fs]))
@@ -81,10 +81,10 @@ def solve(matrix, dV=1, debug=False):
 matrix = [
  [0,0,0,0,0,0,0,0],
  [0,0,0,0,7,0,0,0],
- [0,0,3,1,1,5,0,0],
+ [0,9,3,1,1,5,0,0],
  [0,0,6,2,4,0,0,0],
  [0,0,8,0,0,0,0,0],
  [0,0,0,0,0,0,0,0],
 ]
 
-solve(matrix, dV=1, debug=False)
+solve(matrix, dV=1, dW=6, debug=False)
