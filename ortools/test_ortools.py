@@ -40,8 +40,6 @@ def solve(matrix, dV=1, debug=False):
                 if 0 <= i+di < I and 0 <= j+dj < J]
         fixed_sum = sum(matrix[x][y] for (x,y) in neighs)
         neighs = [(x,y) for (x,y) in neighs if matrix[x][y] == 0]
-        #if i == 4 and j == 3:
-        #    print(i, j, neighs, fixed_sum, matrix[i][j])
         for v in Vrange:
             l = [w * vs[w,x,y]
                  for w in Vrange if w < v
@@ -58,7 +56,6 @@ def solve(matrix, dV=1, debug=False):
         with open("obj", "w") as f:
             f.write(solver.ExportModelAsLpFormat(False))
         print('='*80)
-    return
 
     status = solver.Solve()
     if status in [pywraplp.Solver.OPTIMAL, pywraplp.Solver.FEASIBLE]:
@@ -90,4 +87,4 @@ matrix = [
  [0,0,0,0,0,0,0,0],
 ]
 
-solve(matrix, dV=4, debug=True)
+solve(matrix, dV=3, debug=False)
