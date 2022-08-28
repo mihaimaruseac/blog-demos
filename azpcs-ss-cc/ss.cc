@@ -1,10 +1,12 @@
 #include <iostream>
 #include <map>
+#include <random>
 #include <set>
 #include <utility>
 #include <vector>
 
 using Coord = std::pair<int,int>;
+using RNG = std::mt19937;
 
 int NumDigits(int n) {
 	int v = 0;
@@ -219,7 +221,81 @@ void TestState() {
 
 } // namespace // State
 
+namespace { // Chromo
+
+class Chromo {
+  public:
+	Chromo(RNG* rng, int n) : fitness_(0), n_(n), rng_(rng) {}
+
+	int Fitness() {
+		if (fitness_) return fitness_;
+		State s(n_);
+		bool shorter = false;
+		for (const auto& g: genes_) {
+			std::cout << "from gene: " << g << "\n";
+			std::cout << "\tState:\n"; s.Draw();
+			const auto& next = s.Next();
+			std::cout << "\tNext " << next.size() << " moves\n";
+			if (!next.size()) {
+				shorter = true;
+				break;
+			}
+			const auto& [x,y] = next[g % next.size()];
+			s.Place(x, y);
+			++fitness_;
+		}
+		if (shorter) {
+			genes_.resize(fitness_);
+		} else {
+			while (true) {
+				const unsigned int g = (*rng_)();
+				std::cout << "new gene: " << g << "\n";
+				std::cout << "\tState:\n"; s.Draw();
+				const auto& next = s.Next();
+				std::cout << "\tNext " << next.size() << " moves\n";
+				if (!next.size()) break;
+				const auto& [x,y] = next[g % next.size()];
+				s.Place(x, y);
+				genes_.push_back(g);
+				++fitness_;
+			}
+		}
+		return fitness_;
+	}
+
+	void AddGene(int x) { genes_.push_back(x); } // testing only
+
+  private:
+	std::vector<int> genes_;
+	int fitness_;
+	int n_;
+	RNG* rng_; // not owned
+};
+
+void TestInitialFitness() {
+	RNG gen;
+	gen.seed(42);
+	Chromo c(&gen, 3);
+	std::cout << c.Fitness() << " " << c.Fitness() << "\n";
+}
+
+void TestGivenFitness() {
+	RNG gen;
+	gen.seed(42);
+	Chromo c(&gen, 3);
+	c.AddGene(200);
+	std::cout << c.Fitness();
+}
+
+void TestChromo() {
+	TestInitialFitness();
+	TestGivenFitness();
+}
+
+} // namespace // Chromo
+
 int main() {
 	TestState();
+	TestChromo();
 	return 0;
 }
