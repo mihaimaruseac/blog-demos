@@ -15,6 +15,8 @@ int NumDigits(int n) {
 	return v;
 }
 
+namespace { // State
+
 class State {
   public:
 	State(int n) : n_(n) {
@@ -204,7 +206,7 @@ void TestPlaceNext4() {
 	s.Draw();
 }
 
-int main() {
+void TestState() {
 	TestEmpty();
 	TestPlaceNear();
 	TestPlaceNext();
@@ -213,5 +215,11 @@ int main() {
 	TestGetNextPos2();
 	TestPlaceNext3();
 	TestPlaceNext4();
+}
+
+} // namespace // State
+
+int main() {
+	TestState();
 	return 0;
 }
