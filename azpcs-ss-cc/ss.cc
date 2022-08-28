@@ -27,7 +27,7 @@ class State {
 
 	void Place(int x, int y) {
 		auto value = Value(ps_.size());
-		ps_.emplace_back(x,y);
+		ps_.push_back({x,y});
 		ns_[{x,y}] = -value;
 		nps_[value].erase({x,y});
 		for (int dx = -1; dx < 2; dx++) {
@@ -50,13 +50,13 @@ class State {
 		std::vector<Coord> ret;
 		if (value > 1) {
 			for (const auto& [x,y]: nps_[value]) {
-				ret.emplace_back(x,y);
+				ret.push_back({x,y});
 			}
 		} else {
 			for (int x = -max_delta; x <= max_delta; x++) {
 				for (int y = -max_delta; y <= max_delta; y++) {
 					if (ns_[{x,y}] >= 0) {
-						ret.emplace_back(x, y);
+						ret.push_back({x, y});
 					}
 				}
 			}
