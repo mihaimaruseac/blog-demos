@@ -174,7 +174,7 @@ void TestGetNextPos() {
 void TestGetNextPos2() {
 	std::cout << "========= TestGetNextPos2 =========\n";
 	State s(2);
-	for (const auto& [x,y] : s.Next()) {
+	for (const auto& [x,y] : s.Next(1)) {
 		std::cout << "{" << x << "," << y << "} ";
 	}
 	std::cout << "\n";
@@ -182,13 +182,24 @@ void TestGetNextPos2() {
 
 void TestPlaceNext3() {
 	std::cout << "========== TestPlaceNext3 =========\n";
-	State s(4);
-	for (int i = 0; i < 2; i++) {
-		const auto next = s.Next();
-		if (next.size()) {
-			const auto& [x,y] = next[0];
-			s.Place(x, y);
-		}
+	State s(3);
+	while (true) {
+		const auto next = s.Next(2);
+		if (!next.size()) break;
+		const auto& [x,y] = next[0];
+		s.Place(x, y);
+	}
+	s.Draw();
+}
+
+void TestPlaceNext4() {
+	std::cout << "========== TestPlaceNext4 =========\n";
+	State s(3);
+	while (true) {
+		const auto next = s.Next(2);
+		if (!next.size()) break;
+		const auto& [x,y] = next[next.size() / 2];
+		s.Place(x, y);
 	}
 	s.Draw();
 }
@@ -201,6 +212,6 @@ int main() {
 	TestGetNextPos();
 	TestGetNextPos2();
 	TestPlaceNext3();
-	//TestPlaceNext4();
+	TestPlaceNext4();
 	return 0;
 }
