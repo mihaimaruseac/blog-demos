@@ -235,10 +235,7 @@ class Chromo {
 		State s(n_);
 		bool shorter = false;
 		for (const auto& g: genes_) {
-			std::cout << "from gene: " << g << "\n";
-			std::cout << "\tState:\n"; s.Draw();
 			const auto& next = s.Next();
-			std::cout << "\tNext " << next.size() << " moves\n";
 			if (!next.size()) {
 				shorter = true;
 				break;
@@ -252,10 +249,7 @@ class Chromo {
 		} else {
 			while (true) {
 				const unsigned int g = (*rng_)();
-				std::cout << "new gene: " << g << "\n";
-				std::cout << "\tState:\n"; s.Draw();
 				const auto& next = s.Next();
-				std::cout << "\tNext " << next.size() << " moves\n";
 				if (!next.size()) break;
 				const auto& [x,y] = next[g % next.size()];
 				s.Place(x, y);
@@ -268,6 +262,12 @@ class Chromo {
 
 	void AddGene(int x) { genes_.push_back(x); } // testing only
 
+	void Dump() const { // testing only
+		std::cout << "{";
+		for (const auto& g : genes_) std::cout << g << " ";
+		std::cout << "}\n";
+	}
+
   private:
 	std::vector<int> genes_;
 	int fitness_;
@@ -276,6 +276,7 @@ class Chromo {
 };
 
 void TestInitialFitness() {
+	std::cout << "======= TestInitialFitness ========\n";
 	RNG gen;
 	gen.seed(42);
 	Chromo c(&gen, 3);
@@ -283,16 +284,30 @@ void TestInitialFitness() {
 }
 
 void TestGivenFitness() {
+	std::cout << "======== TestGivenFitness =========\n";
 	RNG gen;
 	gen.seed(42);
 	Chromo c(&gen, 3);
 	c.AddGene(200);
-	std::cout << c.Fitness();
+	std::cout << c.Fitness() << "\n";
+}
+
+void TestGivenFitness2() {
+	std::cout << "======== TestGivenFitness2 ========\n";
+	RNG gen;
+	gen.seed(42);
+	Chromo c(&gen, 3);
+	for (const auto& g : {200, 200, 3, 3, 0,0,0,0,0,0, 42}) {
+		c.AddGene(g);
+	}
+	std::cout << c.Fitness() << "\n";
+	c.Dump();
 }
 
 void TestChromo() {
 	TestInitialFitness();
 	TestGivenFitness();
+	TestGivenFitness2();
 }
 
 } // namespace // Chromo
