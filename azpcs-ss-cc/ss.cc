@@ -260,6 +260,25 @@ class Chromo {
 		return fitness_;
 	}
 
+	void Crossover(Chromo& other) {
+		std::uniform_int_distribution<> distrib(0,
+				std::min(genes_.size(), other.genes_.size()) - 1);
+		int ix = distrib(*rng_);
+		auto ti = genes_.begin() + ix;
+		auto oi = other.genes_.begin() + ix;
+		for(; ti != genes_.end() && oi != other.genes_.end(); ++ti, ++oi) {
+			std::swap(*ti, *oi);
+		}
+	}
+
+	void Mutate() {
+		std::uniform_int_distribution<> distrib(0, genes_.size() - 1);
+		int ix = distrib(*rng_);
+		++genes_[ix];
+	}
+
+	void NextGen() { fitness_ = 0; }
+
 	void AddGene(int x) { genes_.push_back(x); } // testing only
 
 	void Dump() const { // testing only
@@ -304,10 +323,44 @@ void TestGivenFitness2() {
 	c.Dump();
 }
 
+void TestCrossover() {
+	std::cout << "========== TestCrossover ==========\n";
+	RNG gen;
+	gen.seed(42);
+	Chromo c1(&gen, 3);
+	for (const auto& g : {1,2,3,4,5,6,7}) {
+		c1.AddGene(g);
+	}
+	Chromo c2(&gen, 3);
+	for (const auto& g : {11,12,13,14,15,16,17,18,19,20}) {
+		c2.AddGene(g);
+	}
+	c1.Dump();
+	c2.Dump();
+	c1.Crossover(c2);
+	c1.Dump();
+	c2.Dump();
+}
+
+void TestMutate() {
+	std::cout << "=========== TestMutate ============\n";
+	RNG gen;
+	gen.seed(42);
+	Chromo c(&gen, 3);
+	for (const auto& g : {200, 200, 3, 3, 0,0,0,0,0,0, 42}) {
+		c.AddGene(g);
+	}
+	c.Dump();
+	c.Mutate();
+	c.Dump();
+}
+
 void TestChromo() {
 	TestInitialFitness();
 	TestGivenFitness();
 	TestGivenFitness2();
+	TestCrossover();
+	TestMutate();
 }
 
 } // namespace // Chromo
