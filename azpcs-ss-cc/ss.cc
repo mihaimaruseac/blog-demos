@@ -397,7 +397,7 @@ int main() {
 	const int n = 31;
 	const int pop_size = 100;
 	const int md = 5;
-	const float mutation_probability = 0.05;
+	const float mutation_probability = 0.1;
 	const int every_iterations = 10000;
 
 	struct {
