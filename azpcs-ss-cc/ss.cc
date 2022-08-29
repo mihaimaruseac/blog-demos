@@ -389,11 +389,11 @@ int main() {
 	TestState();
 	TestChromo();
 #else
-	const int n = 2;
-	const int pop_size = 10;
-	const int md = 2;
-	const float mutation_probability = 0.01;
-	const int every_iterations = 1000;
+	const int n = 4;
+	const int pop_size = 100;
+	const int md = 10;
+	const float mutation_probability = 0.05;
+	const int every_iterations = 10000;
 
 	struct {
 		bool operator()(Chromo a, Chromo b) const {
@@ -417,7 +417,7 @@ int main() {
 	while (true) {
 		++num_iterations;
 		if (num_iterations % every_iterations == 0) {
-			std::cout << "Iteration " << num_iterations << " best fitness " << best_fitness << "\n";
+			std::cout << "Iteration " << num_iterations << " best fitness " << best_fitness - n + 2 << "\n";
 		}
 		for (int i = 0; i < pop_size; i += 2) {
 			population[i].Crossover(population[i+1]);
@@ -436,7 +436,7 @@ int main() {
 		std::sort(population.begin(), population.end(), FitnessSort);
 		if (population[0].Fitness() > best_fitness) {
 			best_fitness = population[0].Fitness();
-			std::cout << "New best fitness " << best_fitness << " from:\n";
+			std::cout << "New best fitness " << best_fitness - n + 2 << " from:\n";
 			population[0].Draw();
 		}
 	}
