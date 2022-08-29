@@ -289,7 +289,12 @@ class Chromo {
 	void Mutate() {
 		std::uniform_int_distribution<> distrib(0, genes_.size() - 1);
 		int ix = distrib(*rng_);
-		++genes_[ix];
+		if (ix < n_) {
+			std::uniform_int_distribution<> d(0, 100);
+			genes_[ix] += distrib(*rng_);
+		} else {
+			++genes_[ix];
+		}
 	}
 
 	void NextGen() { fitness_ = 0; }
@@ -389,7 +394,7 @@ int main() {
 	TestState();
 	TestChromo();
 #else
-	const int n = 4;
+	const int n = 7;
 	const int pop_size = 100;
 	const int md = 10;
 	const float mutation_probability = 0.05;
