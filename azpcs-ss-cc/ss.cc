@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 #include <map>
 #include <random>
@@ -71,7 +72,7 @@ class State {
 		return n < n_ ? 1 : (n - n_ + 2);
 	}
 
-	void Draw() const {
+	void Draw(bool full=true) const {
 		int xmin = 0, ymin = 0, xmax = 0, ymax = 0;
 		for (const auto& [c,_]: ns_) {
 			const auto& [x,y] = c;
@@ -94,12 +95,25 @@ class State {
 		}
 		const int width = 1 + NumDigits(max_v);
 
-		for (int i = 0; i < dx; i++) {
-			for (int j = 0; j < dy; j++) {
-				// C++20 required for fmt
-				printf("%*d ", width, matrix[i * dy + j]);
+		if (full) {
+			for (int i = 0; i < dx; i++) {
+				for (int j = 0; j < dy; j++) {
+					// C++20 required for fmt
+					printf("%*d ", width, matrix[i * dy + j]);
+				}
+				printf("\n");
 			}
-			printf("\n");
+		} else {
+			for (int i = 0; i < dx; i++) {
+				for (int j = 0; j < dy; j++) {
+					if (matrix[i * dy + j] > 0) {
+						printf("%*d ", width, matrix[i * dy + j]);
+					} else {
+						printf("%*c ", width, ' ');
+					}
+				}
+				printf("\n");
+			}
 		}
 
 		free(matrix);
@@ -228,14 +242,14 @@ namespace { // Chromo
 
 class Chromo {
   public:
-	Chromo(RNG* rng, int n) : fitness_(0), n_(n), rng_(rng) {}
+	Chromo(RNG* rng, int n, int md=10) : fitness_(0), n_(n), rng_(rng), md_(md), s_(n_) {}
 
 	int Fitness() {
 		if (fitness_) return fitness_;
 		State s(n_);
 		bool shorter = false;
 		for (const auto& g: genes_) {
-			const auto& next = s.Next();
+			const auto& next = s.Next(md_);
 			if (!next.size()) {
 				shorter = true;
 				break;
@@ -249,7 +263,7 @@ class Chromo {
 		} else {
 			while (true) {
 				const unsigned int g = (*rng_)();
-				const auto& next = s.Next();
+				const auto& next = s.Next(md_);
 				if (!next.size()) break;
 				const auto& [x,y] = next[g % next.size()];
 				s.Place(x, y);
@@ -257,6 +271,7 @@ class Chromo {
 				++fitness_;
 			}
 		}
+		s_ = s;
 		return fitness_;
 	}
 
@@ -279,6 +294,8 @@ class Chromo {
 
 	void NextGen() { fitness_ = 0; }
 
+	void Draw() { s_.Draw(false); }
+
 	void AddGene(int x) { genes_.push_back(x); } // testing only
 
 	void Dump() const { // testing only
@@ -292,6 +309,8 @@ class Chromo {
 	int fitness_;
 	int n_;
 	RNG* rng_; // not owned
+	int md_;
+	State s_; // only computed in Fitness()
 };
 
 void TestInitialFitness() {
@@ -366,7 +385,61 @@ void TestChromo() {
 } // namespace // Chromo
 
 int main() {
+#if 0
 	TestState();
 	TestChromo();
+#else
+	const int n = 2;
+	const int pop_size = 10;
+	const int md = 2;
+	const float mutation_probability = 0.01;
+	const int every_iterations = 1000;
+
+	struct {
+		bool operator()(Chromo a, Chromo b) const {
+			return a.Fitness() > b.Fitness();
+		}
+	} FitnessSort;
+
+	RNG gen;
+	std::random_device r;
+	gen.seed(r());
+
+	std::vector<Chromo> population;
+	for (int i = 0; i < pop_size; i++) {
+		population.push_back(Chromo(&gen, n, md));
+		population[i].Fitness();
+	}
+	std::sort(population.begin(), population.end(), FitnessSort);
+	int best_fitness = population[0].Fitness();
+
+	int num_iterations = 0;
+	while (true) {
+		++num_iterations;
+		if (num_iterations % every_iterations == 0) {
+			std::cout << "Iteration " << num_iterations << " best fitness " << best_fitness << "\n";
+		}
+		for (int i = 0; i < pop_size; i += 2) {
+			population[i].Crossover(population[i+1]);
+		}
+		for (auto& c : population) {
+			std::uniform_real_distribution<> u(0, 1);
+			if (u(gen) < mutation_probability) {
+				c.Mutate();
+			}
+			c.NextGen();
+		}
+		// NOTE: why does this need a separate loop?
+		for (auto& c : population) {
+			c.Fitness();
+		}
+		std::sort(population.begin(), population.end(), FitnessSort);
+		if (population[0].Fitness() > best_fitness) {
+			best_fitness = population[0].Fitness();
+			std::cout << "New best fitness " << best_fitness << " from:\n";
+			population[0].Draw();
+		}
+	}
+#endif
 	return 0;
 }
