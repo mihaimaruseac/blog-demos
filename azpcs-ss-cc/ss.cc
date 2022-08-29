@@ -36,9 +36,9 @@ class State {
 				const auto ny = y + dy;
 				if (ns_[{nx,ny}] >= 0) {
 					const auto old_value = ns_[{nx,ny}];
+					const auto new_value = old_value + value;
+					ns_[{nx,ny}] = new_value;
 					nps_[old_value].erase({nx, ny});
-					ns_[{nx,ny}] += value;
-					const auto new_value = ns_[{nx,ny}];
 					nps_[new_value].insert({nx, ny});
 				}
 			}
@@ -55,8 +55,11 @@ class State {
 		} else {
 			for (int x = -max_delta; x <= max_delta; x++) {
 				for (int y = -max_delta; y <= max_delta; y++) {
-					if (ns_[{x,y}] >= 0) {
-						ret.push_back({x, y});
+					const auto& key = Coord{x,y};
+					const auto& found = ns_.find(key);
+					// if not found or if found but positive
+					if (found == ns_.end() || found->second >= 0) {
+						ret.push_back(key);
 					}
 				}
 			}
