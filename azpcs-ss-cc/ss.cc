@@ -394,9 +394,9 @@ int main() {
 	TestState();
 	TestChromo();
 #else
-	const int n = 7;
+	const int n = 31;
 	const int pop_size = 100;
-	const int md = 10;
+	const int md = 5;
 	const float mutation_probability = 0.05;
 	const int every_iterations = 10000;
 
