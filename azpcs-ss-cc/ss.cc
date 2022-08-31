@@ -391,6 +391,23 @@ void TestChromo() {
 
 int main() {
 #if 1
+#if 1
+	FILE *f = fopen("47.txt", "r");
+	int k, l, n, x0, y0;
+	int num_ones = 0;
+	fscanf(f, "%d%d%d%d%d", &k, &l, &n, &x0, &y0);
+	int *matrix = static_cast<int*>(calloc(k*l, sizeof(matrix[0])));
+	for (int i = 0; i < k; i++) {
+		for (int j = 0; j < l; j++) {
+			fscanf(f, "%d", &matrix[i * l + j]);
+			if (matrix[i * l + j] == 1) num_ones++;
+			if (matrix[i * l + j] == 2) printf("%d %d\n", i, j);
+		}
+	}
+	if (matrix[x0 * l + y0] != 1) return 0;
+	fclose(f);
+	free(matrix);
+#else
 	State s(30);
 	std::vector<Coord> v{
 		{0,3},{-1,3},{1,3},{-1,4},{7,4},{-2,5},{1,5},{4,5},{5,5},{-1,6},{3,6},{6,6},{-2,7},{1,7},{4,7},{8,7},{1,8},{3,8},{1,9},{2,10},{6,10},{3,11},{8,11},{8,12},{6,12},{7,13},{2,13},{0,13},{-2,13}, //1s
@@ -410,6 +427,7 @@ int main() {
 	}
 	s.Draw();
 	s.Draw(false);
+#endif
 #else
 #if 0
 	TestState();
