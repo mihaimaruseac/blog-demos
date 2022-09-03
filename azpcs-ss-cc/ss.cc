@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <cstdlib>
 #include <iostream>
 #include <map>
 #include <random>
@@ -438,9 +439,9 @@ void TestChromo() {
 
 } // namespace // Chromo
 
-int main() {
-	const int n = 31;
-	const int md = 10;
+int main(int argc, char **argv) {
+	const int n = std::atoi(argv[0]);
+	const int md = std::atoi(argv[1]);
 	const int every_iterations = 1000;
 
 	struct {
