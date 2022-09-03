@@ -346,9 +346,14 @@ class Chromo {
 	// must be called after Fitness()
 	int Size() const { return genes_.size(); }
 
-	void Bump(int x) {
+	void Bump(int ix, bool shrt) {
 		fitness_ = 0;
-		++genes_[x];
+		if (shrt) {
+			++genes_[ix];
+		} else {
+			std::uniform_int_distribution<> d(2, md_ * md_ - 1);
+			genes_[ix] += d(*rng_);
+		}
 	}
 
 	void AddGene(int x) { genes_.push_back(x); } // testing only
@@ -468,8 +473,7 @@ int main(int argc, char **argv) {
 		next.reserve(2 * c.Size());
 		for (int i = 0; i < 2 * c.Size(); i++) {
 			next.push_back(Chromo{c});
-			next[i].Bump(i/2);
-			if (i % 2) next[i].Bump(i/2);
+			next[i].Bump(i/2, i%2);
 			next[i].Fitness();
 		}
 
