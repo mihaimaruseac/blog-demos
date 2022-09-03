@@ -269,6 +269,13 @@ class Chromo {
   public:
 	Chromo(RNG* rng, int n, int md=10) : fitness_(0), n_(n), rng_(rng), md_(md), s_(n_) {}
 
+	Chromo(const Chromo &other) : fitness_(0), n_(other.n_), rng_(other.rng_), md_(other.md_), s_(other.n_) {
+		genes_.reserve(other.genes_.size());
+		for (const auto& g : other.genes_) {
+			genes_.push_back(g);
+		}
+	}
+
 	int Fitness() {
 		if (fitness_) return fitness_;
 		State s(n_);
