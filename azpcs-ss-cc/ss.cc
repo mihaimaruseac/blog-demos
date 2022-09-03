@@ -333,6 +333,14 @@ class Chromo {
 
 	void Draw(bool space=false, bool input=false) { s_.Draw(space, input); }
 
+	// must be called after Fitness()
+	int Size() const { return genes_.size(); }
+
+	void Bump(int x) {
+		fitness_ = 0;
+		++genes_[x];
+	}
+
 	void AddGene(int x) { genes_.push_back(x); } // testing only
 
 	void Dump() const { // testing only
