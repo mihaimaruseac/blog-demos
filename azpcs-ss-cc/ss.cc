@@ -331,7 +331,7 @@ class Chromo {
 
 	void NextGen() { fitness_ = 0; }
 
-	void Draw() { s_.Draw(false); }
+	void Draw(bool space=false, bool input=false) { s_.Draw(space, input); }
 
 	void AddGene(int x) { genes_.push_back(x); } // testing only
 
