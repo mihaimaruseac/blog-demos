@@ -444,9 +444,15 @@ void TestChromo() {
 
 } // namespace // Chromo
 
+std::pair<int, int> parseArgs(int argc, char **argv) {
+	if (argc >= 2) return {std::atoi(argv[1]), std::atoi(argv[2])};
+	if (argc >= 1) return {std::atoi(argv[1]), 10};
+	return {31, 10};
+}
+
 int main(int argc, char **argv) {
-	const int n = std::atoi(argv[0]);
-	const int md = std::atoi(argv[1]);
+	const auto& [n, md] = parseArgs(argc, argv);
+	if (n < 2 || md < 2) return 0;
 	const int every_iterations = 1000;
 
 	struct {
