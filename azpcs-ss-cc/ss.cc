@@ -440,10 +440,8 @@ void TestChromo() {
 
 int main() {
 	const int n = 31;
-	const int pop_size = 100;
 	const int md = 10;
-	const float mutation_probability = 0.25;
-	const int every_iterations = 10000;
+	const int every_iterations = 1000;
 
 	struct {
 		bool operator()(Chromo a, Chromo b) const {
@@ -455,13 +453,9 @@ int main() {
 	std::random_device r;
 	gen.seed(r());
 
-	std::vector<Chromo> population;
-	for (int i = 0; i < pop_size; i++) {
-		population.push_back(Chromo(&gen, n, md));
-		population[i].Fitness();
-	}
-	std::sort(population.begin(), population.end(), FitnessSort);
-	int best_fitness = population[0].Fitness();
+	Chromo c(&gen, n, md);
+	int best_fitness = c.Fitness();
+	c.Draw(true, true);
 
 	int num_iterations = 0;
 	while (true) {
@@ -469,26 +463,24 @@ int main() {
 		if (num_iterations % every_iterations == 0) {
 			std::cout << "Iteration " << num_iterations << " best fitness " << best_fitness - n + 2 << "\n";
 		}
-		for (int i = 0; i < pop_size; i += 2) {
-			population[i].Crossover(population[i+1]);
+		std::vector<Chromo> next;
+		next.reserve(2 * c.Size());
+		for (int i = 0; i < 2 * c.Size(); i++) {
+			next.push_back(Chromo{c});
+			next[i].Bump(i/2);
+			if (i % 2) next[i].Bump(i/2);
+			next[i].Fitness();
 		}
-		for (auto& c : population) {
-			std::uniform_real_distribution<> u(0, 1);
-			if (u(gen) < mutation_probability) {
-				c.Mutate();
-			}
-			c.NextGen();
-		}
-		// NOTE: why does this need a separate loop?
-		for (auto& c : population) {
-			c.Fitness();
-		}
-		std::sort(population.begin(), population.end(), FitnessSort);
-		if (population[0].Fitness() > best_fitness) {
-			best_fitness = population[0].Fitness();
+
+		std::sort(next.begin(), next.end(), FitnessSort);
+		if (next[0].Fitness() > best_fitness) {
+			best_fitness = next[0].Fitness();
 			std::cout << "New best fitness " << best_fitness - n + 2 << " from:\n";
-			population[0].Draw();
+			next[0].Draw(true, true);
+			std::cout << "==== ^ " << best_fitness - n + 2 << "====\n";
 		}
+
+		c = next[0];
 	}
 
 	if (false) {
