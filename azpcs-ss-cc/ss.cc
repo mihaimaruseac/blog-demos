@@ -32,9 +32,9 @@ class State {
 		ps_.push_back({x,y});
 		ns_[{x,y}] = -value;
 		nps_[value].erase({x,y});
-		for (int dx = -1; dx < 2; dx++) {
+		for (int dx = -1; dx < 2; ++dx) {
 			const auto nx = x + dx;
-			for (int dy = -1; dy < 2; dy++) {
+			for (int dy = -1; dy < 2; ++dy) {
 				const auto ny = y + dy;
 				if (ns_[{nx,ny}] >= 0) {
 					const auto old_value = ns_[{nx,ny}];
@@ -55,8 +55,8 @@ class State {
 				ret.push_back({x,y});
 			}
 		} else {
-			for (int x = -max_delta; x <= max_delta; x++) {
-				for (int y = -max_delta; y <= max_delta; y++) {
+			for (int x = -max_delta; x <= max_delta; ++x) {
+				for (int y = -max_delta; y <= max_delta; ++y) {
 					const auto& key = Coord{x,y};
 					const auto& found = ns_.find(key);
 					// if not found or if found but positive
@@ -96,16 +96,16 @@ class State {
 		}
 		const int width = 1 + NumDigits(max_v);
 
-		for (int i = 0; i < dx; i++) {
-			for (int j = 0; j < dy; j++) {
+		for (int i = 0; i < dx; ++i) {
+			for (int j = 0; j < dy; ++j) {
 				// C++20 required for fmt
 				printf("%*d ", width, matrix[i * dy + j]);
 			}
 			printf("\n");
 		}
 		if (space) {
-			for (int i = 0; i < dx; i++) {
-				for (int j = 0; j < dy; j++) {
+			for (int i = 0; i < dx; ++i) {
+				for (int j = 0; j < dy; ++j) {
 					if (matrix[i * dy + j] > 0) {
 						printf("%*d ", width, matrix[i * dy + j]);
 					} else {
@@ -116,11 +116,11 @@ class State {
 			}
 		}
 		if (input) {
-			for (int i = 1; i < dx-1; i++) {
+			for (int i = 1; i < dx-1; ++i) {
 				int space = 0;
 				bool first = true;
 				printf("(");
-				for (int j = 1; j < dy; j++) {
+				for (int j = 1; j < dy; ++j) {
 					if (matrix[i * dy + j] > 0) {
 						if (first) {
 							first = false;
@@ -477,7 +477,7 @@ int main(int argc, char **argv) {
 		}
 		std::vector<Chromo> next;
 		next.reserve(2 * c.Size());
-		for (int i = 0; i < 2 * c.Size(); i++) {
+		for (int i = 0; i < 2 * c.Size(); ++i) {
 			next.push_back(Chromo{c});
 			next[i].Bump(i/2, i%2);
 			next[i].Fitness();
