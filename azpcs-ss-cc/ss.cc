@@ -27,6 +27,8 @@ class State {
 		Place(0, 0);
 	}
 
+	State(const State &other) : ps_(other.ps_), ns_(other.ns_), nps_(other.nps_), n_(other.n_) {}
+
 	void Place(int x, int y) {
 		auto value = Value(ps_.size());
 		ps_.push_back({x,y});
