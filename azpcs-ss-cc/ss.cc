@@ -71,6 +71,11 @@ class State {
 		return ret;
 	}
 
+
+	int Score() const {
+		return ps_.size();
+	}
+
 	int Value(int n) const {
 		return n < n_ ? 1 : (n - n_ + 2);
 	}
