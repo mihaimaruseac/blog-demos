@@ -293,6 +293,60 @@ class Chromo {
 		return *this;
 	}
 
+	void Grow() {
+		State s(n_);
+		for (const auto& g: genes_) { // debug only, mostly unused
+			const auto& next = s.Next(md_);
+			if (!next.size()) return; // safety measure, impossible
+			const auto& [x,y] = next[g % next.size()];
+			s.Place(x, y);
+		}
+		while (true) {
+			std::cout << "===VVVVV============\n";
+			const auto& next = s.Next(md_);
+			if (!next.size()) break;
+			auto best_x = 0, best_y = 0; // surely overriden
+			auto best_of_n = s.Score();
+			for (auto try_ = 0; try_ < 3; ++try_) {
+				auto best_score = s.Score();
+				auto best_next = -1;
+				for (unsigned int ix = 0; ix < next.size(); ++ix) {
+					const auto& [x,y] = next[ix];
+					std::cout << "Trying {" << x << ", " << y << "}\n";
+					State ss(s);
+					ss.Place(x, y);
+					while (true) {
+						const unsigned int g = (*rng_)();
+						const auto& next = ss.Next(md_);
+						if (!next.size()) break;
+						const auto& [x,y] = next[g % next.size()];
+						ss.Place(x, y);
+					}
+					auto now_score = ss.Score();
+					if (now_score > best_score) {
+						std::cout << "Next best @ " << ix << "\n";
+						ss.Draw(true);
+						best_score = now_score;
+						best_next = ix;
+					}
+				}
+				std::cout << s.Score() << " / " << best_score << " @ " << best_next << "\n";
+				if (best_next < 0) break; // impossible
+				if (best_score > best_of_n) {
+					const auto& [x,y] = next[best_next];
+					best_x = x;
+					best_y = y;
+					best_of_n = best_score;
+				}
+			}
+			s.Place(best_x, best_y);
+			std::cout << "===^^^^^============\n";
+		}
+		std::cout << "At end of grow...\n";
+		s.Draw(true, true);
+		std::cout << "===\n";
+	}
+
 	int Fitness() {
 		if (fitness_) return fitness_;
 		State s(n_);
@@ -473,6 +527,10 @@ int main(int argc, char **argv) {
 	gen.seed(r());
 
 	Chromo c(&gen, n, md);
+	c.Grow();
+	c.Draw(true, true);
+	return 0;
+
 	int best_fitness = c.Fitness();
 	c.Draw(true, true);
 
