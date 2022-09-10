@@ -323,7 +323,7 @@ class Chromo {
 					}
 					auto now_score = ss.Score();
 					if (now_score > best_score) {
-						std::cout << "Next best @ " << ix << "\n";
+						std::cout << "Next best @ " << ix << "(" << x << "," << y << ")\n";
 						ss.Draw(true);
 						best_score = now_score;
 						best_next = ix;
@@ -338,6 +338,7 @@ class Chromo {
 					best_of_n = best_score;
 				}
 			}
+			std::cout << "#" << s.Score() << " / " << best_of_n << " @ (" << best_x << "," << best_y << ")\n";
 			s.Place(best_x, best_y);
 			std::cout << "===^^^^^============\n";
 		}
