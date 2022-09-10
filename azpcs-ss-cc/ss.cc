@@ -71,7 +71,6 @@ class State {
 		return ret;
 	}
 
-
 	int Score() const {
 		return ps_.size();
 	}
