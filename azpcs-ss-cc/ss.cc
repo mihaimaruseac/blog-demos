@@ -510,49 +510,13 @@ std::pair<int, int> parseArgs(int argc, char **argv) {
 int main(int argc, char **argv) {
 	const auto& [n, md] = parseArgs(argc, argv);
 	if (n < 2 || md < 2) return 0;
-	const int every_iterations = 1000;
-
-	struct {
-		bool operator()(Chromo a, Chromo b) const {
-			return a.Fitness() > b.Fitness();
-		}
-	} FitnessSort;
 
 	RNG gen;
 	std::random_device r;
-	gen.seed(r());
+	gen.seed(42);//r());
 
 	Chromo c(&gen, n, md);
 	c.Grow().Draw(true, true);
-	return 0;
-
-	int best_fitness = c.Fitness();
-	c.Draw(true, true);
-
-	int num_iterations = 0;
-	while (true) {
-		++num_iterations;
-		if (num_iterations % every_iterations == 0) {
-			std::cout << "Iteration " << num_iterations << " best fitness " << best_fitness - n + 2 << "\n";
-		}
-		std::vector<Chromo> next;
-		next.reserve(2 * c.Size());
-		for (int i = 0; i < 2 * c.Size(); ++i) {
-			next.push_back(Chromo{c});
-			next[i].Bump(i/2, i%2);
-			next[i].Fitness();
-		}
-
-		std::sort(next.begin(), next.end(), FitnessSort);
-		if (next[0].Fitness() > best_fitness) {
-			best_fitness = next[0].Fitness();
-			std::cout << "New best fitness " << best_fitness - n + 2 << " from:\n";
-			next[0].Draw(true, true);
-			std::cout << "==== ^ " << best_fitness - n + 2 << "====\n";
-		}
-
-		c = next[0];
-	}
 
 	if (false) {
 		TestState();
