@@ -517,7 +517,9 @@ int main(int argc, char **argv) {
 	gen.seed(42);//r());
 
 	Chromo c(&gen, n, md);
-	c.Grow(reps).Draw(true, true);
+	State s = c.Grow(reps);
+	s.Draw(true, true);
+	std::cout << s.Score() << "\n";
 
 	if (false) {
 		TestState();
