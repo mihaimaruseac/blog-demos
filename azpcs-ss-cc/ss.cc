@@ -292,7 +292,7 @@ class Chromo {
 		return *this;
 	}
 
-	State Grow() {
+	State Grow(int reps) {
 		State s(n_);
 		State best(n_);
 		for (const auto& g: genes_) { // debug only, mostly unused
@@ -306,7 +306,7 @@ class Chromo {
 			if (!next.size()) break;
 			auto best_x = 0, best_y = 0; // surely overriden
 			auto best_of_n = s.Score();
-			for (auto try_ = 0; try_ < 3; ++try_) {
+			for (auto try_ = 0; try_ < reps; ++try_) {
 				auto best_score = s.Score();
 				auto best_next = -1;
 				for (unsigned int ix = 0; ix < next.size(); ++ix) {
@@ -501,22 +501,23 @@ void TestChromo() {
 
 } // namespace // Chromo
 
-std::pair<int, int> parseArgs(int argc, char **argv) {
-	if (argc >= 2) return {std::atoi(argv[1]), std::atoi(argv[2])};
-	if (argc >= 1) return {std::atoi(argv[1]), 10};
-	return {31, 10};
+std::tuple<int, int, int> parseArgs(int argc, char **argv) {
+	if (argc >= 3) return {std::atoi(argv[1]), std::atoi(argv[2]), std::atoi(argv[3])};
+	if (argc >= 2) return {std::atoi(argv[1]), std::atoi(argv[2]), 10};
+	if (argc >= 1) return {std::atoi(argv[1]), 10, 10};
+	return {31, 10, 10};
 }
 
 int main(int argc, char **argv) {
-	const auto& [n, md] = parseArgs(argc, argv);
-	if (n < 2 || md < 2) return 0;
+	const auto& [n, md, reps] = parseArgs(argc, argv);
+	if (n < 2 || md < 2 || reps < 3) return 0;
 
 	RNG gen;
 	std::random_device r;
 	gen.seed(42);//r());
 
 	Chromo c(&gen, n, md);
-	c.Grow().Draw(true, true);
+	c.Grow(reps).Draw(true, true);
 
 	if (false) {
 		TestState();
