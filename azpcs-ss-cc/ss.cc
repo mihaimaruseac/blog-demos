@@ -292,16 +292,16 @@ class Chromo {
 		return *this;
 	}
 
-	void Grow() {
+	State Grow() {
 		State s(n_);
+		State best(n_);
 		for (const auto& g: genes_) { // debug only, mostly unused
 			const auto& next = s.Next(md_);
-			if (!next.size()) return; // safety measure, impossible
+			if (!next.size()) return best; // safety measure, impossible
 			const auto& [x,y] = next[g % next.size()];
 			s.Place(x, y);
 		}
 		while (true) {
-			std::cout << "===VVVVV============\n";
 			const auto& next = s.Next(md_);
 			if (!next.size()) break;
 			auto best_x = 0, best_y = 0; // surely overriden
@@ -311,7 +311,6 @@ class Chromo {
 				auto best_next = -1;
 				for (unsigned int ix = 0; ix < next.size(); ++ix) {
 					const auto& [x,y] = next[ix];
-					std::cout << "Trying {" << x << ", " << y << "}\n";
 					State ss(s);
 					ss.Place(x, y);
 					while (true) {
@@ -323,13 +322,14 @@ class Chromo {
 					}
 					auto now_score = ss.Score();
 					if (now_score > best_score) {
-						std::cout << "Next best @ " << ix << "(" << x << "," << y << ")\n";
-						ss.Draw(true);
 						best_score = now_score;
 						best_next = ix;
+						if (now_score > best.Score()) {
+							best = ss;
+							best.Draw(true, true);
+						}
 					}
 				}
-				std::cout << s.Score() << " / " << best_score << " @ " << best_next << "\n";
 				if (best_next < 0) break; // impossible
 				if (best_score > best_of_n) {
 					const auto& [x,y] = next[best_next];
@@ -338,13 +338,9 @@ class Chromo {
 					best_of_n = best_score;
 				}
 			}
-			std::cout << "#" << s.Score() << " / " << best_of_n << " @ (" << best_x << "," << best_y << ")\n";
 			s.Place(best_x, best_y);
-			std::cout << "===^^^^^============\n";
 		}
-		std::cout << "At end of grow...\n";
-		s.Draw(true, true);
-		std::cout << "===\n";
+		return best;
 	}
 
 	int Fitness() {
@@ -527,8 +523,7 @@ int main(int argc, char **argv) {
 	gen.seed(r());
 
 	Chromo c(&gen, n, md);
-	c.Grow();
-	c.Draw(true, true);
+	c.Grow().Draw(true, true);
 	return 0;
 
 	int best_fitness = c.Fitness();
