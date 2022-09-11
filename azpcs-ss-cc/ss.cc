@@ -514,7 +514,7 @@ int main(int argc, char **argv) {
 
 	RNG gen;
 	std::random_device r;
-	gen.seed(42);//r());
+	gen.seed(r());
 
 	Chromo c(&gen, n, md);
 	State s = c.Grow(reps);
