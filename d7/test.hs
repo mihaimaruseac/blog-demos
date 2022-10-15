@@ -21,4 +21,5 @@ search k placed
     guard $ length (nub dists) == k * (k + 1) `div` 2
     search (k + 1) placed'
 
+main :: IO ()
 main = mapM_ print $ search 0 []
